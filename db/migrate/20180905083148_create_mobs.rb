@@ -6,8 +6,6 @@ class CreateMobs < ActiveRecord::Migration[5.2]
       t.text :web_url_1
       t.text :web_url_2
       t.text :description
-
-      t.timestamps
     end
   end
 end
