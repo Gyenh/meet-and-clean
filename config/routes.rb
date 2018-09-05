@@ -1,8 +1,14 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  resources :events
-  devise_for :admins
-  devise_for :users
-  resources :mobs
   root 'home_pages#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :events
+
+  devise_for :admins, path: 'admins'
+  # exemple : http://localhost:3000/admins/sign_in
+  devise_for :users, path: 'users'
+  # exemple : http://localhost:3000/users/sign_in
+
+  resources :mobs
 end
