@@ -16,6 +16,7 @@ class EventsTest < ApplicationSystemTestCase
 
     fill_in "Date", with: @event.date
     fill_in "Description", with: @event.description
+    fill_in "Mob", with: @event.mob_id
     fill_in "Name", with: @event.name
     fill_in "Place", with: @event.place
     click_on "Create Event"
@@ -30,6 +31,7 @@ class EventsTest < ApplicationSystemTestCase
 
     fill_in "Date", with: @event.date
     fill_in "Description", with: @event.description
+    fill_in "Mob", with: @event.mob_id
     fill_in "Name", with: @event.name
     fill_in "Place", with: @event.place
     click_on "Update Event"
