@@ -25,7 +25,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    @event.mob_id = current_admin.id
+    @event.mob_id = current_admin.mob_id
 
     respond_to do |format|
       if @event.save
