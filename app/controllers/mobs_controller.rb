@@ -28,6 +28,9 @@ class MobsController < ApplicationController
 
     respond_to do |format|
       if @mob.save
+        asso = Mob.last
+        current_admin.update_attribute(:mob_id, asso.id)
+
         format.html { redirect_to @mob, notice: 'Mob was successfully created.' }
         format.json { render :show, status: :created, location: @mob }
       else
