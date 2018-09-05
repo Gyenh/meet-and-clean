@@ -1,0 +1,42 @@
+<%= form_with(model: mob, local: true) do |form| %>
+  <% if mob.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mob.errors.count, "error") %> prohibited this mob from being saved:</h2>
+
+      <ul>
+      <% mob.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.number_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :web_url_1 %>
+    <%= form.text_area :web_url_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :web_url_2 %>
+    <%= form.text_area :web_url_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

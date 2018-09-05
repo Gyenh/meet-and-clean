@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mob.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @mob.phone %>
+</p>
+
+<p>
+  <strong>Web url 1:</strong>
+  <%= @mob.web_url_1 %>
+</p>
+
+<p>
+  <strong>Web url 2:</strong>
+  <%= @mob.web_url_2 %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mob.description %>
+</p>
+
+<%= link_to 'Edit', edit_mob_path(@mob) %> |
+<%= link_to 'Back', mobs_path %>
