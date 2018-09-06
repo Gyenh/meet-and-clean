@@ -1,2 +1,19 @@
-<h1>HomePages#index</h1>
-<p>Find me in app/views/home_pages/index.html.erb</p>
+<h1>MOBMOP</h1>
+<p>Ensemble, réduisons la planète à néant</p>
+
+<% if admin_signed_in? %>
+ <li>
+ <%= link_to('Logout', destroy_admin_session_path, method: :delete) %>
+ </li>
+<% elsif user_signed_in? %>
+ <li>
+ <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+ </li>
+ <% else %>
+ <li>
+ <%= link_to('MOB Access', new_admin_session_path)  %>
+ </li>
+  <li>
+ <%= link_to('User Access', new_user_session_path)  %>
+ </li>
+<% end %>
