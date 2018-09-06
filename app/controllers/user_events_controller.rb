@@ -1,6 +1,7 @@
 class UserEventsController < ApplicationController
   before_action :set_user_event, only: [:show, :edit, :update, :destroy]
 
+
   # GET /user_events
   # GET /user_events.json
   def index
@@ -21,22 +22,21 @@ class UserEventsController < ApplicationController
   def edit
   end
 
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
+
   # POST /user_events
   # POST /user_events.json
   def create
     @user_event = UserEvent.new
     @user_event.user_id = current_user.id
-    @user_event.event_id = current_user.id
+    @user_event.event_id = params['format']
 
-    respond_to do |format|
-      if @user_event.save
-        format.html { redirect_to @user_event, notice: 'User event was successfully created.' }
-        format.json { render :show, status: :created, location: @user_event }
-      else
-        format.html { render :new }
-        format.json { render json: @user_event.errors, status: :unprocessable_entity }
-      end
-    end
+    @user_event.save
+    redirect_to @user_event
   end
 
   # PATCH/PUT /user_events/1
@@ -64,13 +64,13 @@ class UserEventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user_event
-      @user_event = UserEvent.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user_event
+    @user_event = UserEvent.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_event_params
-      params.require(:user_event).permit(:user_id, :event_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_event_params
+    params.require(:user_event).permit(:user_id, :event_id)
+  end
 end
