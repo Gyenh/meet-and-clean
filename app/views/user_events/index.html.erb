@@ -14,8 +14,8 @@
   <tbody>
     <% @user_events.each do |user_event| %>
       <tr>
-        <td><%= user_event.user %></td>
-        <td><%= user_event.event %></td>
+        <td><%= user_event.user.email %></td>
+        <td><%= user_event.event.name %></td>
         <td><%= link_to 'Show', user_event %></td>
         <td><%= link_to 'Edit', edit_user_event_path(user_event) %></td>
         <td><%= link_to 'Destroy', user_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
