@@ -7,19 +7,29 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    #s'exécute apres avoir ecris dans la base de donnée
+
+    super
+    #s'exécute apres avoir ecris dans la base de donnée
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    #s'exécute avant avoir ecris dans la base de donnée
+    super
+    #s'exécute apres avoir ecris dans la base de donnée
+    email = current_user.email
+    name = "Marie"
+    # name = current_user.first_name
+    MailService.send_email(email, name, MailObject.get_welcome_subject, subject = MailObject.get_welcome_content) #envoie un mail après que l'user se soit inscrit au site
+
+  end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    super
+  end
 
   # PUT /resource
   # def update
