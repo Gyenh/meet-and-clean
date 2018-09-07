@@ -31,11 +31,21 @@ class UserEventsController < ApplicationController
   # POST /user_events
   # POST /user_events.json
   def create
+
     @user_event = UserEvent.new
     @user_event.user_id = current_user.id
     @user_event.event_id = params['format']
 
     @user_event.save
+
+
+      #début envoie email de confirmation
+
+      name = "Marie"     # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+     # on appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
+    MailService.send_email(current_user.email, name, MailObject.get_confirmation_subject, subject = MailObject.get_confirmation_content) #envoie un mail après que l'user se soit inscrit au site
+    #fin envoie email de confirmation
+
     redirect_to @user_event
   end
 

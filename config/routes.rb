@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :events
 
-  devise_for :admins, path: 'admins', controllers: { sessions: 'admins/sessions' }
+  devise_for :admins, path: 'admins', controllers: { sessions: 'admins/sessions', registrations: 'admins/registrations' }
   # path example : http://localhost:3000/admins/sign_in
 
   devise_for :users, path: 'users', controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
