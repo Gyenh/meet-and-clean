@@ -1,6 +1,6 @@
 class HomePagesController < ApplicationController
   def index
-    #
+    @events = Event.all
     # email = "kyg972@msn.com" # l'émail de l'user
     # name = "Pierre"
     # subject =  MailObject.get_confirmation_subject
