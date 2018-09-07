@@ -13,3 +13,335 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	font-family: 'Hind Siliguri', sans-serif;	
+    font-weight: 600;
+}
+p {
+	font-family: 'Source Serif Pro', serif;
+}
+body {
+	margin: 0px !important;
+}
+.wrapper {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
+}
+/*css pour la navbar à ranger dans un fichier navbar*/
+.navbar {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbarleft {
+	display: flex;
+    align-items: center;
+}
+.navbarright{
+}
+
+.logo {
+    height: 34px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.baseline {
+    font-size: 13px;
+    width: 151px;
+}
+h1 {
+    font-weight: 400;	
+}
+
+.event {
+	border: solid 2px black;
+    padding: 4px;
+	border-radius: 1px;
+	font-weight: 600;
+	cursor: pointer;
+	width: 135px;
+    margin-right: 14px;
+}
+.event:hover {
+    background: #0000ff;
+    color: white;
+}
+.login {
+	font-weight: 600;
+	border-style: none;
+    padding-top: 3px;
+    cursor: pointer;
+    width: 90px;
+}
+.login:hover {
+	color: #ff00ff;
+}
+
+
+/*à utiliser pour l'interation du site*/
+.wrappi {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+}
+
+/*css pour le background*/
+.ampoule {
+    position: absolute;
+    width: 51px;
+    height: 50px;
+    z-index: 1;
+    top: 17%;
+    left: 50%;
+    cursor: pointer;
+
+}
+.ampoulee {
+    position: absolute;
+    width: 41px;
+    height: 50px;
+    z-index: 1;
+    top: 66%;
+    left: 80%;
+    cursor: pointer;
+}
+
+.biere {
+    position: absolute;
+    width: 39px;
+    height: 50px;
+    z-index: 1;
+    top: 78%;
+    left: 58%;
+    cursor: pointer;
+}
+
+.bouteille {
+	position: absolute;
+    width: 38px;
+    height: 50px;
+    z-index: 1;
+    top: 16%;
+    left: 9%;
+    cursor: pointer;
+}
+
+.casserole {
+    position: absolute;
+    width: 72px;
+    height: 50px;
+    z-index: 1;
+    top: 17%;
+    left: 40%;
+    cursor: pointer;
+}
+
+.cassette {
+    position: absolute;
+    width: 55px;
+    height: 50px;
+    z-index: 1;
+    top: 13%;
+    left: 68%;
+    cursor: pointer;
+}
+
+.chaussette {
+    position: absolute;
+    width: 54px;
+    height: 50px;
+    z-index: 1;
+    top: 37%;
+    left: 82%;
+    cursor: pointer;
+}
+
+.chaussettee {
+    position: absolute;
+    width: 64px;
+    height: 50px;
+    z-index: 1;
+    top: 73%;
+    left: 37%;
+    cursor: pointer;
+}
+
+.citron {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    top: 55%;
+    left: 10%;
+    cursor: pointer;
+}
+
+.lunette {
+ 	position: absolute;
+    width: 67px;
+    height: 50px;
+    z-index: 1;
+    top: 15%;
+    left: 79%;
+    cursor: pointer;
+}
+
+.orange {
+    position: absolute;
+    width: 65px;
+    height: 50px;
+    z-index: 1;
+    top: 48%;
+    left: 72%;
+    cursor: pointer;
+}
+
+.ordi {
+    position: absolute;
+    width: 65px;
+    height: 50px;
+    z-index: 1;
+    top: 66%;
+    left: 20%;
+    cursor: pointer;
+}
+
+.pile {
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    z-index: 1;
+    top: 81%;
+    left: 47%;
+    cursor: pointer;
+}
+
+.pneu {
+    position: absolute;
+    width: 123px;
+    height: 50px;
+    z-index: 1;
+    top: 54%;
+    left: 28%;
+    cursor: pointer;
+}
+
+.pomme {
+	position: absolute;
+    width: 54px;
+    height: 50px;
+    z-index: 1;
+    top: 40%;
+    left: 23%;
+    cursor: pointer;
+}
+
+.pommee {
+	position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    top: 78%;
+    left: 73%;
+    cursor: pointer;
+}
+
+.raquette {
+    position: absolute;
+    width: 85px;
+    height: 50px;
+    z-index: 1;
+    top: 29%;
+    left: 61%;
+    cursor: pointer;
+}
+
+.roue {
+    position: absolute;
+    width: 114px;
+    height: 50px;
+    z-index: 1;
+    top: 63%;
+    left: 63%;
+    cursor: pointer;
+}
+
+.saccuir {
+    position: absolute;
+    width: 95px;
+    height: 50px;
+    z-index: 1;
+    top: 36%;
+    left: 38%;
+    cursor: pointer;
+}
+
+.sacpla {
+    position: absolute;
+    width: 75px;
+    height: 50px;
+    z-index: 1;
+    top: 78%;
+    left: 10%;
+    cursor: pointer;
+}
+
+.soap {
+    position: absolute;
+    width: 41px;
+    height: 50px;
+    z-index: 1;
+    top: 13%;
+    left: 23%;
+    cursor: pointer;
+}
+
+.tele {
+    position: absolute;
+    width: 101px;
+    height: 50px;
+    z-index: 1;
+    top: 58%;
+    left: 47%;
+    cursor: pointer;
+}
+
+.tomate {
+	position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    top: 26%;
+    left: 16%;
+    cursor: pointer;
+}
+
+.verre {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    top: 82%;
+    left: 27%;
+    cursor: pointer;
+}
+
+.verrebleu {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    top: 38%;
+    left: 8%;
+	cursor: pointer;
+}
+

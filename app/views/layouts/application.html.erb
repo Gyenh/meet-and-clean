@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MeetAndClean</title>
+    <title>MobMop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:400,600,700|Source+Serif+Pro" rel="stylesheet">
+    <!-- mes deux typos sur googlefonts -->
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+    <!-- j'ouvre ma div du background -->
+    <%= render 'shared/navbar' %>
+    <!-- ma navbar -->
+    <%= render 'shared/trash' %>
+    <!-- mon background -->
+    <%= render 'layouts/alerts' %>
+    <!-- truc de devise -->
+  <%= yield %>
+    <!-- dans le yield je mets toute l'intéraction du site -->
+    </div>
+    <!-- ici je ferme la div de mon wrapper -->
   </body>
 </html>

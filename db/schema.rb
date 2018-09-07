@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_09_07_101501) do
 
   create_table "mobs", force: :cascade do |t|
     t.string "name"
-    t.string "phone"
+    t.integer "phone"
     t.text "web_url_1"
     t.text "web_url_2"
     t.text "description"
