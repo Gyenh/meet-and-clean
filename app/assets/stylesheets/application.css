@@ -13,3 +13,85 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	font-family: 'Hind Siliguri', sans-serif;	
+    font-weight: 600;
+}
+.navbar {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+}
+.navbarleft {
+	display: flex;
+    align-items: center;
+}
+.navbarright{
+}
+
+.logo {
+    height: 34px;
+    margin-right: 20px;
+}
+.baseline {
+    font-size: 13px;
+    width: 151px;
+}
+h1 {
+    font-weight: 400;	
+}
+
+.event {
+	border: solid 2px black;
+    padding: 4px;
+	border-radius: 1px;
+	font-weight: 600;
+}
+.login {
+	font-weight: 600;
+	border-style: none;
+    padding-top: 3px;
+}
+
+p {
+	font-family: 'Source Serif Pro', serif;
+}
+
+
+
+
+.wrapper {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
+}
+
+.wrappi {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+/*	background-color: green;
+*/
+}
+
+.pomme {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+/*	background-color: purple;
+*/
+}
+
+body {
+	margin: 0px !important;
+}
