@@ -49,6 +49,7 @@ body {
 .logo {
     height: 34px;
     margin-right: 20px;
+    cursor: pointer;
 }
 .baseline {
     font-size: 13px;
@@ -63,6 +64,7 @@ h1 {
     padding: 4px;
 	border-radius: 1px;
 	font-weight: 600;
+	cursor: pointer;
 }
 .event:hover {
     background: #0000ff;
@@ -72,6 +74,7 @@ h1 {
 	font-weight: 600;
 	border-style: none;
     padding-top: 3px;
+    cursor: pointer;
 }
 .login:hover {
 	color: #ff00ff;
@@ -96,6 +99,8 @@ h1 {
     z-index: 1;
     top: 17%;
     left: 50%;
+    cursor: pointer;
+
 }
 .ampoulee {
     position: absolute;
@@ -104,6 +109,7 @@ h1 {
     z-index: 1;
     top: 66%;
     left: 80%;
+    cursor: pointer;
 }
 
 .biere {
@@ -113,6 +119,7 @@ h1 {
     z-index: 1;
     top: 78%;
     left: 58%;
+    cursor: pointer;
 }
 
 .bouteille {
@@ -122,6 +129,7 @@ h1 {
     z-index: 1;
     top: 16%;
     left: 9%;
+    cursor: pointer;
 }
 
 .casserole {
@@ -131,6 +139,7 @@ h1 {
     z-index: 1;
     top: 17%;
     left: 40%;
+    cursor: pointer;
 }
 
 .cassette {
@@ -140,6 +149,7 @@ h1 {
     z-index: 1;
     top: 13%;
     left: 68%;
+    cursor: pointer;
 }
 
 .chaussette {
@@ -149,6 +159,7 @@ h1 {
     z-index: 1;
     top: 37%;
     left: 82%;
+    cursor: pointer;
 }
 
 .chaussettee {
@@ -158,6 +169,7 @@ h1 {
     z-index: 1;
     top: 73%;
     left: 37%;
+    cursor: pointer;
 }
 
 .citron {
@@ -167,6 +179,7 @@ h1 {
     z-index: 1;
     top: 55%;
     left: 10%;
+    cursor: pointer;
 }
 
 .lunette {
@@ -176,6 +189,7 @@ h1 {
     z-index: 1;
     top: 15%;
     left: 79%;
+    cursor: pointer;
 }
 
 .orange {
@@ -185,6 +199,7 @@ h1 {
     z-index: 1;
     top: 48%;
     left: 72%;
+    cursor: pointer;
 }
 
 .ordi {
@@ -194,6 +209,7 @@ h1 {
     z-index: 1;
     top: 66%;
     left: 20%;
+    cursor: pointer;
 }
 
 .pile {
@@ -203,6 +219,7 @@ h1 {
     z-index: 1;
     top: 81%;
     left: 47%;
+    cursor: pointer;
 }
 
 .pneu {
@@ -212,6 +229,7 @@ h1 {
     z-index: 1;
     top: 54%;
     left: 28%;
+    cursor: pointer;
 }
 
 .pomme {
@@ -221,6 +239,7 @@ h1 {
     z-index: 1;
     top: 40%;
     left: 23%;
+    cursor: pointer;
 }
 
 .pommee {
@@ -230,6 +249,7 @@ h1 {
     z-index: 1;
     top: 78%;
     left: 73%;
+    cursor: pointer;
 }
 
 .raquette {
@@ -239,6 +259,7 @@ h1 {
     z-index: 1;
     top: 29%;
     left: 61%;
+    cursor: pointer;
 }
 
 .roue {
@@ -248,6 +269,7 @@ h1 {
     z-index: 1;
     top: 63%;
     left: 63%;
+    cursor: pointer;
 }
 
 .saccuir {
@@ -257,6 +279,7 @@ h1 {
     z-index: 1;
     top: 36%;
     left: 38%;
+    cursor: pointer;
 }
 
 .sacpla {
@@ -266,6 +289,7 @@ h1 {
     z-index: 1;
     top: 78%;
     left: 10%;
+    cursor: pointer;
 }
 
 .soap {
@@ -275,6 +299,7 @@ h1 {
     z-index: 1;
     top: 13%;
     left: 23%;
+    cursor: pointer;
 }
 
 .tele {
@@ -284,6 +309,7 @@ h1 {
     z-index: 1;
     top: 58%;
     left: 47%;
+    cursor: pointer;
 }
 
 .tomate {
@@ -293,6 +319,7 @@ h1 {
     z-index: 1;
     top: 26%;
     left: 16%;
+    cursor: pointer;
 }
 
 .verre {
@@ -302,6 +329,7 @@ h1 {
     z-index: 1;
     top: 82%;
     left: 27%;
+    cursor: pointer;
 }
 
 .verrebleu {
@@ -311,6 +339,6 @@ h1 {
     z-index: 1;
     top: 38%;
     left: 8%;
-
+	cursor: pointer;
 }
 
