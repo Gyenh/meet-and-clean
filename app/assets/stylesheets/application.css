@@ -65,6 +65,8 @@ h1 {
 	border-radius: 1px;
 	font-weight: 600;
 	cursor: pointer;
+	width: 135px;
+    margin-right: 14px;
 }
 .event:hover {
     background: #0000ff;
@@ -75,6 +77,7 @@ h1 {
 	border-style: none;
     padding-top: 3px;
     cursor: pointer;
+    width: 90px;
 }
 .login:hover {
 	color: #ff00ff;
