@@ -7,14 +7,21 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+
+    email = current_admin.email
+
+     name = "Marie admin"     # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+     # on appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
+     MailService.send_email(email, name, MailObject.get_welcome_admin_subject, subject = MailObject.get_welcome_admin_content) #envoie un mail après que l'user se soit inscrit au site
+
+  end
 
   # GET /resource/edit
   # def edit
