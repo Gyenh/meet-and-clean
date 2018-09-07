@@ -1,4 +1,7 @@
-<h1>Editing Event</h1>
+<% if user_signed_in? %>
+  <%= render "views/shared/error" %>
+  <% else %>
+  <h1>Editing Event</h1>
 
 <%= render 'form', event: @event %>
 
