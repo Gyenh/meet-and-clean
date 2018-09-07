@@ -1,14 +1,13 @@
 <div class="navbar">
 	<div class="navbarleft">
-			<%= link_to root_path do %>
-			   <%= image_tag "logo.svg", class: "logo" %>
-			<% end %>
-
-			<h1 class="baseline">LET'S CLEAN THE STREET</h1>
+		<%= link_to root_path do %>
+		   <%= image_tag "logo.svg", class: "logo" %>
+		<% end %>
+		<h1 class="baseline">LET'S CLEAN THE STREET</h1>
 	</div>
 	<div class="navbarright">
-			<button class="event">Créer un évènement</button>
-			<button class="login">Connexion</button>
-			<button class="login">Inscription</button>
+		<%= link_to 'Créer un évènement', new_event_path, class: "eventbleu"%>
+		<button class="loginrose">Connexion</button>
+		<button class="loginrose">Inscription</button>
 	</div>
 </div>

@@ -59,7 +59,7 @@ h1 {
     font-weight: 400;	
 }
 
-.event {
+.eventbleu {
 	border: solid 2px black;
     padding: 4px;
 	border-radius: 1px;
@@ -67,19 +67,22 @@ h1 {
 	cursor: pointer;
 	width: 135px;
     margin-right: 14px;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
 }
-.event:hover {
+.eventbleu:hover {
     background: #0000ff;
     color: white;
 }
-.login {
+.loginrose {
 	font-weight: 600;
 	border-style: none;
     padding-top: 3px;
     cursor: pointer;
     width: 90px;
 }
-.login:hover {
+.loginrose:hover {
 	color: #ff00ff;
 }
 
