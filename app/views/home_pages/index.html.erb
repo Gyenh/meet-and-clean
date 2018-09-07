@@ -11,7 +11,7 @@
  </li>
  <% else %>
  <li>
- <%= link_to('MOB Access', new_admin_session_path)  %>
+ <%= link_to('MOB Access', new_admin_session_path) %>
  </li>
   <li>
  <%= link_to('User Access', new_user_session_path)  %>
@@ -55,4 +55,5 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+
+<%= link_to 'New Event', new_event_path, id: 'new_link', remote: true  %>

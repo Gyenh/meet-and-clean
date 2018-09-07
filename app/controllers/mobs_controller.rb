@@ -33,6 +33,7 @@ class MobsController < ApplicationController
 
         format.html { redirect_to @mob, notice: 'Mob was successfully created.' }
         format.json { render :show, status: :created, location: @mob }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @mob.errors, status: :unprocessable_entity }
