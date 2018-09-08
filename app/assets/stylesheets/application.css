@@ -144,6 +144,46 @@ h1 {
 
 
 
+/*csss pour le bouton batterie*/
+* {-webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s; }
+
+body {
+  font-family: Helvetica, Sans-Serif; text-align:center; font-size:18pt; color:#3D3D3D; line-height:1em;}
+
+
+.battery {display:block;
+margin-left:25%;
+  margin-right:25%;}
+
+.innerpre { width: 0px;
+height: 90px;
+background: #8fc800;
+position: absolute;
+margin: 117px 0px 0px 153px; }
+
+.inner {
+   width: 224px;
+height: 90px;
+background: #3D3D3D;
+position: absolute;
+margin: 93px 0px 0px 129px;
+border: 24px solid #fff;
+outline: 21px solid #3D3D3D;}
+
+.posi {width: 34px;
+height: 89px;
+background: #3D3D3D;
+position: absolute;
+margin: 118px 0px 0px 433px;}
+
+.inner:hover + .innerpre,
+.innerpre:hover {
+    width: 224px;
+    margin: 117px 0px 0px 153px;
+  box-shadow:0px 0px 10px rgba(255,255,255,0.2) inset;}
+
 
 
 
@@ -158,12 +198,12 @@ h1 {
 
 /*à utiliser pour l'interation du site*/
 .wrappi {
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	z-index: 2;
-	top: 50%;
-	left: 50%;
+    position: absolute;
+    width: 173px;
+    height: 50px;
+    z-index: 2;
+    top: 8%;
+    left: 21%;
 }
 
 /*css pour le background*/
