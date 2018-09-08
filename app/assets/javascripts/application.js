@@ -20,6 +20,7 @@
 
 
 
+ //début du code de la map
 
   var ny = gon.mapLatLong;
 	var name = gon.mapName
@@ -36,3 +37,5 @@ var marker = L.marker(ny).addTo(map);
 
 // ajout d'un popup
 marker.bindPopup(name);
+
+//fin du code de la map 
