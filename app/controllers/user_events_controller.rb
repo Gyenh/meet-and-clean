@@ -13,15 +13,24 @@ class UserEventsController < ApplicationController
   # GET /user_events/1.json
   def show
 
-  puts "ok"
+    u = UserEvent.find(params["id"])
+  event = Event.find(u.event_id)
+
+  adress = event.place
+  name = event.name
+  puts adress
+  puts name
+
+  puts "done"
 
 
 
-  adress = "91 Rue de Rivoli, 75001 Paris"
-  adress1 = "paris"
-  adress2 = "101 Quai Branly, 75015 Paris"
-  adress3 = "cacabouya" #crash avec fausse adresse....................
-  results = Geocoder.search(adress3)
+  # adress = "91 Rue de Rivoli, 75001 Paris 3 ème"
+  # adress1 = "paris"
+  # adress2 = "101 Quai Branly, 75015 Paris"
+  # adress3 = "cacabouya" #crash avec fausse adresse....................
+
+  results = Geocoder.search(adress)
 
   begin
      puts "start"
@@ -31,12 +40,14 @@ class UserEventsController < ApplicationController
         long = results.first.coordinates[1]
 
           gon.mapLatLong = [lat, long]
-          gon.mapName = ["<h3>Nom de l'event ou du lieu</h3>"]
+          gon.mapName = name
 
         rescue Exception
 
          #rescue avec une fausse adresse ou une adresse plus simple
          #ou tester ça dans le formulaire de new event
+
+         adress = "91 Rue de Rivoli, 75001 "
 
 
          results = Geocoder.search(adress)
@@ -46,7 +57,7 @@ class UserEventsController < ApplicationController
          long = results.first.coordinates[1]
 
            gon.mapLatLong = [lat, long]
-           gon.mapName = ["<h3>Nom de l'event ou du lieu</h3>"]
+           gon.mapName = ["<h3>Erreur</h3>"]
 
        end
 
@@ -54,6 +65,9 @@ class UserEventsController < ApplicationController
 
   # GET /user_events/new
   def new
+
+
+
     @user_event = UserEvent.new
   end
 
@@ -67,6 +81,20 @@ class UserEventsController < ApplicationController
   # POST /user_events
   # POST /user_events.json
   def create
+
+
+    #debut debug gino
+
+if UserEvent.first.nil?
+
+elsif UserEvent.where(:user_id => current_user.id, :event_id => params["format"]).blank?
+
+else
+       redirect_to root_path
+       return
+     end
+
+#fin debug gino
     @user_event = UserEvent.new
     @user_event.user_id = current_user.id
     @user_event.event_id = params['format']
