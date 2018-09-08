@@ -7,14 +7,18 @@
 	</div>
 	<div class="navbarright">
 		<%= link_to 'Créer un évènement', new_event_path, class: "eventbleu"%>
-<!-- 		<button class="loginrose">Connexion</button>
-		<button class="loginrose">Inscription</button> -->
 		<div class="dropdown">
-		  <button class="dropbtn">Connexion</button>
-		  <div class="dropdown-content">
-		    <%= link_to 'User', new_user_session_path, class: "loginrose"%>
-		    <%= link_to 'Association', new_admin_session_path, class: "loginrose"%>
-		  </div>
+		  <% if admin_signed_in? %>
+					<%= link_to('Logout', destroy_admin_session_path, method: :delete, class: "loginrose") %>
+			<% elsif user_signed_in? %>
+					<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "loginrose" %>
+			<% else %>
+				<button class="dropbtn">Connexion</button>
+				<div class="dropdown-content">
+					<%= link_to 'User', new_user_session_path, class: "loginrose"%>
+					<%= link_to 'Association', new_admin_session_path, class: "loginrose"%>
+		  	</div>
+			<% end %>
 		</div>
 
 		<div class="dropdown">
