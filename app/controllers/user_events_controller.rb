@@ -2,7 +2,8 @@
 
 class UserEventsController < ApplicationController
   before_action :set_user_event, only: %i[show edit update destroy]
-  before_action :authenticate_admin!
+  before_action :authenticate_user!
+  before_action :current_user_id_present
   # GET /user_events
   # GET /user_events.json
   def index
@@ -29,6 +30,7 @@ class UserEventsController < ApplicationController
   # POST /user_events.json
   def create
     @user_event = UserEvent.new
+
     @user_event.user_id = current_user.id
     @user_event.event_id = params['format']
 
@@ -82,5 +84,13 @@ class UserEventsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_event_params
     params.require(:user_event).permit(:user_id, :event_id)
+  end
+
+  def current_user_id_present
+    if UserEvent.exists?(user_id: current_user.id)
+      redirect_to root_path
+    else
+      UserEvent.create
+    end
   end
 end
