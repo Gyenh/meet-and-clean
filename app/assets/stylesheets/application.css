@@ -120,7 +120,9 @@ h1 {
 .dropbtnrose:hover {
     color: #ff00ff;
 }
-
+.dropdownrose:focus, .dropbtnrose:focus, .dropdown-contentrose:focus {
+    outline: none;
+}
 
 
 
