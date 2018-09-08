@@ -2,6 +2,7 @@
 
 class MobsController < ApplicationController
   before_action :set_mob, only: %i[show edit update destroy]
+  before_action :authenticate_admin!
 
   # GET /mobs
   # GET /mobs.json
@@ -28,7 +29,7 @@ class MobsController < ApplicationController
 
     respond_to do |format|
       if @mob.save
-        asso = Mob.last
+        asso = @mob
         current_admin.update_attribute(:mob_id, asso.id)
 
         format.html { redirect_to root_path, notice: 'Mob was successfully created.' }

@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!
+  before_action :verify_mobid_of_current_admin
 
   # GET /events
   # GET /events.json
@@ -25,7 +27,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    @event.mob_id = current_admin.id
+    @event.mob_id = current_admin.mob_id
 
     respond_to do |format|
       if @event.save
@@ -63,13 +65,19 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def event_params
-      params.require(:event).permit(:name, :place, :description, :date, :hour)
+  def verify_mobid_of_current_admin
+    if current_admin.mob_id == nil
+      redirect_to root_path
     end
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def event_params
+    params.require(:event).permit(:name, :place, :description, :date, :hour)
+  end
 end

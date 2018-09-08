@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HomePagesController < ApplicationController
   def index
     @events = Event.all
@@ -10,7 +12,7 @@ class HomePagesController < ApplicationController
     #
     # MailService.send_email(email, name, MailObject.get_welcome_subject, subject = MailObject.get_welcome_content) #envoie un mail après que l'user se soit inscrit au site
 
- # MailService.welcome_email(email)
- # MailService.welcome_email_2(email, name) #envoie un mail après que l'user se soit inscrit au site
+    # MailService.welcome_email(email)
+    # MailService.welcome_email_2(email, name) #envoie un mail après que l'user se soit inscrit au site
   end
 end
