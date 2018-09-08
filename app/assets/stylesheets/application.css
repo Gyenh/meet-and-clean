@@ -133,37 +133,53 @@ h1 {
 
 .innerpre { 
     width: 0px;
-    height: 26px;
+    height: 23px;
     background: #00ff00;
     position: absolute;
 }
 
 .inner {
-    width: 75px;
-    /* height: 15px; */
-    height: 0px;
+    width: 95px;
+    height: 23px;
+    background-color: white;
     position: absolute;
-    border: 13px solid #fff;
-    outline: 5px solid black;
+    outline: 3px solid black;
 }
 
 .posi {
     width: 7px;
-    height: 20px;
+    height: 15px;
     background: black;
     position: absolute;
-    margin: 4px 0px 0px 104px;
+    margin: 4px 0px 0px 95px;
+}
+.moins {
+    width: 13px;
+    height: 5px;
+    background: black;
+    position: absolute;
+    margin: 9px 0px 0px 80px;
+}
+.plus {
+    width: 5px;
+    height: 13px;
+    background: black;
+    position: absolute;
+    margin: 5px 0px 0px 84px;
 }
 
 .inner:hover + .innerpre,
 .innerpre:hover {
-    width: 101px;
+    width: 95px;
     box-shadow: 0px 0px 10px rgba(255,255,255,0.2) inset;
 }
-h4 {
+h5 {
     font-size: 13px;
     font-family: 'Hind Siliguri', sans-serif;
     font-weight: 600;
+    margin-left: 8px;
+    margin-top: 1px;
+    margin-bottom: 0px;
 }
 
 
@@ -180,11 +196,13 @@ h4 {
 /*à utiliser pour l'interation du site*/
 .wrappi {
     position: absolute;
-    width: 173px;
-    height: 50px;
+    width: 1200px;
+    height: 338px;
     z-index: 2;
-    top: 8%;
-    left: 21%;
+    top: 25%;
+    left: 7%;
+    background-color: paleturquoise;
+    border-radius: 1px;
 }
 
 /*css pour le background*/
