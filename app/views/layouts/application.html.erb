@@ -13,13 +13,15 @@
 
   <body>
     <div class="wrapper">
-    <!-- j'ouvre ma div du background -->
-    <%= render 'shared/navbar' %>
-    <!-- ma navbar -->
-    <%= render 'shared/trash' %>
-    <!-- mon background -->
-    <%= yield %>
-    <!-- dans le yield je mets toute l'intéraction du site -->
+        <!-- j'ouvre ma div du background -->
+        <%= render 'shared/navbar' %>
+        <!-- ma navbar -->
+        <%= render 'shared/trash' %>
+        <!-- mon background -->
+        <div class="wrappi">
+            <%= yield %>
+        <!-- dans le yield je mets toute l'intéraction du site -->
+        </div>
     </div>
     <!-- ici je ferme la div de mon wrapper -->
   </body>
