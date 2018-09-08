@@ -13,6 +13,14 @@ gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
+#use to convert normal address into geographic coordinates(latitude: 2.55554, longitude: 48.24655)
+gem 'geocoder', '~> 1.5'
+
+#Use this to send variable from controller to js file
+gem 'gon', '~> 6.2', '>= 6.2.1'
+
+
+
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'

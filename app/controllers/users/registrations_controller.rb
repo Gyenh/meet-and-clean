@@ -18,12 +18,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
     #s'exécute apres avoir ecris dans la base de donnée
 
-    email = current_user.email
 
-    name = "Marie"    # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
 
-    #on appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
-    MailService.send_email(email, name, MailObject.get_welcome_subject, subject = MailObject.get_welcome_content) #envoie un mail après que l'user se soit inscrit au site
+    begin
+
+          email = current_user.email
+
+          name = "Marie"    # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+
+          #on appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
+          MailService.send_email(email, name, MailObject.get_welcome_subject, subject = MailObject.get_welcome_content) #envoie un mail après que l'user se soit inscrit au site
+
+    rescue Exception
+        puts "email error"
+
+    end
 
   end
 

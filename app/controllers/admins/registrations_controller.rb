@@ -16,13 +16,23 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   def create
     super
 
-    email = current_admin.email
 
-    name = 'Marie admin'
-    # name = current_user.first_name
-    # je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+
+
+    begin
+
+       email = current_admin.email
+
+      name = 'Marie admin'
+      # je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+      # name = current_user.first_name
     # on appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
-    MailService.send_email(email, name, MailObject.get_welcome_admin_subject, subject = MailObject.get_welcome_admin_content) # envoie un mail après que l'user se soit inscrit au site
+      MailService.send_email(email, name, MailObject.get_welcome_admin_subject, subject = MailObject.get_welcome_admin_content) # envoie un mail après que l'user se soit inscrit au site
+      rescue Exception
+        puts "email error"
+
+    end
+
   end
 
   # GET /resource/edit

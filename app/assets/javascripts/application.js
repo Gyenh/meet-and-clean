@@ -16,3 +16,22 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+
+
+  var ny = gon.mapLatLong;
+	var name = gon.mapName
+// création de la map
+var map = L.map('map').setView(ny, 16);
+
+// création du calque images
+L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
+	maxZoom: 20
+}).addTo(map);
+
+// ajout d'un markeur
+var marker = L.marker(ny).addTo(map);
+
+// ajout d'un popup
+marker.bindPopup(name);
