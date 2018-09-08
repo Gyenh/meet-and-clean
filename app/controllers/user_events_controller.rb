@@ -87,6 +87,7 @@ class UserEventsController < ApplicationController
   end
 
   def current_user_id_present
+      Event.find(params[:id])
     if UserEvent.exists?(user_id: current_user.id)
       redirect_to root_path
     else
