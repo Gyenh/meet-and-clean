@@ -9,24 +9,7 @@
 
 
 
-  <% if admin_signed_in? %>
-   <li>
-   <%= link_to('Logout', destroy_admin_session_path, method: :delete) %>
-   </li>
-  <% elsif user_signed_in? %>
-   <li>
-   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-   </li>
-   <% else %>
-   <li>
-   <%= link_to('MOB Access', new_admin_session_path) %>
-   </li>
-    <li>
-   <%= link_to('User Access', new_user_session_path)  %>
-   </li>
-  <% end %>
 
-  <p id="notice"><%= notice %></p>
 
   <h1>Events</h1>
 
