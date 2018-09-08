@@ -44,6 +44,7 @@ body {
     border: none;
     font-weight: 600;
     width: 90px;
+    cursor: pointer;
 }
 
 /* The container <div> - needed to position the dropdown content */
