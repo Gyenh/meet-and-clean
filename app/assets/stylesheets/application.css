@@ -60,10 +60,11 @@ h1 {
 .eventbleu {
 	border: solid 2px black;
     padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
 	border-radius: 1px;
 	font-weight: 600;
 	cursor: pointer;
-	width: 135px;
     margin-right: 14px;
     text-decoration: none;
     color: black;
