@@ -12,7 +12,5 @@ class HomePagesController < ApplicationController
 
  # MailService.welcome_email(email)
  # MailService.welcome_email_2(email, name) #envoie un mail après que l'user se soit inscrit au site
-
-
   end
 end

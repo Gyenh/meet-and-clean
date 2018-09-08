@@ -2,13 +2,14 @@
 
 class Admins::RegistrationsController < Devise::RegistrationsController
   include Accessible
-  skip_before_action :check_user, except: [:new, :create]
+  skip_before_action :check_user, except: %i[new create]
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
     super
+    @mob = Mob.new
   end
 
   # POST /resource
@@ -17,10 +18,11 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 
     email = current_admin.email
 
-     name = "Marie admin"     # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
-     # on appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
-     MailService.send_email(email, name, MailObject.get_welcome_admin_subject, subject = MailObject.get_welcome_admin_content) #envoie un mail après que l'user se soit inscrit au site
-
+    name = 'Marie admin'
+    # name = current_user.first_name
+    # je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+    # on appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
+    MailService.send_email(email, name, MailObject.get_welcome_admin_subject, subject = MailObject.get_welcome_admin_content) # envoie un mail après que l'user se soit inscrit au site
   end
 
   # GET /resource/edit
@@ -47,7 +49,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -60,9 +62,9 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    "/mobs/new"
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
