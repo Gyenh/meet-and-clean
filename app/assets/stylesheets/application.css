@@ -129,41 +129,35 @@ h1 {
   -moz-transition: all 1s;
   transition: all 1s; }
 .battery {
-    display: block;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
 .innerpre { 
     width: 0px;
-    height: 48px;
+    height: 26px;
     background: #00ff00;
     position: absolute;
-    margin: 93px 0px 0px 129px;
 }
 
 .inner {
     width: 75px;
+    /* height: 15px; */
     height: 0px;
-    background: black;
     position: absolute;
-    margin: 93px 0px 0px 129px;
-    border: 24px solid #fff;
+    border: 13px solid #fff;
     outline: 5px solid black;
 }
 
 .posi {
     width: 7px;
-    height: 27px;
+    height: 20px;
     background: black;
     position: absolute;
-    margin: 104px 0px 0px 256px;
+    margin: 4px 0px 0px 104px;
 }
 
 .inner:hover + .innerpre,
 .innerpre:hover {
-    width: 123px;
-    margin: 93px 0px 0px 129px;
+    width: 101px;
     box-shadow: 0px 0px 10px rgba(255,255,255,0.2) inset;
 }
 
