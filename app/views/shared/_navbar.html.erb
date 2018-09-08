@@ -7,7 +7,22 @@
 	</div>
 	<div class="navbarright">
 		<%= link_to 'Créer un évènement', new_event_path, class: "eventbleu"%>
-		<button class="loginrose">Connexion</button>
-		<button class="loginrose">Inscription</button>
+<!-- 		<button class="loginrose">Connexion</button>
+		<button class="loginrose">Inscription</button> -->
+		<div class="dropdown">
+		  <button class="dropbtn">Connexion</button>
+		  <div class="dropdown-content">
+		    <%= link_to 'User', new_user_session_path, class: "loginrose"%>
+		    <%= link_to 'Association', new_admin_session_path, class: "loginrose"%>
+		  </div>
+		</div>
+
+		<div class="dropdown">
+		  <button class="dropbtn">Inscription</button>
+		  <div class="dropdown-content">
+		    <%= link_to 'User', new_admin_registration_path, class: "loginrose"%>
+		    <%= link_to 'Association', new_user_registration_path, class: "loginrose"%>
+		  </div>
+		</div>
 	</div>
 </div>

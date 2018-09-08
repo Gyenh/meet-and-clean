@@ -30,6 +30,75 @@ body {
 	height: 100vh;
 	background-color: white;
 }
+
+
+
+
+
+
+/* Dropdown Button */
+.dropbtn {
+    color: black;
+    padding-top: 3px;
+    font-size: 12px;
+    border: none;
+    font-weight: 600;
+    width: 90px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 90px;
+    z-index: 2;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #ff00ff;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 13px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: white;
+    color: #dc05e2;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.dropbtn:hover {
+    color: #ff00ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*css pour la navbar à ranger dans un fichier navbar*/
 .navbar {
     padding-left: 30px;
@@ -85,6 +154,22 @@ h1 {
 .loginrose:hover {
 	color: #ff00ff;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*à utiliser pour l'interation du site*/
