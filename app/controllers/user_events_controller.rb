@@ -2,7 +2,7 @@
 
 class UserEventsController < ApplicationController
   before_action :set_user_event, only: %i[show edit update destroy]
-
+  before_action :authenticate_admin!
   # GET /user_events
   # GET /user_events.json
   def index
