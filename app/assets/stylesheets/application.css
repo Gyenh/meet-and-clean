@@ -10,12 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require social-share-button
  *= require_tree .
  *= require_self
  */
 
 body {
-	font-family: 'Hind Siliguri', sans-serif;	
+	font-family: 'Hind Siliguri', sans-serif;
     font-weight: 600;
 }
 p {
@@ -75,7 +76,7 @@ body {
     width: 151px;
 }
 h1 {
-    font-weight: 400;	
+    font-weight: 400;
 }
 
 .eventbleu {
@@ -390,4 +391,3 @@ h1 {
     top: 38%;
     left: 8%;
 }
-
