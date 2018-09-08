@@ -1,7 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
+<<<<<<< HEAD
   before_action :verify_mobid_of_current_admin
+=======
+>>>>>>> f47006cf7596d0cf144fddc9df710478deb7af64
 
   # GET /events
   # GET /events.json
