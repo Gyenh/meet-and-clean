@@ -1,32 +1,17 @@
 <div class="wrappi">
 
-    <div class="battery">
-    <div class="inner"></div>
+  <div class="battery">
+    <div class="inner"><h5>Intéressé(e)</h5></div>
     <div class="innerpre"></div>
     <div class="posi"></div>
-    </div>
+    <div class="moins"></div>
+    <div class="plus"></div>
+  </div>
 
 
+  <br>
 
 
-  <% if admin_signed_in? %>
-   <li>
-   <%= link_to('Logout', destroy_admin_session_path, method: :delete) %>
-   </li>
-  <% elsif user_signed_in? %>
-   <li>
-   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-   </li>
-   <% else %>
-   <li>
-   <%= link_to('MOB Access', new_admin_session_path) %>
-   </li>
-    <li>
-   <%= link_to('User Access', new_user_session_path)  %>
-   </li>
-  <% end %>
-
-  <p id="notice"><%= notice %></p>
 
   <h1>Events</h1>
 
@@ -67,6 +52,6 @@
     <% elsif admin_signed_in? %>
       <%= link_to 'New Event', new_event_path %>
     <% else current_user == nil %>
-      <p> Vous êtes un MOB ? Inscrivez vous par <%= link_to 'ici', new_admin_registration_path %> et proposez dès maintenant votre événement. </p>
+<!--       <p> Vous êtes un MOB ? Inscrivez vous par <%= link_to 'ici', new_admin_registration_path %> et proposez dès maintenant votre événement. </p> -->
   <% end %>
 </div>
