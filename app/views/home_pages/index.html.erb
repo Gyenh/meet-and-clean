@@ -44,7 +44,7 @@
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= button_to 'Participer', user_events_path(event), method: :post, class: "btn btn-primary" %></td>
+        <td><%= button_to 'Participer', user_events_path(event), method: :post %></td>
       </tr>
     <% end %>
   </tbody>
