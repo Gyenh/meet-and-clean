@@ -2,7 +2,7 @@
 
 class MobsController < ApplicationController
   before_action :set_mob, only: %i[show edit update destroy]
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, except: :index
 
   # GET /mobs
   # GET /mobs.json
