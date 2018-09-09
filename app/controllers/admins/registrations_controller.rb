@@ -3,6 +3,7 @@
 class Admins::RegistrationsController < Devise::RegistrationsController
   include Accessible
   skip_before_action :check_user, except: %i[new create]
+  before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -16,13 +17,23 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   def create
     super
 
-    email = current_admin.email
 
-    name = 'Marie admin'
-    # name = current_user.first_name
-    # je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+
+
+    begin
+
+       email = current_admin.email
+
+      name = 'Marie admin'
+      # je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+      # name = current_user.first_name
     # on appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
-    MailService.send_email(email, name, MailObject.get_welcome_admin_subject, subject = MailObject.get_welcome_admin_content) # envoie un mail après que l'user se soit inscrit au site
+      MailService.send_email(email, name, MailObject.get_welcome_admin_subject, subject = MailObject.get_welcome_admin_content) # envoie un mail après que l'user se soit inscrit au site
+      rescue Exception
+        puts "email error"
+
+    end
+
   end
 
   # GET /resource/edit
@@ -66,6 +77,9 @@ class Admins::RegistrationsController < Devise::RegistrationsController
     "/mobs/new"
   end
 
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
+  end
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)

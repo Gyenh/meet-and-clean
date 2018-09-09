@@ -1,3 +1,4 @@
+#classe dédiée à l'envoie de mail
 #le fichier de configuration de mailjet se trouve dans: config/initializers/mailjet.rb
 class MailService
 

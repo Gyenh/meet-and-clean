@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!
-  before_action :verify_mobid_of_current_admin
+  before_action :authenticate_admin!, except: [:show, :index]
+  before_action :verify_if_currentadmin_have_mobid, except: [:show, :index]
 
   # GET /events
   # GET /events.json
@@ -12,6 +12,44 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    # u = UserEvent.find(params['id'])
+    # event = Event.find(u.event_id)
+
+    event = Event.find(params['id'])
+
+    adress = event.place
+    name = event.name
+    puts adress
+    puts name
+
+    puts 'done'
+
+    results = Geocoder.search(adress)
+
+    begin
+             puts 'start'
+
+             lat = results.first.coordinates[0]
+
+             long = results.first.coordinates[1]
+
+             gon.mapLatLong = [lat, long]
+             gon.mapName = name
+           rescue Exception
+             # rescue avec une fausse adresse ou une adresse plus simple
+             # ou tester ça dans le formulaire de new event
+
+             adress = '91 Rue de Rivoli, 75001 '
+
+             results = Geocoder.search(adress)
+
+             lat = results.first.coordinates[0]
+
+             long = results.first.coordinates[1]
+
+             gon.mapLatLong = [lat, long]
+             gon.mapName = ['<h3>Erreur</h3>']
+           end
   end
 
   # GET /events/new
@@ -70,7 +108,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def verify_mobid_of_current_admin
+  def verify_if_currentadmin_have_mobid
     if current_admin.mob_id == nil
       redirect_to root_path
     end
