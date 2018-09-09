@@ -92,40 +92,48 @@ class UserEventsController < ApplicationController
     redirect_to @user_event
   end
 
-  # PATCH/PUT /user_events/1
-  # PATCH/PUT /user_events/1.json
-  def update
-    respond_to do |format|
-      if @user_event.update(user_event_params)
-        format.html { redirect_to @user_event, notice: 'User event was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user_event }
-      else
-        format.html { render :edit }
-        format.json { render json: @user_event.errors, status: :unprocessable_entity }
+    # PATCH/PUT /user_events/1
+    # PATCH/PUT /user_events/1.json
+    def update
+      respond_to do |format|
+        if @user_event.update(user_event_params)
+          format.html { redirect_to @user_event, notice: 'User event was successfully updated.' }
+          format.json { render :show, status: :ok, location: @user_event }
+        else
+          format.html { render :edit }
+          format.json { render json: @user_event.errors, status: :unprocessable_entity }
+        end
       end
     end
-  end
 
-  # DELETE /user_events/1
-  # DELETE /user_events/1.json
-  def destroy
-    @user_event.destroy
-    respond_to do |format|
-      format.html { redirect_to user_events_url, notice: 'User event was successfully destroyed.' }
-      format.json { head :no_content }
+    # DELETE /user_events/1
+    # DELETE /user_events/1.json
+    def destroy
+      @user_event.destroy
+      respond_to do |format|
+        format.html { redirect_to user_events_url, notice: 'User event was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
-  end
 
-  private
+    private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_user_event
-    @user_event = UserEvent.find(params[:id])
-  end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user_event
+      @user_event = UserEvent.find(params[:id])
+    end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def user_event_params
-    params.require(:user_event).permit(:user_id, :event_id)
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def user_event_params
+      params.require(:user_event).permit(:user_id, :event_id)
+    end
+
+    def user_event_id
+      unless @user_event.user_id == current_user.id
+        flash[:notice] = 'Tu n es pas autoriser a modifier cet event'
+        redirect_to user_events_path
+      end
+    end
   end
 
   def check_if_user_exist
