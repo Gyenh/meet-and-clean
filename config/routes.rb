@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   devise_for :users, path: 'users', controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   # path example : http://localhost:3000/users/sign_in
 
-  resources :user_events
+  resources :user_events, :except => [:index]
 
   resources :events
 
