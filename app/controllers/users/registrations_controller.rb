@@ -2,42 +2,40 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   include Accessible
-  skip_before_action :check_user, except: [:new, :create]
+  skip_before_action :check_user, except: %i[new create]
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
+  def index
+    @user = current_user.id
+    @user_events = UserEvent.find_by(@user)
+  end
+
   # GET /resource/sign_up
-  def new         #s'exécute avant d'avoir ecris dans la base de donnée
+  def new # s'exécute avant d'avoir ecris dans la base de donnée
     super
-   end
+  end
 
   # POST /resource
-  def create #création d'un nouvel user
-
-    #s'exécute avant avoir ecris dans la base de donnée
+  def create # création d'un nouvel user
+    # s'exécute avant avoir ecris dans la base de donnée
     super
-    #s'exécute apres avoir ecris dans la base de donnée
-
-
-
+    # s'exécute apres avoir ecris dans la base de donnée
     begin
+      email = current_user.email
 
-          email = current_user.email
+      name = 'Marie' # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
 
-          name = "Marie"    # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
-
-          #on appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
-          MailService.send_email(email, name, MailObject.get_welcome_subject, subject = MailObject.get_welcome_content) #envoie un mail après que l'user se soit inscrit au site
-
+      # on appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
+      MailService.send_email(email, name, MailObject.get_welcome_subject, subject = MailObject.get_welcome_content) # envoie un mail après que l'user se soit inscrit au site
     rescue Exception
-        puts "email error"
-
+      puts 'email error'
     end
-
   end
 
   # GET /resource/edit
   def edit
+    @user_events = UserEvent.where(user_id: current_user.id)
     super
   end
 
@@ -50,7 +48,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def destroy
   #   super
   # end
+  def show
 
+
+  end
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to

@@ -111,7 +111,7 @@ class UserEventsController < ApplicationController
   def destroy
     @user_event.destroy
     respond_to do |format|
-      format.html { redirect_to user_events_url, notice: 'User event was successfully destroyed.' }
+      format.html { redirect_to edit_user_registration_url, notice: 'User event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
