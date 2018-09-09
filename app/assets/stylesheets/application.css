@@ -85,6 +85,7 @@ body {
     width: 700px;
     border-radius: 1px;
     padding-left: 30px;
+    padding-right: 30px;
 }
 .inscriptionassos {
     color: #c000ff;
@@ -103,11 +104,15 @@ body {
     margin-top: 10px;
     color: black;
     border-radius: 1px;
+    padding-left: 8px;
 }
 .champsinfo:focus {
     outline: none;
 }
-
+.champignon {
+    display: flex;
+    justify-content: space-between;
+}
 /*css pour ma carte event en petit à mettre dans un fichier séparé*/
 .carteevent {
     background-color: white;
