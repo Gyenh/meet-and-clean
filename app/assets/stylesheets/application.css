@@ -69,7 +69,10 @@ body {
 	height: 100vh;
 	background-color: white;
 }
+/*css pour la checkbox*/
+.rond {
 
+}
 /*css pour mon inscription user*/
 .inscriptionuser {
     color: #ff00ff;
@@ -197,6 +200,20 @@ body {
     position: absolute;
     width: 90px;
     z-index: 2;
+}
+.logoutuser, .logoutassos {
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: white;
+}
+.logoutuser:hover {
+    color: #ff00ff;
+}
+.logoutassos:hover {
+    color: #c000ff;
 }
 /* Links inside the dropdown */
 .dropdown-contentrose a {
