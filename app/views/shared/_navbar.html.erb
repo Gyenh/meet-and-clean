@@ -9,8 +9,12 @@
 		<%= link_to 'Créer un évènement', new_event_path, class: "eventbleu"%>
 		<div class="dropdownrose">
 		  	<% if admin_signed_in? %>
+				<%= current_admin.first_name %>
 				<%= link_to 'Logout', destroy_admin_session_path, method: :delete %>
 			<% elsif user_signed_in? %>
+				<%= link_to edit_user_registration_path do %>
+  				<strong><%= current_user.first_name %></strong>
+				<% end %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 			<% else %>
 				<button class="dropbtnrose">Connexion</button>

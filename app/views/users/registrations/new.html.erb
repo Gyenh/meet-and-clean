@@ -1,6 +1,6 @@
 <div class="inscription">
   <% if admin_signed_in? %>
-    <%= render "users/shared/error" %> 
+    <%= render "users/shared/error" %>
     <% else %>
 
     <div class="inscriptionuser">
@@ -15,8 +15,16 @@
     </div>
 
     <div class="field">
+      <%= f.text_field :first_name, placeholder: "Prenom", class: "champsinfo" %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :last_name, placeholder: "Nom", class: "champsinfo" %>
+    </div>
+
+    <div class="field">
       <% if @minimum_password_length %>
-<!--       <em>(<%= @minimum_password_length %> characters minimum)</em> -->
+<!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
       <% end %>
       <%= f.password_field :password, autocomplete: "new-password", placeholder: "mot de passe", class: "champsinfo" %>
     </div>
