@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!
-  before_action :verify_mobid_of_current_admin
+  before_action :authenticate_admin!, except: [:show, :index]
+  before_action :verify_if_currentadmin_have_mobid, except: [:show, :index]
 
   # GET /events
   # GET /events.json
@@ -70,7 +70,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def verify_mobid_of_current_admin
+  def verify_if_currentadmin_have_mobid
     if current_admin.mob_id == nil
       redirect_to root_path
     end

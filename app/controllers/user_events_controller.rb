@@ -4,7 +4,10 @@ class UserEventsController < ApplicationController
   before_action :set_user_event, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
-   # GET /user_events
+  before_action :check_if_user_exist
+
+  # GET /user_events
+>>>>>>> cd30eecca7f88a423a10e710b42a28e56c63562f
   # GET /user_events.json
   def index
     @user_events = UserEvent.all
@@ -14,62 +17,46 @@ class UserEventsController < ApplicationController
   # GET /user_events/1
   # GET /user_events/1.json
   def show
+    u = UserEvent.find(params['id'])
+    event = Event.find(u.event_id)
 
-    u = UserEvent.find(params["id"])
-  event = Event.find(u.event_id)
+    adress = event.place
+    name = event.name
+    puts adress
+    puts name
 
-  adress = event.place
-  name = event.name
-  puts adress
-  puts name
+    puts 'done'
 
-  puts "done"
+    results = Geocoder.search(adress)
 
+    begin
+             puts 'start'
 
+             lat = results.first.coordinates[0]
 
-  # adress = "91 Rue de Rivoli, 75001 Paris 3 ème"
-  # adress1 = "paris"
-  # adress2 = "101 Quai Branly, 75015 Paris"
-  # adress3 = "cacabouya" #crash avec fausse adresse....................
+             long = results.first.coordinates[1]
 
-  results = Geocoder.search(adress)
+             gon.mapLatLong = [lat, long]
+             gon.mapName = name
+           rescue Exception
+             # rescue avec une fausse adresse ou une adresse plus simple
+             # ou tester ça dans le formulaire de new event
 
-  begin
-     puts "start"
+             adress = '91 Rue de Rivoli, 75001 '
 
-        lat = results.first.coordinates[0]
+             results = Geocoder.search(adress)
 
-        long = results.first.coordinates[1]
+             lat = results.first.coordinates[0]
 
-          gon.mapLatLong = [lat, long]
-          gon.mapName = name
+             long = results.first.coordinates[1]
 
-        rescue Exception
-
-         #rescue avec une fausse adresse ou une adresse plus simple
-         #ou tester ça dans le formulaire de new event
-
-         adress = "91 Rue de Rivoli, 75001 "
-
-
-         results = Geocoder.search(adress)
-
-         lat = results.first.coordinates[0]
-
-         long = results.first.coordinates[1]
-
-           gon.mapLatLong = [lat, long]
-           gon.mapName = ["<h3>Erreur</h3>"]
-
-       end
-
+             gon.mapLatLong = [lat, long]
+             gon.mapName = ['<h3>Erreur</h3>']
+           end
  end
 
   # GET /user_events/new
   def new
-
-
-
     @user_event = UserEvent.new
   end
 
@@ -83,20 +70,6 @@ class UserEventsController < ApplicationController
   # POST /user_events
   # POST /user_events.json
   def create
-
-
-    #debut debug gino
-
-if UserEvent.first.nil?
-
-elsif UserEvent.where(:user_id => current_user.id, :event_id => params["format"]).blank?
-
-else
-       redirect_to root_path
-       return
-     end
-
-#fin debug gino
     @user_event = UserEvent.new
 
     @user_event.user_id = current_user.id
@@ -105,6 +78,8 @@ else
     @user_event.save
 
     # Début envoie email de confirmation
+#HEAD
+
         begin
 
 event = Event.find(params['format'])
@@ -118,22 +93,17 @@ puts name
 puts hour
 puts place
 
-      uname = 'Marie'
-      # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+#end head
+       # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
       # On appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
       MailService.send_email(current_user.email, uname,
                              MailObject.get_confirmation_subject,
-                             subject = MailObject.get_confirmation_content(name, place, date, hour)  )
-      # Envoie un mail après que l'user se soit inscrit au site
-      # Fin envoie email de confirmation
-
-        rescue Exception
-            puts "email error"
-
-        end
-
-
-
+                             subject = MailObject.get_confirmation_content)
+    # Envoie un mail après que l'user se soit inscrit au site
+    # Fin envoie email de confirmation
+    rescue Exception
+      puts 'email error'
+    end
     redirect_to @user_event
   end
 
@@ -173,5 +143,18 @@ puts place
     params.require(:user_event).permit(:user_id, :event_id)
   end
 
+  def user_event_id
+    unless @user_event.user_id == current_user.id
+      flash[:notice] = 'Tu n es pas autoriser a modifier cet event'
+      redirect_to user_events_path
+    end
+  end
 
+  def check_if_user_exist
+    if UserEvent.first.nil?
+    elsif UserEvent.where(user_id: current_user.id, event_id: params['format']).blank?
+    else
+      redirect_to root_path
+    end
+  end
 end
