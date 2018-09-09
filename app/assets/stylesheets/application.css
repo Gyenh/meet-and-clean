@@ -70,6 +70,33 @@ body {
 	background-color: white;
 }
 
+/*css pour mon inscription d'association*/
+.inscriptionassos {
+    background-color: white;
+    border: 3px solid black;
+    width: 700px;
+}
+.inscription {
+    color: #c000ff;
+}
+.field {
+
+}
+.champsinfo {
+    height: 25px;
+    width: 200px;
+    border: 2px solid black;
+    font-family: 'Hind Siliguri', sans-serif;   
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: black;
+}
+.champsinfo:focus {
+    outline: none;
+}
+
 /*css pour ma carte event en petit à mettre dans un fichier séparé*/
 .carteevent {
     background-color: white;
@@ -200,6 +227,7 @@ body {
 .batterygreen {
     padding-left: 172px;
     padding-top: 14px;
+    cursor: pointer;
 }
 
 .innerpre { 
@@ -268,6 +296,7 @@ body {
     border-radius: 1px;
     display: flex;
     justify-content: space-around;
+    background-color: whitesmoke;
 }
 
 /*css pour le background*/
