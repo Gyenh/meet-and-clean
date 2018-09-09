@@ -36,9 +36,9 @@ adress = ['91 Rue de Rivoli, 75001 Paris', '101 Quai Branly, 75015 Paris', 'caca
 
   mob = Mob.create(name: mob_name[i], phone: phone[i], web_url_1: Faker::Internet.url, web_url_2: Faker::Internet.url, description: description[i])
 
-  event = Event.create(name: event_name[i], place: "#{adress[i]}", description: "Nous allons nous concentrer sur le rammasage de #{description_dechet[i]}", mob_id: mob.id)
+  event = Event.create(name: event_name[i], place: "#{adress[i]}", description: "Nous allons nous concentrer sur le rammasage de #{description_dechet[i]}", date: "2018-09-24", hour: "18h00", mob_id: mob.id)
 
-#cette ligne inscrit tous les user a un evenement 
+#cette ligne inscrit tous les user a un evenement
   # userEvent = UserEvent.create(user_id: user.id, event_id: event.id)
 end
 
