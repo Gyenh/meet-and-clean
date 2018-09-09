@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   has_many :userevents
 
 
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 15 }
   validates :place, presence: true
   validates :description, presence: true
   
