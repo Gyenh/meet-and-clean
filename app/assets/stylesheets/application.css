@@ -25,6 +25,8 @@ h3 {
     font-family: 'Hind Siliguri', sans-serif;   
     font-weight: 600;
     font-size: 14px;
+    margin-bottom: 1px;
+    margin-top: 1px;
 }
 
 h4 {
@@ -39,11 +41,15 @@ h5 {
     font-size: 14px;
     font-weight: 400;
     color: #ff00ff;
+    margin-bottom: 1px;
+    margin-top: 15px;
 }
 
 h6 {
     font-size: 24px;
     font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 1px;
 }
 body {
 	font-family: 'Hind Siliguri', sans-serif;	
@@ -64,7 +70,7 @@ body {
 	background-color: white;
 }
 
-
+/*css pour ma carte event en petit à mettre dans un fichier séparé*/
 .carteevent {
     background-color: white;
     border: 3px solid black;
@@ -74,13 +80,14 @@ body {
 }
 .hautcard {
     display: flex;
+    height: 70px;
 }
 .nameevent {
     padding-left: 21px;
-
+    width: 228px;
 }
 .date {
-
+    height: 57px;
 }
 .adressandnumber {
     padding-left: 21px;
@@ -191,7 +198,8 @@ body {
   -moz-transition: all 1s;
   transition: all 1s; }
 .batterygreen {
-    padding-left: 182px;
+    padding-left: 172px;
+    padding-top: 14px;
 }
 
 .innerpre { 
@@ -257,8 +265,9 @@ body {
     z-index: 2;
     top: 25%;
     left: 7%;
-    background-color: paleturquoise;
     border-radius: 1px;
+    display: flex;
+    justify-content: space-around;
 }
 
 /*css pour le background*/
