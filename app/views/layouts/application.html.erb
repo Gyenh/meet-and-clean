@@ -21,17 +21,17 @@
   </head>
 
   <body>
+    <!-- j'ouvre ma div du background -->
     <div class="wrapper">
-        <!-- j'ouvre ma div du background -->
-        <%= render 'shared/navbar' %>
         <!-- ma navbar -->
-        <%= render 'shared/trash' %>
+        <%= render 'shared/navbar' %>
         <!-- mon background -->
+        <%= render 'shared/trash' %>
         <div class="wrappi">
-            <%= yield %>
         <!-- dans le yield je mets toute l'intéraction du site -->
+            <%= yield %>
         </div>
-    </div>
     <!-- ici je ferme la div de mon wrapper -->
+    </div>
   </body>
 </html>

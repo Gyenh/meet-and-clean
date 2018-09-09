@@ -1,18 +1,20 @@
-<% if user_signed_in? %>
+<div class="inscription">
+  <% if user_signed_in? %>
   <%= render "admins/shared/error" %>
   <% else %>
 
-  <h2>Log in</h2>
+    <div class="inscriptionassos">
+      <h2>Connexion</h2>
+    </div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "champsinfo" %>
     </div>
 
     <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe", class: "champsinfo" %>
     </div>
 
     <% if devise_mapping.rememberable? -%>
@@ -27,5 +29,6 @@
     </div>
   <% end %>
 
-  <%= render "admins/shared/links" %>
+<!--   <%= render "admins/shared/links" %> -->
 <% end %>
+</div>
