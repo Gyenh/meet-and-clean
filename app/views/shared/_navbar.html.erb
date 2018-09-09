@@ -8,27 +8,29 @@
 	<div class="navbarright">
 		<%= link_to 'Créer un évènement', new_event_path, class: "eventbleu"%>
 		<div class="dropdownrose">
-		  	<% if admin_signed_in? %>
-				<%= link_to edit_admin_registration_path do %>
-				<%= current_admin.first_name.capitalize %>
-				<% end %>
+		  <% if admin_signed_in? %>
+				<% a = current_admin.mob_id %>
+				<%= Mob.find(a).name.capitalize %>
+					<%= link_to edit_admin_registration_path do %>
+						<%= current_admin.first_name.capitalize %>
+					<% end %>
 				<%= link_to 'Logout', destroy_admin_session_path, method: :delete %>
 			<% elsif user_signed_in? %>
 				<%= link_to edit_user_registration_path do %>
-  			<%= current_user.first_name.capitalize %>
+  				<%= current_user.first_name.capitalize %>
 				<% end %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 			<% else %>
 				<button class="dropbtnrose">Connexion</button>
 				<div class="dropdown-contentrose">
-					<%= link_to 'User', new_user_session_path %>
-					<%= link_to 'Association', new_admin_session_path %>
-		  		</div>
+				<%= link_to 'User', new_user_session_path %>
+				<%= link_to 'Association', new_admin_session_path %>
+	  		</div>
 		</div>
 		<div class="dropdownrose">
-		  	<button class="dropbtnrose">Inscription</button>
+		  <button class="dropbtnrose">Inscription</button>
 		  	<div class="dropdown-contentrose">
-		    	<%= link_to 'User', new_user_registration_path %>
+		  		<%= link_to 'User', new_user_registration_path %>
 		    	<%= link_to 'Association', new_admin_registration_path %>
 		  	</div>
 		</div>
