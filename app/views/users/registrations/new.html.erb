@@ -28,7 +28,7 @@
       <div class="inscriright">
         <div class="field">
           <% if @minimum_password_length %>
-    <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
+    <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> ajouter la taille demandé ? est ce que c'est ux ? -->
           <% end %>
           <%= f.password_field :password, autocomplete: "new-password", placeholder: "mot de passe", class: "champsinfo" %>
         </div>
