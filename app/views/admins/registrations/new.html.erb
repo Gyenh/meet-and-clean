@@ -1,9 +1,9 @@
-<div class="inscriptionassos">
+<div class="inscription">
   <% if user_signed_in? %>
     <%= render "admins/shared/error" %>
     <% else %>
     
-    <div class="inscription">
+    <div class="inscriptionassos">
       <h2>Inscription</h2>
     </div>
 
@@ -16,8 +16,8 @@
 
       <div class="field">
         <% if @minimum_password_length %>
-<!--         <em>(<%= @minimum_password_length %> characters minimum)</em>
- -->        <% end %>
+<!--         <em>(<%= @minimum_password_length %> characters minimum)</em>-->
+        <% end %>
         <%= f.password_field :password, autocomplete: "new-password", placeholder: "mot de passe", class: "champsinfo" %>
       </div>
 
@@ -29,7 +29,7 @@
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
-    
+
 <!-- pour le bouton connexion : -->
 <!--     <%= render "admins/shared/links" %>
  -->  <% end %>

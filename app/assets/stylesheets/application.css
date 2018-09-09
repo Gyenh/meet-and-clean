@@ -70,13 +70,19 @@ body {
 	background-color: white;
 }
 
+/*css pour mon inscription user*/
+.inscriptionuser {
+    color: #ff00ff;
+}
 /*css pour mon inscription d'association*/
-.inscriptionassos {
+.inscription {
     background-color: white;
     border: 3px solid black;
     width: 700px;
+    border-radius: 1px;
+    padding-left: 30px;
 }
-.inscription {
+.inscriptionassos {
     color: #c000ff;
 }
 .field {
@@ -85,13 +91,14 @@ body {
 .champsinfo {
     height: 25px;
     width: 200px;
-    border: 2px solid black;
+    border: 3px solid black;
     font-family: 'Hind Siliguri', sans-serif;   
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 10px;
     margin-top: 10px;
     color: black;
+    border-radius: 1px;
 }
 .champsinfo:focus {
     outline: none;
