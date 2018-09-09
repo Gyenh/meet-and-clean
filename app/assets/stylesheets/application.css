@@ -318,16 +318,12 @@ body {
 
 /*à utiliser pour l'interation du site*/
 .wrappi {
-    position: absolute;
-    width: 1200px;
-    height: 338px;
-    z-index: 2;
-    top: 25%;
-    left: 7%;
+    position: relative;
+    z-index: 1000;
+    padding-top: 20vh;
     border-radius: 1px;
     display: flex;
     justify-content: space-around;
-    background-color: whitesmoke;
 }
 
 /*css pour le background*/
