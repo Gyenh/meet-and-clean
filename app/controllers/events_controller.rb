@@ -60,7 +60,13 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-  end
+    event_mob_id = Event.find(params["id"]).mob_id
+    admin_mob_id = Admin.find(current_admin.id).mob_id
+    if event_mob_id != admin_mob_id
+      redirect_to root_path
+    end
+
+end
 
   # POST /events
   # POST /events.json
