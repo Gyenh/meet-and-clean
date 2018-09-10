@@ -12,7 +12,10 @@
 		<div class="dropdownrose">
 		  <% if admin_signed_in? %>
 				<% a = current_admin.mob_id %>
-				<%= Mob.find(a).name.capitalize %>
+				<% if a == nil %>
+				<% else %>
+					<%= Mob.find(a).name.capitalize %>
+				<% end %>
 					<%= link_to edit_admin_registration_path do %>
 						<%= current_admin.first_name.capitalize %>
 					<% end %>
