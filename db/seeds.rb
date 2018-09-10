@@ -7,13 +7,14 @@ User.destroy_all
 Mob.destroy_all
 Admin.destroy_all
 
-mob_name = ['Les mégots', 'Mister Clean', 'Green broom'] #le nom des associations..
-event_name = ['Les mégots, louvre', 'Mister Clean, C.I.D.J', 'Green broom'] #le nom des évènements...
+mob_name = ['Les mégots', 'Mister Clean', 'Green broom']
+event_name = ['Les mégots', 'Mister Clean', 'Green broom'] #le nom des évènements...
 
 phone = %w[0646789465 0764859856 0715326548]
 description = ['Nous déployons d’importants moyens humains et matériels pour assurer la propreté de l’espace public.', 'pour rendre nos villes plus propres et plus respirable. Vous êtes toujours les bienvenus dans notre communauté de cleaners  dans le monde entier !', 'NOus sommes une cinquantaine d\'ambassadeurs de la propreté au service de notre ville.']
 description_dechet = ['mégots', 'sac plastique', 'déchets']
-adress = ['91 Rue de Rivoli, 75001 Paris', '101 Quai Branly, 75015 Paris', 'cacabouya']
+adress = ['91 Rue de Rivoli, 75001 Paris', '101 Quai Branly, 75015 Paris', '96 rue de Bercy, 75012 Paris']
+# userEvent = Test.create( event: '22', user: '65') #testasup
 
 
 3.times do |i|

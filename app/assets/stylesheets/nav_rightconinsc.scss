@@ -1,0 +1,33 @@
+/*fichier css pour les boutons connexion et inscription*/
+.blackhoverrose {
+    color: black;
+    padding-top: 3px;
+    font-size: 13px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.blackhoverrose:hover {
+    color: #ff00ff;
+}
+.navbuttonrose {
+    position: relative;
+    display: inline-block;
+}
+.logoutuser, .logoutassos {
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: white;
+}
+.logoutuser:hover {
+    color: #ff00ff;
+}
+.logoutassos:hover {
+    color: #c000ff;
+}
