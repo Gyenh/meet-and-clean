@@ -4,9 +4,19 @@
     <% else %>
 
     <div class="inscriptionuser">
-      <h2>Inscription</h2>
+      <div class="connexionnoir">
+        <h2><%= link_to 'Connexion', new_user_session_path %></h2>
+      </div>
+      <div class="inscriptionrose">
+        <h2><%= link_to 'Inscription', new_user_registration_path %></h2>
+      </div>
     </div>
-
+    <div class="buttonrond">
+      <%= link_to ' ', new_user_registration_path, class: "rondrose" %>
+      <h3>Je veux participer aux évènements</h3>
+      <%= link_to ' ', new_admin_registration_path, class: "rondvide" %>
+      <h3>Je veux créer des évènements</h3>
+    </div>
     <div class="champignon">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
@@ -22,20 +32,20 @@
         <div class="field">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "champsinfo" %>
         </div>
-          <div class="field">
-            <% if @minimum_password_length %>
-      <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> ajouter la taille demandé ? est ce que c'est ux ? -->
-            <% end %>
-            <%= f.password_field :password, autocomplete: "new-password", placeholder: "mot de passe", class: "champsinfo" %>
-          </div>
+        <div class="field">
+          <% if @minimum_password_length %>
+    <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> ajouter la taille demandé ? est ce que c'est ux ? -->
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "mot de passe", class: "champsinfo" %>
+        </div>
 
-          <div class="field">
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirmation", class: "champsinfo" %>
-          </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirmation", class: "champsinfo" %>
+        </div>
 
-          <div class="actions">
-              <%= f.submit "Sign up" %>
-          </div>
+        <div class="actions">
+            <%= f.submit "ok", class: "pommeok" %>
+        </div>
         <% end %>
     <% end %>
 <!-- pour le bouton connexion : -->
