@@ -104,8 +104,8 @@ class EventsController < ApplicationController
   def set_event
     @event = Event.find(params[:id])
 
-
-@date = Utils.get_date(@event.date.to_s)
+    #convertion de la date!
+    @date = Utils.get_date(@event.date.to_s)
 
 
   end

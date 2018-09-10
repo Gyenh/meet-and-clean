@@ -5,9 +5,15 @@ class HomePagesController < ApplicationController
     @events = Event.all
     @array_date = []
 
+    #debut date
+    # on isole la date pour la convertir dans le format: [Mois, Jour]
     @events.each_with_index do |event, i|
-      @array_date <<  @date = Utils.get_date(event.date.to_s)
+      @array_date  <<  @date = Utils.get_date(event.date.to_s)
     end
+    #fin date
+
+
+    # debut mailer
 
     # @date = Utils.get_date(@event.date.to_s)
 
@@ -22,5 +28,7 @@ class HomePagesController < ApplicationController
 
     # MailService.welcome_email(email)
     # MailService.welcome_email_2(email, name) #envoie un mail après que l'user se soit inscrit au site
+
+    #fin mailer
   end
 end
