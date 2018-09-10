@@ -6,7 +6,6 @@
       <h2>Inscription</h2>
     </div>
     <div class="champignon">
-      <div class="inscrileft">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
@@ -21,8 +20,6 @@
           <div class="field">
             <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "champsinfo" %>
           </div>
-      </div>
-      <div class="inscriright">
         <div class="field">
           <% if @minimum_password_length %>
           <!--<em>(<%= @minimum_password_length %> characters minimum)</em>-->
@@ -35,7 +32,6 @@
         <div class="actions">
           <%= f.submit "Sign up" %>
         </div>
-      </div>
     <% end %>
   </div>
   <% end %>
