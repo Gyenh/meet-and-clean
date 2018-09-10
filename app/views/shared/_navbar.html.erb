@@ -1,35 +1,37 @@
 <div class="navbar">
-
 	<div class="navbarleft">
 		<%= link_to root_path do %>
-		   <%= image_tag "logo.svg", class: "logo" %>
+			<%= image_tag "logo.svg", class: "logo" %>
 		<% end %>
 		<h1 class="baseline">LET'S CLEAN THE STREET</h1>
 	</div>
-
 	<div class="navbarright">
 		<%= link_to 'Créer un évènement', new_event_path, class: "eventbleu"%>
-		<div class="navbuttonrose">
-		  <% if admin_signed_in? %>
-				<% a = current_admin.mob_id %>
-				<% if a == nil %>
-				<% else %>
-					<%= Mob.find(a).name.capitalize %>
-				<% end %>
+			<div class="navbuttonrose">
+		    	<% if admin_signed_in? %>
+					<!-- J'initialise une nouvelle variable pour récupérer l'ID du MOB qui correspond à l'id du admin connecté -->
+					<% a = current_admin.mob_id %>
+					<!-- Si l'ID est NIL on ne fait rien. Pour éviter les erreurs -->
+					<% if a == nil %>
+					<!-- On cherche dans la table association(MOB) l'ID du event qui correspond à l'ID du admin -->
+					<% else %>
+						<%= Mob.find(a).name.capitalize %>
+					<% end %>
 					<%= link_to edit_admin_registration_path do %>
 						<%= current_admin.first_name.capitalize %>
 					<% end %>
 				<%= link_to 'Logout', destroy_admin_session_path, method: :delete %>
-			<% elsif user_signed_in? %>
-				<%= link_to edit_user_registration_path do %>
-  				<%= current_user.first_name.capitalize %>
-				<% end %>
+				
+				<% elsif user_signed_in? %>
+					<%= link_to edit_user_registration_path do %>
+  						<%= current_user.first_name.capitalize %>
+					<% end %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-			<% else %>		
-				<%= link_to 'Connexion', new_user_session_path, class: "blackhoverrose" %>
-		</div>
+				<% else %>		
+					<%= link_to 'Connexion', new_user_session_path, class: "blackhoverrose" %>
 			<%= link_to 'Inscription', new_user_registration_path, class: "blackhoverrose" %>
+
+			</div>
 		<% end %>
 	</div>
-
 </div>
