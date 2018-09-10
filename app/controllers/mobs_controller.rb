@@ -3,6 +3,7 @@
 class MobsController < ApplicationController
   before_action :set_mob, only: %i[show edit update destroy]
   before_action :authenticate_admin!, except: %i[index show]
+  before_action :admin_have_mob, only: %i[edit update destroy]
 
   # GET /mobs
   # GET /mobs.json
@@ -76,6 +77,13 @@ class MobsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def mob_params
     params.require(:mob).permit(:name, :phone, :web_url_1, :web_url_2, :description)
+  end
+
+  def admin_have_mob
+    unless current_admin.mob.id == @mob.id
+      flash[:notice] = "Tu n'es pas autorisé a modifier cette association"
+      redirect_to mobs_path
+    end
   end
 
 
