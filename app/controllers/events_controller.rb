@@ -12,17 +12,12 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    # u = UserEvent.find(params['id'])
-    # event = Event.find(u.event_id)
 
+    #debut de la map
     event = Event.find(params['id'])
 
     adress = event.place
     name = event.name
-    puts adress
-    puts name
-
-    puts 'done'
 
     results = Geocoder.search(adress)
 
@@ -48,8 +43,10 @@ class EventsController < ApplicationController
              long = results.first.coordinates[1]
 
              gon.mapLatLong = [lat, long]
+
              gon.mapName = ['<h3>Erreur</h3>']
            end
+      #fin de la map
   end
 
   # GET /events/new
@@ -106,6 +103,11 @@ class EventsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:id])
+
+
+@date = Utils.get_date(@event.date.to_s)
+
+
   end
 
   def verify_if_currentadmin_have_mobid

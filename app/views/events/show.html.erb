@@ -17,7 +17,9 @@
 
 <p>
   <strong>Date:</strong>
-  <%= @event.date %>
+  <%= @date[0] %>
+  <br>
+  <%= @date[1] %>
 </p>
 
 <p>
@@ -34,7 +36,7 @@
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
 
-
+<!-- Début de la map -->
 <div class="wrapper">
 
 <div id="map" data-latitude="40.764698" data-longitude="-73.978972"></div>
@@ -47,6 +49,8 @@
 
 <%= javascript_include_tag('application.js' ) %>
 
-</script>
+<!-- </script>  yavais cette fermeture de balise, je sais pas si c'etait un oublie, je la laisse en cas de bug, qui sait-->
 
 </div>
+
+<!-- fin de la map -->
