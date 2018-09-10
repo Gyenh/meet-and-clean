@@ -1,34 +1,48 @@
 <div class="inscription">
   <% if admin_signed_in? %>
-  <%= render "users/shared/error" %>
-  <% else %>
+    <%= render "users/shared/error" %>
+    <% else %>
 
     <div class="inscriptionuser">
-      <h2>Connexion</h2>
-    </div>
-
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-    <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "champsinfo" %>
-    </div>
-
-    <div class="field">
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe", class: "champsinfo" %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+      <div class="connexionrose">
+        <h2><%= link_to 'Connexion', new_user_session_path, class: "rose" %></h2>
       </div>
-    <% end -%>
-
-    <div class="actions">
-      <%= f.submit "Log in" %>
+      <div class="inscriptionnoir">
+        <h2><%= link_to 'Inscription', new_user_registration_path %></h2>
+      </div>
     </div>
-  <% end %>
+    <div class="buttonrond">
+      <%= link_to ' ', new_user_session_path, class: "rondrose" %>
+      <h3>Je suis un participant</h3>
+      <%= link_to ' ', new_admin_session_path, class: "rondvide" %>
+      <h3>Je suis un créateur d'évènements</h3>
+    </div>
+    <div class="champignon">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "champsinfo" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe", class: "champsinfo" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <h3><%= f.check_box :remember_me %>
+          <%= f.label :remember_me %></h3>
+          <h3><%= link_to "Forgot your password?", new_password_path(resource_name) %></h3>
+        </div>
+      <% end -%>
+
+      <div class="actions">
+        <%= f.submit "ok", class: "pommeok" %>
+      </div>
+    <% end %>
+
 <!-- bouton pour le sign in et forgot your password ? -->
-<!--   <%= render "users/shared/links" %> -->
-<% end %>
+  <% end %>
+  </div>
+
 </div>
