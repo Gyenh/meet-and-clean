@@ -11,7 +11,7 @@
       <div class="inscrileft">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
-        
+
         <div class="field">
           <%= f.text_field :last_name, placeholder: "Nom", class: "champsinfo" %>
         </div>
@@ -19,7 +19,7 @@
         <div class="field">
           <%= f.text_field :first_name, placeholder: "Prenom", class: "champsinfo" %>
         </div>
-        
+
         <div class="field">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "champsinfo" %>
         </div>
@@ -42,9 +42,8 @@
         </div>
       </div>
     <% end %>
-  </div>
-
+    </div>
+  <% end %>
 <!-- pour le bouton connexion : -->
 <!--   <%= render "users/shared/links" %> -->
-  <% end %>
 </div>
