@@ -18,7 +18,6 @@ class UserEventsController < ApplicationController
   # GET /user_events/1.json
   def show
    redirect_to "/events/#{(UserEvent.find(params['id'])).event_id}"
-
  end
 
   # GET /user_events/new

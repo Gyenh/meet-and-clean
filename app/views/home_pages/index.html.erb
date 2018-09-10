@@ -3,12 +3,13 @@
 
 <!-- à utiliser pour injecter l'infos dans mes cartes à la fin -->
 <tbody>
-  <% @events.each do |event| %>
+  <% @events.each_with_index do |event, index| %>
     <tr>
       <td><%= event.name.upcase %></td>
       <td><%= event.place %></td>
       <td><%= event.description %></td>
-      <td><%= event.date %></td>
+      <td><%= @array_date[index][0] %></td>
+      <td><%= @array_date[index][1] %></td>
       <td><%= event.mob.name %></td>
       <td><%= event.hour %></td>
       <td><%= link_to 'Show', event %></td>
