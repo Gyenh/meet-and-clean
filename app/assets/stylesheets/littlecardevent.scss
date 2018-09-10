@@ -1,0 +1,26 @@
+/*css pour ma carte event en petit à mettre dans un fichier séparé*/
+.carteevent {
+    background-color: white;
+    border: 3px solid black;
+    height: 300px;
+    width: 300px;
+    box-shadow: 10px 15px 40px #cbc9ce;
+}
+.hautcard {
+    display: flex;
+    height: 70px;
+}
+.nameevent {
+    padding-left: 21px;
+    width: 228px;
+}
+.date {
+    height: 57px;
+}
+.adressandnumber {
+    padding-left: 21px;
+}
+.infoevent {
+    padding-left: 21px;
+    padding-right: 20px;
+}

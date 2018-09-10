@@ -11,11 +11,15 @@ class UserEventsController < ApplicationController
   # GET /user_events.json
   def index
     @user_events = UserEvent.all
+
   end
 
   # GET /user_events/1
   # GET /user_events/1.json
-  def show; end
+  def show
+   redirect_to "/events/#{(UserEvent.find(params['id'])).event_id}"
+
+ end
 
   # GET /user_events/new
   def new
@@ -41,22 +45,22 @@ class UserEventsController < ApplicationController
 
     # Début envoie email de confirmation
 
-    begin
-    puts 'debut create'
-    event = Event.find(params['format'])
-    date = event.date
-    hour = event.hour
-    name =  event.name
-    place = event.place
+        begin
+puts "debut create"
+event = Event.find(params['format'])
+date = event.date
+hour = event.hour
+name =  event.name
+place = event.place
 
-    # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
-    # On appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
-    MailService.send_email(current_user.email, name, MailObject.get_confirmation_subject, MailObject.get_confirmation_content(name, place, date, hour))
+       # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+      # On appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
+      MailService.send_email(current_user.email, name, MailObject.get_confirmation_subject, MailObject.get_confirmation_content(name, place, date, hour))
     # Envoie un mail après que l'user se soit inscrit au site
     # Fin envoie email de confirmation
-  rescue Exception
-    puts 'email error'
-  end
+    rescue Exception
+      puts 'email error'
+    end
     redirect_to @user_event
   end
 
