@@ -21,13 +21,13 @@
 						<%= current_admin.first_name.capitalize %>
 					<% end %>
 				<%= link_to 'Logout', destroy_admin_session_path, method: :delete %>
-				
+
 				<% elsif user_signed_in? %>
 					<%= link_to edit_user_registration_path do %>
   						<%= current_user.first_name.capitalize %>
 					<% end %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-				<% else %>		
+				<% else %>
 					<%= link_to 'Connexion', new_user_session_path, class: "blackhoverrose" %>
 
 				<%= link_to 'Inscription', new_user_registration_path, class: "blackhoverrose" %>

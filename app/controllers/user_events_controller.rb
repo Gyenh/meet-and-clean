@@ -3,7 +3,6 @@
 class UserEventsController < ApplicationController
   before_action :set_user_event, only: %i[show edit update destroy]
   before_action :authenticate_user!
-
   before_action :check_if_user_exist
 
   # GET /user_events
@@ -11,14 +10,13 @@ class UserEventsController < ApplicationController
   # GET /user_events.json
   def index
     @user_events = UserEvent.all
-
   end
 
   # GET /user_events/1
   # GET /user_events/1.json
   def show
    redirect_to "/events/#{(UserEvent.find(params['id'])).event_id}"
- end
+  end
 
   # GET /user_events/new
   def new
@@ -44,23 +42,23 @@ class UserEventsController < ApplicationController
 
     # Début envoie email de confirmation
 
-        begin
-puts "debut create"
-event = Event.find(params['format'])
-date = event.date
-hour = event.hour
-name =  event.name
-place = event.place
+    begin
+    puts 'debut create'
+    event = Event.find(params['format'])
+    date = event.date
+    hour = event.hour
+    name =  event.name
+    place = event.place
 
-       # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
-      # On appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
-      MailService.send_email(current_user.email, name, MailObject.get_confirmation_subject, MailObject.get_confirmation_content(name, place, date, hour))
+    # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+    # On appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
+    MailService.send_email(current_user.email, name, MailObject.get_confirmation_subject, MailObject.get_confirmation_content(name, place, date, hour))
     # Envoie un mail après que l'user se soit inscrit au site
     # Fin envoie email de confirmation
     rescue Exception
       puts 'email error'
     end
-    redirect_to @user_event
+    redirect_to root_path
   end
 
   # PATCH/PUT /user_events/1
@@ -82,7 +80,7 @@ place = event.place
   def destroy
     @user_event.destroy
     respond_to do |format|
-      format.html { redirect_to user_events_url, notice: 'User event was successfully destroyed.' }
+      format.html { redirect_to edit_user_registration_path, notice: 'User event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -99,18 +97,11 @@ place = event.place
     params.require(:user_event).permit(:user_id, :event_id)
   end
 
-  def user_event_id
-    unless @user_event.user_id == current_user.id
-      flash[:notice] = 'Tu n es pas autoriser a modifier cet event'
-      redirect_to user_events_path
-    end
-  end
-
   def check_if_user_exist
     if UserEvent.first.nil?
     elsif UserEvent.where(user_id: current_user.id, event_id: params['format']).blank?
     else
-      redirect_to root_path
+      redirect_to edit_user_registration_path
     end
   end
 end
