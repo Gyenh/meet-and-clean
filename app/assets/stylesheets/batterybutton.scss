@@ -6,12 +6,7 @@
     padding-left: 172px;
     padding-top: 14px;
     cursor: pointer;
-}
-.innerpre { 
-    width: 0px;
-    height: 23px;
-    background: #00ff00;
-    position: absolute;
+    height: 50px;
 }
 .inner {
     width: 95px;
@@ -19,6 +14,12 @@
     background-color: white;
     position: absolute;
     outline: 3px solid black;
+}
+.innerpre { 
+    width: 0px;
+    height: 23px;
+    background: #00ff00;
+    position: absolute;
 }
 .posi {
     width: 7px;
