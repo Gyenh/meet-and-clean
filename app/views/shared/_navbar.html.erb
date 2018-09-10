@@ -26,7 +26,6 @@
 				<% end %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 			<% else %>		
-
 				<%= link_to 'Connexion', new_user_session_path, class: "blackhoverrose" %>
 		</div>
 			<%= link_to 'Inscription', new_user_registration_path, class: "blackhoverrose" %>
