@@ -108,7 +108,7 @@ class UserEventsController < ApplicationController
     if UserEvent.first.nil?
     elsif UserEvent.where(user_id: current_user.id, event_id: params['format']).blank?
     else
-      redirect_to root_path
+      redirect_to edit_user_registration_path
     end
   end
 end
