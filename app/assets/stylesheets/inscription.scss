@@ -56,6 +56,12 @@
 .inscriptionassos {
     color: #c000ff;
 }
+.champignon {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin-top: 0px;
+}
 .field {
 }
 .champsinfo {
@@ -74,12 +80,6 @@
 .champsinfo:focus {
     outline: none;
 }
-.champignon {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-    margin-top: 0px;
-}
 .pommeok {
     height: 35px;
     width: 35px;
@@ -87,4 +87,5 @@
     border-radius: 50%;
     background-color: #00ff00;
     cursor: pointer;
+    margin-left: 175px;
 }

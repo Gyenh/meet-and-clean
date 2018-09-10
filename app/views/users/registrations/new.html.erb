@@ -32,9 +32,10 @@
         <div class="field">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "champsinfo" %>
         </div>
+
         <div class="field">
           <% if @minimum_password_length %>
-    <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> ajouter la taille demandé ? est ce que c'est ux ? -->
+         <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> ajouter la taille demandé ? est ce que c'est ux ? -->
           <% end %>
           <%= f.password_field :password, autocomplete: "new-password", placeholder: "mot de passe", class: "champsinfo" %>
         </div>
@@ -46,8 +47,10 @@
         <div class="actions">
             <%= f.submit "ok", class: "pommeok" %>
         </div>
+
         <% end %>
     <% end %>
+    </div>
 <!-- pour le bouton connexion : -->
 <!--   <%= render "users/shared/links" %> -->
 </div>
