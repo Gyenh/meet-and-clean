@@ -7,18 +7,7 @@ User.destroy_all
 Mob.destroy_all
 Admin.destroy_all
 
-mob_name = ['Les mégots', 'Mister Clean', 'Green broom']
-event_name = ['Les mégots', 'Mister Clean', 'Green broom'] #le nom des évènements...
 
-phone = %w[0646789465 0764859856 0715326548]
-description_mob = ['Nous déployons d’importants moyens humains et matériels pour assurer la propreté de l’espace public.', 'pour rendre nos villes plus propres et plus respirable. Vous êtes toujours les bienvenus dans notre communauté de cleaners  dans le monde entier !', 'NOus sommes une cinquantaine d\'ambassadeurs de la propreté au service de notre ville.']
- description_event = ["Nous allons nous concentrer sur le rammasage de mégot, La définition de déchet est complétée par la notion de déchet ultime (loi du 13 juillet 1992) : « un déchet résultant ou non d’un traitement d’un déchet, qui n’est plus susceptible d’être traité dans des conditions techniques et économiques du moment, notamment par extraction de la part valorisable ou par réduction de son caractère polluant ou dangereux », et précisée par la circulaire d’avril 1998 « les déchets ultimes sont les déchets dont on a extrait la part récupérable ainsi que les divers éléments polluants comme les piles et accumulateurs ». ", "Rendons Paris Propre
-Chaque mois, Mister Clean propose une opération de nettoyage d'un quartier de Paris.
-Leur concept: « Ville propre, Esprit léger »
-
-", "description 3"]
-adress = ['91 Rue de Rivoli, 75001 Paris', '101 Quai Branly, 75015 Paris', '96 rue de Bercy, 75012 Paris']
-# userEvent = Test.create( event: '22', user: '65') #testasup
 
 
 3.times do |i|
@@ -26,18 +15,18 @@ adress = ['91 Rue de Rivoli, 75001 Paris', '101 Quai Branly, 75015 Paris', '96 r
   pwd = 123456
 
   user = User.create(last_name: Faker::Name.last_name, first_name: name, email: Faker::Internet.free_email(name), password: pwd, password_confirmation: pwd)
-
-  mob = Mob.create(name: mob_name[i], phone: phone[i], web_url_1: Faker::Internet.url, web_url_2: Faker::Internet.url, description: description_mob[i])
-
-  event = Event.create(name: event_name[i], place: "#{adress[i]}", description: description_event[i], date: "2018-09-24", hour: "2000-01-01 18:30:00 UTC", mob_id: mob.id)
+  mob = Mob.create(name: SeedObject.get_mob_name[i], phone: SeedObject.get_phone[i], web_url_1: Faker::Internet.url, web_url_2: Faker::Internet.url, description: SeedObject.get_description_mob[i])
+  event = Event.create(name: SeedObject.get_event_name[i], place: SeedObject.get_adress[i], description: SeedObject.get_description_event[i], date: "2018-09-24", hour: "2000-01-01 18:30:00 UTC", mob_id: mob.id)
   admin = Admin.create(email: Faker::Internet.free_email , first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, admin: nil, mob_id: mob.id, password: pwd, password_confirmation: pwd)
 
-#cette ligne inscrit tous les user a un evenement
+  #cette ligne inscrit tous les user a un evenement
   # userEvent = UserEvent.create(user_id: user.id, event_id: event.id)
 end
 
 
 
-User.first.update(email: 'kyg972@msn.com')
 
+#on ajoute nos mails dans la base de donnée, pour se connecter sans etre obligé de s'inscrire
+User.first.update(email: 'kyg972@msn.com')
+# User.first.second(email: 'ton_adresse@gmail.com')
 Admin.first.update(email: 'kyg972@msn.com')
