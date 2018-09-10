@@ -1,0 +1,38 @@
+/*css pour mon inscription user*/
+.inscriptionuser {
+    color: #ff00ff;
+}
+/*css pour mon inscription d'association*/
+.inscription {
+    background-color: white;
+    border: 3px solid black;
+    width: 700px;
+    border-radius: 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.inscriptionassos {
+    color: #c000ff;
+}
+.field {
+}
+.champsinfo {
+    height: 25px;
+    width: 200px;
+    border: 3px solid black;
+    font-family: 'Hind Siliguri', sans-serif;   
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: black;
+    border-radius: 1px;
+    padding-left: 8px;
+}
+.champsinfo:focus {
+    outline: none;
+}
+.champignon {
+    display: flex;
+    justify-content: space-between;
+}

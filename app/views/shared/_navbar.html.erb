@@ -1,13 +1,15 @@
 <div class="navbar">
+
 	<div class="navbarleft">
 		<%= link_to root_path do %>
 		   <%= image_tag "logo.svg", class: "logo" %>
 		<% end %>
 		<h1 class="baseline">LET'S CLEAN THE STREET</h1>
 	</div>
+
 	<div class="navbarright">
 		<%= link_to 'Créer un évènement', new_event_path, class: "eventbleu"%>
-		<div class="dropdownrose">
+		<div class="navbuttonrose">
 		  <% if admin_signed_in? %>
 				<% a = current_admin.mob_id %>
 				<% if a == nil %>
@@ -23,20 +25,12 @@
   				<%= current_user.first_name.capitalize %>
 				<% end %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-			<% else %>
-				<button class="dropbtnrose">Connexion</button>
-				<div class="dropdown-contentrose">
-				<%= link_to 'User', new_user_session_path %>
-				<%= link_to 'Association', new_admin_session_path %>
-	  		</div>
+			<% else %>		
+
+				<%= link_to 'Connexion', new_user_session_path, class: "blackhoverrose" %>
 		</div>
-		<div class="dropdownrose">
-		  <button class="dropbtnrose">Inscription</button>
-		  	<div class="dropdown-contentrose">
-		  		<%= link_to 'User', new_user_registration_path %>
-		    	<%= link_to 'Association', new_admin_registration_path %>
-		  	</div>
-		</div>
+			<%= link_to 'Inscription', new_user_registration_path, class: "blackhoverrose" %>
 		<% end %>
 	</div>
+
 </div>
