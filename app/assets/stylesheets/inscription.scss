@@ -1,15 +1,31 @@
-/*css pour mon inscription user*/
-.inscriptionuser {
-    color: #ff00ff;
-}
 /*css pour mon inscription d'association*/
 .inscription {
     background-color: white;
     border: 3px solid black;
     width: 700px;
     border-radius: 1px;
-    padding-left: 30px;
-    padding-right: 30px;
+}
+/*css pour mon inscription user*/
+.inscriptionuser {
+    color: #ff00ff;
+    display: flex;
+    justify-content: space-around;
+}
+.connexionnoir {
+    height: 60px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+.inscriptionrose {
+    height: 60px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .inscriptionassos {
     color: #c000ff;
