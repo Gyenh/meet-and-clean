@@ -34,17 +34,21 @@ class EventsController < ApplicationController
              # rescue avec une fausse adresse ou une adresse plus simple
              # ou tester ça dans le formulaire de new event
 
-             adress = '91 Rue de Rivoli, 75001 '
+             begin
+               adress = '91 Rue de Rivoli, 75001'
 
-             results = Geocoder.search(adress)
+               results = Geocoder.search(adress)
 
-             lat = results.first.coordinates[0]
+               lat = results.first.coordinates[0]
 
-             long = results.first.coordinates[1]
+               long = results.first.coordinates[1]
 
-             gon.mapLatLong = [lat, long]
+               gon.mapLatLong = [lat, long]
 
-             gon.mapName = ['<h3>Erreur</h3>']
+               gon.mapName = ['<h3>Erreur</h3>']
+            rescue Exception
+              puts "map error"
+            end
            end
       #fin de la map
   end
