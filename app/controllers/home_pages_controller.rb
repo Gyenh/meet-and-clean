@@ -3,6 +3,14 @@
 class HomePagesController < ApplicationController
   def index
     @events = Event.all
+    @array_date = []
+
+    @events.each_with_index do |event, i|
+      @array_date <<  @date = Utils.get_date(event.date.to_s)
+    end
+
+    # @date = Utils.get_date(@event.date.to_s)
+
     # email = "kyg972@msn.com" # l'émail de l'user
     # name = "Pierre"
     # subject =  MailObject.get_confirmation_subject
