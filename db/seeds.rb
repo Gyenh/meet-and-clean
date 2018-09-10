@@ -11,8 +11,12 @@ mob_name = ['Les mégots', 'Mister Clean', 'Green broom']
 event_name = ['Les mégots', 'Mister Clean', 'Green broom'] #le nom des évènements...
 
 phone = %w[0646789465 0764859856 0715326548]
-description = ['Nous déployons d’importants moyens humains et matériels pour assurer la propreté de l’espace public.', 'pour rendre nos villes plus propres et plus respirable. Vous êtes toujours les bienvenus dans notre communauté de cleaners  dans le monde entier !', 'NOus sommes une cinquantaine d\'ambassadeurs de la propreté au service de notre ville.']
-description_dechet = ['mégots', 'sac plastique', 'déchets']
+description_mob = ['Nous déployons d’importants moyens humains et matériels pour assurer la propreté de l’espace public.', 'pour rendre nos villes plus propres et plus respirable. Vous êtes toujours les bienvenus dans notre communauté de cleaners  dans le monde entier !', 'NOus sommes une cinquantaine d\'ambassadeurs de la propreté au service de notre ville.']
+ description_event = ["Nous allons nous concentrer sur le rammasage de mégot, La définition de déchet est complétée par la notion de déchet ultime (loi du 13 juillet 1992) : « un déchet résultant ou non d’un traitement d’un déchet, qui n’est plus susceptible d’être traité dans des conditions techniques et économiques du moment, notamment par extraction de la part valorisable ou par réduction de son caractère polluant ou dangereux », et précisée par la circulaire d’avril 1998 « les déchets ultimes sont les déchets dont on a extrait la part récupérable ainsi que les divers éléments polluants comme les piles et accumulateurs ». ", "Rendons Paris Propre
+Chaque mois, Mister Clean propose une opération de nettoyage d'un quartier de Paris.
+Leur concept: « Ville propre, Esprit léger »
+
+", "description 3"]
 adress = ['91 Rue de Rivoli, 75001 Paris', '101 Quai Branly, 75015 Paris', '96 rue de Bercy, 75012 Paris']
 # userEvent = Test.create( event: '22', user: '65') #testasup
 
@@ -23,9 +27,9 @@ adress = ['91 Rue de Rivoli, 75001 Paris', '101 Quai Branly, 75015 Paris', '96 r
 
   user = User.create(last_name: Faker::Name.last_name, first_name: name, email: Faker::Internet.free_email(name), password: pwd, password_confirmation: pwd)
 
-  mob = Mob.create(name: mob_name[i], phone: phone[i], web_url_1: Faker::Internet.url, web_url_2: Faker::Internet.url, description: description[i])
+  mob = Mob.create(name: mob_name[i], phone: phone[i], web_url_1: Faker::Internet.url, web_url_2: Faker::Internet.url, description: description_mob[i])
 
-  event = Event.create(name: event_name[i], place: "#{adress[i]}", description: "Nous allons nous concentrer sur le rammasage de #{description_dechet[i]}", date: "2018-09-24", hour: "2000-01-01 18:30:00 UTC", mob_id: mob.id)
+  event = Event.create(name: event_name[i], place: "#{adress[i]}", description: description_event[i], date: "2018-09-24", hour: "2000-01-01 18:30:00 UTC", mob_id: mob.id)
   admin = Admin.create(email: Faker::Internet.free_email , first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, admin: nil, mob_id: mob.id, password: pwd, password_confirmation: pwd)
 
 #cette ligne inscrit tous les user a un evenement
