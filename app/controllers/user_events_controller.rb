@@ -61,7 +61,7 @@ place = event.place
     rescue Exception
       puts 'email error'
     end
-    redirect_to @user_event
+    redirect_to root_path
   end
 
   # PATCH/PUT /user_events/1

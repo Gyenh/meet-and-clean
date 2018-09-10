@@ -28,6 +28,7 @@
 
 <%= social_share_button_tag(@event.name, :url => 'www.google.fr', desc: @event.name) %>
 
+<%= button_to 'Participer', user_events_path(@event), method: :post %>
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
