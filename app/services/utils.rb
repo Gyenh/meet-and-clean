@@ -1,6 +1,6 @@
   class Utils
 
-
+    #convertie le format initial de la date en format: [mois, année]
     def self.get_date(date)
 
        jour = date[8] + date[9]
