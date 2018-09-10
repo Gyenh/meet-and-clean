@@ -23,13 +23,7 @@
         <td><%= mob.web_url_2 %></td>
         <td><%= mob.description %></td>
         <td><%= link_to 'Show', mob %></td>
-        <td><%= link_to 'Edit', edit_mob_path(mob) %></td>
-        <td><%= link_to 'Destroy', mob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Mob', new_mob_path %>

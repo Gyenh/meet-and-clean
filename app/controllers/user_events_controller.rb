@@ -97,13 +97,6 @@ class UserEventsController < ApplicationController
     params.require(:user_event).permit(:user_id, :event_id)
   end
 
-  def user_event_id
-    unless @user_event.user_id == current_user.id
-      flash[:notice] = 'Tu n es pas autoriser a modifier cet event'
-      redirect_to user_events_path
-    end
-  end
-
   def check_if_user_exist
     if UserEvent.first.nil?
     elsif UserEvent.where(user_id: current_user.id, event_id: params['format']).blank?

@@ -2,7 +2,7 @@
 
 class MobsController < ApplicationController
   before_action :set_mob, only: %i[show edit update destroy]
-  before_action :authenticate_admin!, except: :index
+  before_action :authenticate_admin!, except: %i[index show]
 
   # GET /mobs
   # GET /mobs.json
@@ -77,4 +77,13 @@ class MobsController < ApplicationController
   def mob_params
     params.require(:mob).permit(:name, :phone, :web_url_1, :web_url_2, :description)
   end
+
+
+  # def user_event_id
+  #   unless @user_event.user_id == current_user.id
+  #     flash[:notice] = 'Tu n es pas autoriser a modifier cet event'
+  #     redirect_to user_events_path
+  #   end
+  # end
+
 end
