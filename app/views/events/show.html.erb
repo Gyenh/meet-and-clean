@@ -1,55 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<div class="bigcardevent">
+  <h5><%= @date[0] %></h5>
+  <h6><%= @date[1] %></h6>
 
-<p>
-  <strong>Place:</strong>
-  <%= @event.place %>
-</p>
+  <h2><%= @event.name.upcase %></h2>
+  <h3><%= @event.mob.name %></h3>
+  <h3>Demain de 16:00 à 22:00</h3>
+  <h3>9-12°C - Éclaircies</h3>
+  <h3><%= @event.place %></h3>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @date[0] %>
-  <br>
-  <%= @date[1] %>
-</p>
-
-<p>
-  <strong>Mob:</strong>
-  <%= @event.mob.name %>
-
-</p>
-
-<%= social_share_button_tag(@event.name, :url => 'www.google.fr', desc: @event.name) %>
+  <h4><%= @event.description %></h4>
 
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
 
-<!-- Début de la map -->
-<div class="wrapper">
-
-<div id="map" data-latitude="40.764698" data-longitude="-73.978972"></div>
+    <%= social_share_button_tag(@event.name, :url => 'www.google.fr', desc: @event.name) %>
 
 
- <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
-  integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
-  crossorigin=""></script>
+
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
+
+  <!-- Début de la map -->
+
+  <div id="map" data-latitude="40.764698" data-longitude="-73.978972"></div>
 
 
-<%= javascript_include_tag('application.js' ) %>
+   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
 
-<!-- </script>  yavais cette fermeture de balise, je sais pas si c'etait un oublie, je la laisse en cas de bug, qui sait-->
 
+  <%= javascript_include_tag('application.js' ) %>
+
+  <!-- </script>  yavais cette fermeture de balise, je sais pas si c'etait un oublie, je la laisse en cas de bug, qui sait-->
+
+
+  <!-- fin de la map -->
 </div>
-
-<!-- fin de la map -->
