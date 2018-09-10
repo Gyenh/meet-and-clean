@@ -22,26 +22,26 @@
             <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "champsinfo" %>
           </div>
       </div>
-
       <div class="inscriright">
         <div class="field">
           <% if @minimum_password_length %>
           <!--<em>(<%= @minimum_password_length %> characters minimum)</em>-->
           <% end %>
-          <%= f.password_field :password, autocomplete: "new-password", placeholder: "mot de passe", class: "champsinfo" %>
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: "mot de passe", class: "champsinfo" %>
         </div>
-
         <div class="field">
           <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirmation", class: "champsinfo" %>
         </div>
-
         <div class="actions">
           <%= f.submit "Sign up" %>
         </div>
-        <% end %>
       </div>
-      <% end %>
-    </div>
-    <!-- pour le bouton connexion : -->
-    <!--     <%= render "admins/shared/links" %> -->
+    <% end %>
+  </div>
+  <% end %>
 </div>
+
+
+      <!-- pour le bouton connexion : -->
+      <!--     <%= render "admins/shared/links" %>
+       -->
