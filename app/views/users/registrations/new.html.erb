@@ -11,7 +11,12 @@
         <h2><%= link_to 'Inscription', new_user_registration_path %></h2>
       </div>
     </div>
-
+    <div class="buttonrond">
+      <%= link_to ' ', new_user_registration_path, class: "rondrose" %>
+      <h3>Je veux participer aux évènements</h3>
+      <%= link_to ' ', new_admin_registration_path, class: "rondvide" %>
+      <h3>Je veux créer des évènements</h3>
+    </div>
     <div class="champignon">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
@@ -39,7 +44,7 @@
         </div>
 
         <div class="actions">
-            <%= f.submit "Sign up" %>
+            <%= f.submit "ok", class: "pommeok" %>
         </div>
         <% end %>
     <% end %>

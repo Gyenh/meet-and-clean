@@ -27,6 +27,29 @@
     align-items: center;
     justify-content: center;
 }
+.buttonrond {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.rondrose {
+    border: 3px solid black;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    background-color: #ff00ff;
+    margin: 20px;
+    margin-right: 10px;
+}
+.rondvide {
+    border: 3px solid black;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    margin: 20px;
+    margin-right: 10px;
+}
 .inscriptionassos {
     color: #c000ff;
 }
@@ -51,4 +74,13 @@
 .champignon {
     display: flex;
     justify-content: space-between;
+    margin: 20px;
+    margin-top: 0px;
+}
+.pommeok {
+    height: 35px;
+    width: 35px;
+    border: 3px solid black;
+    border-radius: 50%;
+    background-color: #00ff00;
 }
