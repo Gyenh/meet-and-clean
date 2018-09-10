@@ -1,3 +1,26 @@
+<!-- CECI EST LA HOMEPAGE -->
+
+
+<!-- à utiliser pour injecter l'infos dans mes cartes à la fin -->
+<tbody>
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= event.name.upcase %></td>
+      <td><%= event.place %></td>
+      <td><%= event.description %></td>
+      <td><%= event.date %></td>
+      <td><%= event.mob.name %></td>
+      <td><%= event.hour %></td>
+      <td><%= link_to 'Show', event %></td>
+      <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= button_to 'Participer', user_events_path(event), method: :post %></td>
+    </tr>
+  <% end %>
+</tbody>
+
+
+<!-- event 1  -->
 <div class="carteevent">
   <div class="hautcard">
     <div class="nameevent">
@@ -15,7 +38,6 @@
   <div class="infoevent">
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumdolor in hendrerit in vulputate velit eseros et accumsan et iusto odio dignissim qui blandit praesent...</p>
   </div>
-
   <div class="batterygreen">
     <div class="inner"><h4>Intéressé(e)</h4></div>
     <div class="innerpre"></div>
@@ -23,23 +45,56 @@
     <div class="moins"></div>
     <div class="plus"></div>
   </div>
-
 </div>
-
-<!-- à utiliser pour injecter l'infos dans mes cartes à la fin -->
-<tbody>
-  <% @events.each do |event| %>
-    <tr>
-      <td><%= event.name %></td>
-      <td><%= event.place %></td>
-      <td><%= event.description %></td>
-      <td><%= event.date %></td>
-      <td><%= event.mob.name %></td>
-      <td><%= event.hour %></td>
-      <td><%= link_to 'Show', event %></td>
-      <td><%= link_to 'Edit', edit_event_path(event) %></td>
-      <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <td><%= button_to 'Participer', user_events_path(event), method: :post %></td>
-    </tr>
-  <% end %>
-</tbody>
+<!-- event 2 -->
+<div class="carteevent">
+  <div class="hautcard">
+    <div class="nameevent">
+      <h2>NOM DE L'EVENT</h2>
+    </div>
+    <div class="date">
+    <h5>OCT</h5>
+    <h6>17</h6>
+    </div>
+  </div>
+  <div class="adressandnumber">
+  <h3>Place de Cambronne</h3>
+  <h3>1 500 personnes intéressées</h3>
+  </div>
+  <div class="infoevent">
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumdolor in hendrerit in vulputate velit eseros et accumsan et iusto odio dignissim qui blandit praesent...</p>
+  </div>
+  <div class="batterygreen">
+    <div class="inner"><h4>Intéressé(e)</h4></div>
+    <div class="innerpre"></div>
+    <div class="posi"></div>
+    <div class="moins"></div>
+    <div class="plus"></div>
+  </div>
+</div>
+<!-- event 3 -->
+<div class="carteevent">
+  <div class="hautcard">
+    <div class="nameevent">
+      <h2>NOM DE L'EVENT</h2>
+    </div>
+    <div class="date">
+    <h5>OCT</h5>
+    <h6>17</h6>
+    </div>
+  </div>
+  <div class="adressandnumber">
+  <h3>Place de Cambronne</h3>
+  <h3>1 500 personnes intéressées</h3>
+  </div>
+  <div class="infoevent">
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumdolor in hendrerit in vulputate velit eseros et accumsan et iusto odio dignissim qui blandit praesent...</p>
+  </div>
+  <div class="batterygreen">
+    <div class="inner"><h4>Intéressé(e)</h4></div>
+    <div class="innerpre"></div>
+    <div class="posi"></div>
+    <div class="moins"></div>
+    <div class="plus"></div>
+  </div>
+</div>
