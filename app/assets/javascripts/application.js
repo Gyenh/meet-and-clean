@@ -27,7 +27,7 @@
 	var name = gon.mapName
 // création de la map
 
-var map = L.map('map').setView(ny, 16);
+var map = L.map('map', {zoomControl:false}).setView(ny, 16);
 
 // if(map==null)then map=new L.Map('idopenstreet').setView();
 // création du calque images
