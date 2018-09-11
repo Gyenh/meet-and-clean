@@ -6,6 +6,7 @@ ruby '2.5.1'
 gem 'social-share-button'
 gem 'devise'
 gem 'jquery-rails'
+gem 'httparty', '~> 0.13.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
