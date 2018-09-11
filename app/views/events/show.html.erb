@@ -28,13 +28,16 @@
         <h3>Demain à 16:00</h3>
         <h3>9-12°C - Éclaircies</h3>
       </div>
+        <div class="bigcardevent_informations_details_actions_address">
+          <h3><%= @event.place %></h3>
+        </div>
     </div>
   </div>
   <div class="bigcardevent_informations_details_actions">
     <div class="bigcardevent_informations_details_actions_cta">
       <div class="batterygreen">
         <div class="inner"></div>
-        <div class="innerpre"><h4><%= link_to 'Intéressé(e)', event_path %></h4></div>
+        <div class="innerpre"><h4><%= link_to 'Contacter', event_path %></h4></div>
         <div class="posi"></div>
         <div class="moins"></div>
         <div class="plus"></div>
@@ -53,9 +56,6 @@
         <div class="moins"></div>
         <div class="plus"></div>
       </div>       
-    </div>
-    <div class="bigcardevent_informations_details_actions_address">
-      <h3><%= @event.place %></h3>
     </div>
   </div>
 </div>
