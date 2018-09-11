@@ -44,10 +44,12 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <!-- Affichage du nom de l'asso ainsi que de ses Events -->
+<% if current_admin.mob == nil %>
+<%= link_to "Finaliser l'inscription", new_mob_path, class: "blackoverrose" %>
+<% else %>
 <h2>Voici le nom de ton association :</h2>
 <%= current_admin.mob.name %>
 <br>
-
 <h2>Voici le nom de tes events :</h2>
 <% current_admin.mob.events.each do |event| %>
 <%= event.name %>
@@ -75,6 +77,7 @@
 <% current_admin.mob.events.each do |event| %>
 <%= event.hour %>
 <p>/</p>
+<% end %>
 <% end %>
 
 <%= link_to "Back", :back %>
