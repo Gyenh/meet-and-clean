@@ -46,15 +46,15 @@
             <div class="field">
               <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel", class: "champsinfo" %>
             </div>
-          
-            <%= button_to "Supprimer mon compte ?", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "champsinfo" %>
 
             <div class="actions">
               <%= f.submit "ok", class: "pommeok" %>
             </div>
 
-            <% end %>
           </div>
+          <% end %>
+
+          <%= button_to "Supprimer mon compte ?", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "champsinfo" %>
         </div>
       </div>
       <!-- Affiche tous les événements où le user participe -->
