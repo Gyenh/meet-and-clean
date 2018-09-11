@@ -1,7 +1,45 @@
 .wrappi {
+    position: absolute;
+    z-index: 3;
+    border-radius: 1px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wrappi_home_pages_index {
     position: relative;
     z-index: 3;
     border-radius: 1px;
     display: flex;
     justify-content: space-around;
+    margin-top: 20vh;
+    padding: 0px 7vw;
+}
+
+.wrappi_sessions_new, .wrappi_registrations_new {
+    position: relative;
+    z-index: 3;
+    border-radius: 1px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15vh;
+    // padding: 0px 7vw;
+}
+
+.wrappi_registrations_edit {
+  position: relative;
+  z-index: 3;
+  border-radius: 1px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5vh;
+}
+
+.wrappi_mobs_new {
+  position: relative;
+  z-index: 3;
+  border-radius: 1px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5vh;
 }
