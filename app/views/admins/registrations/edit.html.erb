@@ -5,6 +5,12 @@
   <%= render "admins/shared/error" %>
   <% else %>
 
+  <!-- Affichage du nom de l'asso ainsi que de ses Events -->
+  <% if current_admin.mob == nil %>
+  <%= link_to "Finaliser l'inscription", new_mob_path, class: "blackoverrose" %>
+  <% else %>
+
+
   <div class="inscriptionuser">
     <div class="inscriptionrose">
       <h2><%= link_to edit_admin_registration_path, class: "rose" do %>
@@ -14,7 +20,11 @@
 
 
     <div class="inscriptionnoir">
-      <h2>nom de l'association mettre lien</h2>
+      <% assoid = current_admin.mob.id %>
+
+      <h2><%= link_to edit_mob_path(assoid), class: "noir" do %>
+          <%= current_admin.mob.name.capitalize %></h2>
+      <% end %>
     </div>
   </div>
 
@@ -69,6 +79,8 @@
 
       <%= button_to "Cancel my account", registration_path(resource_name), class: "champsinfo", data: { confirm: "Are you sure?" }, method: :delete %>
       <% end %>
+      <% end %>
+
     </div>
   </div>
 </div>
