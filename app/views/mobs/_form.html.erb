@@ -1,42 +1,51 @@
-<%= form_with(model: mob, local: true) do |form| %>
-  <% if mob.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(mob.errors.count, "error") %> prohibited this mob from being saved:</h2>
+<div class="champignon">
 
-      <ul>
-      <% mob.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <%= form_with(model: mob, local: true) do |form| %>
+          <% if mob.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(mob.errors.count, "error") %> prohibited this mob from being saved:</h2>
+
+              <ul>
+              <% mob.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+  <div class="wrappiti">
+    <div class="wrappiti_left">
+
+          <div class="field">
+            <%= form.text_field :name, placeholder: "Nom de ton association", class: "champsinfo" %>
+          </div>
+
+          <div class="field">
+            <%= form.text_field :phone, placeholder: "Téléphone", class: "champsinfo" %>
+          </div>
+
+          <div class="field">
+            <%= form.text_field :web_url_1, placeholder: "Site web", class: "champsinfo" %>
+          </div>
+
+          <div class="field">
+            <%= form.text_field :web_url_2, placeholder: "Autre lien", class: "champsinfo" %>
+          </div>
     </div>
-  <% end %>
+    <div class="wrappiti_right">
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+          <div class="field">
+            <%= form.text_area :description, placeholder: "Description", class: "champsdescription" %>
+          </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
+          <div class="actions">
+            <%= form.submit "ok", class: "pommeok" %>
+          </div>
+        <% end %>
 
-  <div class="field">
-    <%= form.label :web_url_1 %>
-    <%= form.text_area :web_url_1 %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :web_url_2 %>
-    <%= form.text_area :web_url_2 %>
-  </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

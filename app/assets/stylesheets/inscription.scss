@@ -113,6 +113,22 @@
 .champsinfo:focus {
     outline: none;
 }
+.champsdescription {
+    height: 182px;
+    width: 200px;
+    border: 3px solid black;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: black;
+    border-radius: 1px;
+    padding-left: 8px;
+}
+.champsdescription:focus {
+    outline: none;
+}
 .pommeok {
     height: 35px;
     width: 35px;
