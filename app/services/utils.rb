@@ -24,4 +24,10 @@
    end
 
 
+
+   def self.get_time(e)
+
+     "Rendez-vous à #{e[11..12]} h #{e[14..15]} "
+   end
+
 end

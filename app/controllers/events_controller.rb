@@ -12,11 +12,13 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    event = Event.find(params['id']) #on récupère l'évent en question
+
+
+    @hour = Utils.get_time(event.hour.to_s) #retourne: "Rendez-vous à 14h" par exemple
 
 
     #debut de la map
-    event = Event.find(params['id'])
-
     #début température
     #on récupère la température via la classe OpenWeather, on la stocke dans la variable @temperature
     @temperature =  OpenWeather.new.get_temperature(event.hour.to_s,  event.date.to_s)
