@@ -9,7 +9,9 @@ class MailService
  #et le contenu de son émail
 
     def self.send_email(user_email, name, subject,content)
-
+      puts "starrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrt"
+      puts ENV['DEFAULT_FROM']
+puts "dooooooooooooooooooooooooooooooooooone"
           variable = Mailjet::Send.create(messages: [{
               'From'=> {
                 'Email'=> ENV['DEFAULT_FROM'], #émail du destinateur

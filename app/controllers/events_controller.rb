@@ -13,26 +13,45 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    event = Event.find(params['id']) #on récupère l'évent en question
+
+
+    @hour = Utils.get_time(event.hour.to_s) #retourne: "Rendez-vous à 14h" par exemple
+
+
     #debut de la map
-    event = Event.find(params['id'])
+    #début température
+    #on récupère la température via la classe OpenWeather, on la stocke dans la variable @temperature
+    @temperature =  OpenWeather.new.get_temperature(event.hour.to_s,  event.date.to_s)
+    #fin température
+
     adress = event.place
     name = event.name
     results = Geocoder.search(adress)
     begin
       puts 'start'
+
       lat = results.first.coordinates[0]
+
       long = results.first.coordinates[1]
+
       gon.mapLatLong = [lat, long]
       gon.mapName = name
     rescue Exception
       # rescue avec une fausse adresse ou une adresse plus simple
       # ou tester ça dans le formulaire de new event
+
       begin
         adress = '91 Rue de Rivoli, 75001'
+
         results = Geocoder.search(adress)
+
         lat = results.first.coordinates[0]
+
         long = results.first.coordinates[1]
+
         gon.mapLatLong = [lat, long]
+
         gon.mapName = ['<h3>Erreur</h3>']
       rescue Exception
         puts "map error"

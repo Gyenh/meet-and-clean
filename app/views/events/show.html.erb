@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 <div class="bigcardevent_header">
   <%= image_tag "macbandeau.jpg", class: "bandeauevent" %>
-  <%= image_tag "macprofil.jpg", class: "photoprofilasso" %>  
+  <%= image_tag "macprofil.jpg", class: "photoprofilasso" %>
 </div>
 <div class="bigcardevent_informations">
   <div class="bigcardevent_informations_details">
@@ -21,11 +21,11 @@
     </div>
     <div class="bigcardevent_informations_details_meteo">
       <div class="bigcardevent_informations_details_meteo_img">
-        
+
       </div>
       <div class="bigcardevent_informations_details_meteo_details">
-        <h3>Demain de 16:00 à 22:00</h3>
-        <h3>9-12°C - Éclaircies</h3>
+        <h3><%= @hour %></h3>
+         <h3><%= @temperature %></h3>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
         <div class="posi"></div>
         <div class="moins"></div>
         <div class="plus"></div>
-      </div>       
+      </div>
     </div>
     <div class="bigcardevent_informations_details_actions_address">
       <%= @event.place %>
@@ -67,7 +67,7 @@
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
     integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
     crossorigin=""></script>
-    <%= javascript_include_tag('application.js' ) %>    
+    <%= javascript_include_tag('application.js' ) %>
   </div>
 </div>
 
@@ -80,7 +80,7 @@
 
 <%= link_to 'Back', events_path %>
 
-<!--  Début de la map 
+<!--  Début de la map
 
   <div id="map" data-latitude="40.764698" data-longitude="-73.978972"></div>
 
@@ -95,5 +95,5 @@
  </script>  yavais cette fermeture de balise, je sais pas si c'etait un oublie, je la laisse en cas de bug, qui sait
 
 
- fin de la map 
+ fin de la map
 </div> -->
