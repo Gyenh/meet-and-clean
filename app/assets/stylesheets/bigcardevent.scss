@@ -1,3 +1,49 @@
 .bigcardevent {
+	background-color: white;
+	padding: 30px;
+	border: 3px solid black;
+    width: 900px;
+    position: relative;
+    &_informations {
+    	display: flex;
+    	&_details {
+    		display: flex;
+    		flex-direction: column;
+    		&_event {
+    			display: flex;
+    			&_date {}
+    			&_name {}
+    			&_interested {}
+    		}
+    		&_meteo {
+    			&_img {}
+    			&_details {}
+    		}
+	    	&_actions {
+	    		display: flex;
+	    		flex-direction: column;
+	  			&_cta {
+	  				display: flex;
+	  			}
+
+	    	}
+    	}
+    }
+    &_geoloc {
+    	display: flex;
+    	&_description {
+
+    	}
+    	&_map {
+
+    	}
+    }
 	
+}
+
+.photoprofilasso {
+	border-radius: 50%;
+	position: absolute;
+	top: 85px;
+	left: 75px;
 }
