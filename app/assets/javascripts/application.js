@@ -10,7 +10,35 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require social-share-button
+//= require jquery
+//= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+
+ //début du code de la map
+
+
+  var ny = gon.mapLatLong;
+	var name = gon.mapName
+// création de la map
+
+var map = L.map('map').setView(ny, 16);
+
+// if(map==null)then map=new L.Map('idopenstreet').setView();
+// création du calque images
+L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
+	maxZoom: 20
+}).addTo(map);
+
+// ajout d'un markeur
+var marker = L.marker(ny).addTo(map);
+
+// ajout d'un popup
+marker.bindPopup(name);
+
+//fin du code de la map

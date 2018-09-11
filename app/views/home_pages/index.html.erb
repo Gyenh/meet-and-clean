@@ -1,19 +1,32 @@
-<h1>MOBMOP</h1>
-<p>Ensemble, réduisons la planète à néant</p>
+<!-- CECI EST LA HOMEPAGE -->
+<!-- à utiliser pour injecter l'infos dans mes cartes à la fin -->
+<tbody>
+  <% @events.each_with_index do |event, index| %>
+    <div class="carteevent">
+      <div class="hautcard">
+        <div class="nameevent">
+          <h2><%= event.name.upcase %></h2>
+        </div>
+        <div class="date">
+          <h5><%= @array_date[index][0] %></h5>
+          <h6><%= @array_date[index][1] %></h6>
+        </div>
+      </div>
+      <div class="adressandnumber">
+        <h3><%= event.place %></h3>
+        <h3>1 500 personnes intéressées</h3>
+      </div>
+      <div class="infoevent">
+        <p><%= event.description[0...160] %>...</p>
+      </div>
+      <div class="batterygreen">
 
-<% if admin_signed_in? %>
- <li>
- <%= link_to('Logout', destroy_admin_session_path, method: :delete) %>
- </li>
-<% elsif user_signed_in? %>
- <li>
- <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
- </li>
- <% else %>
- <li>
- <%= link_to('MOB Access', new_admin_session_path)  %>
- </li>
-  <li>
- <%= link_to('User Access', new_user_session_path)  %>
- </li>
-<% end %>
+        <div class="inner"></div>
+        <div class="innerpre"><h4><%= link_to 'Intéressé(e)', event %></h4></div>
+        <div class="posi"></div>
+        <div class="moins"></div>
+        <div class="plus"></div>
+      </div>
+    </div>
+  <% end %>
+</tbody>

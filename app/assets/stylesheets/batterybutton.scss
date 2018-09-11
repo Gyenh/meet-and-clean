@@ -1,0 +1,49 @@
+/*csss pour le bouton batterie*/
+* {-webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s; }
+.batterygreen {
+    padding-left: 172px;
+    padding-top: 14px;
+    cursor: pointer;
+    height: 50px;
+}
+.inner {
+    width: 95px;
+    height: 23px;
+    background-color: white;
+    position: absolute;
+    outline: 3px solid black;
+}
+.innerpre { 
+    width: 0px;
+    height: 23px;
+    background: #00ff00;
+    position: absolute;
+}
+.posi {
+    width: 7px;
+    height: 15px;
+    background: black;
+    position: absolute;
+    margin: 4px 0px 0px 95px;
+}
+.moins {
+    width: 13px;
+    height: 5px;
+    background: black;
+    position: absolute;
+    margin: 9px 0px 0px 80px;
+}
+.plus {
+    width: 5px;
+    height: 13px;
+    background: black;
+    position: absolute;
+    margin: 5px 0px 0px 84px;
+}
+.inner:hover + .innerpre,
+.innerpre:hover {
+    width: 95px;
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.2) inset;
+}

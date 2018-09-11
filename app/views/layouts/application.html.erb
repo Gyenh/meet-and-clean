@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MeetAndClean</title>
+    <title>MobMop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Envoyer des données du controller au fichier JavaScript -->
+    <%= include_gon %>
+    <%= Gon::Base.render_data %>
+
+    <!-- Stylesheet de l'API map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""/>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:400,600,700|Source+Serif+Pro" rel="stylesheet">
+    <!-- mes deux typos sur googlefonts -->
   </head>
 
   <body>
-  <%= render 'layouts/alerts' %>
-    <%= yield %>
+    <!-- j'ouvre ma div du background -->
+    <div class="wrapper">
+        <!-- ma navbar -->
+        <%= render 'shared/navbar' %>
+        <!-- mon background -->
+        <%= render 'shared/trash' %>
+        <!-- parce qu'un wrappi c'est tout mimi -->
+        <div class="wrappi">
+        <!-- dans le yield je mets toute l'intéraction du site -->
+            <%= yield %>
+        </div>
+    <!-- ici je ferme la div de mon wrapper -->
+    </div>
   </body>
 </html>

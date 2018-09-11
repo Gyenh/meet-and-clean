@@ -23,12 +23,17 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description , :maxlength => 450, placeholder: "450 caractères maximum"  %>
   </div>
 
   <div class="field">
     <%= form.label :date %>
     <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hour %>
+    <%= form.time_select :hour %>
   </div>
 
   <div class="actions">
