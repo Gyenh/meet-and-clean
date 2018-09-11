@@ -15,7 +15,7 @@ class UserEventsController < ApplicationController
   # GET /user_events/1
   # GET /user_events/1.json
   def show
-   redirect_to "/events/#{(UserEvent.find(params['id'])).event_id}"
+    redirect_to "/events/#{(UserEvent.find(params['id'])).event_id}"
   end
 
   # GET /user_events/new
@@ -37,28 +37,27 @@ class UserEventsController < ApplicationController
 
     @user_event.user_id = current_user.id
     @user_event.event_id = params['format']
-
     @user_event.save
 
     # Début envoie email de confirmation
-
     begin
-    puts 'debut create'
-    event = Event.find(params['format'])
-    date = event.date
-    hour = event.hour
-    name =  event.name
-    place = event.place
+      puts 'debut create'
+      event = Event.find(params['format'])
+      date = event.date
+      hour = event.hour
+      name =  event.name
+      place = event.place
 
-    # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
-    # On appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
-    MailService.send_email(current_user.email, name, MailObject.get_confirmation_subject, MailObject.get_confirmation_content(name, place, date, hour))
-    # Envoie un mail après que l'user se soit inscrit au site
-    # Fin envoie email de confirmation
+      # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
+      # On appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
+      MailService.send_email(current_user.email, name, MailObject.get_confirmation_subject, MailObject.get_confirmation_content(name, place, date, hour))
+      # Envoie un mail après que l'user se soit inscrit au site
+      # Fin envoie email de confirmation
     rescue Exception
       puts 'email error'
     end
-    redirect_to root_path
+    flash[:notice] = 'Participation confirmée'
+    redirect_to edit_user_registration_path
   end
 
   # PATCH/PUT /user_events/1
@@ -101,6 +100,7 @@ class UserEventsController < ApplicationController
     if UserEvent.first.nil?
     elsif UserEvent.where(user_id: current_user.id, event_id: params['format']).blank?
     else
+      flash[:notice] = 'Tu participes deja !'
       redirect_to edit_user_registration_path
     end
   end

@@ -16,17 +16,15 @@
 
   <tbody>
     <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.place %></td>
-        <td><%= event.description %></td>
-        <td><%= event.date %></td>
-        <td><%= event.mob.name %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= button_to 'Participer', user_events_path(event), method: :post, class: "btn btn-primary" %></td>
-      </tr>
+    <tr>
+      <td><%= event.name %></td>
+      <td><%= event.place %></td>
+      <td><%= event.description %></td>
+      <td><%= event.date %></td>
+      <td><%= event.mob.name %></td>
+      <td><%= link_to 'Show', event %></td>
+      <td><%= button_to 'Participer', user_events_path(event), method: :post, class: "btn btn-primary" %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
@@ -34,8 +32,7 @@
 <br>
 
 <% if user_signed_in? %>
-  <% elsif admin_signed_in? %>
-    <%= link_to 'New Event', new_event_path %>
-  <% else current_user == nil %>
-    <p> Vous êtes un MOB ? Inscrivez vous par <%= link_to 'ici', new_admin_registration_path %> et proposez dès maintenant votre événement. </p>
+<% elsif admin_signed_in? %>
+<% else current_user == nil %>
+<p> Vous êtes un MOB ? Inscrivez vous par <%= link_to 'ici', new_admin_registration_path %> et proposez dès maintenant votre événement. </p>
 <% end %>
