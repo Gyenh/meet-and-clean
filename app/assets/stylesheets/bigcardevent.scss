@@ -11,11 +11,16 @@
     		flex-direction: column;
     		&_event {
     			display: flex;
-    			&_date {}
+    			&_date {
+                    width: 40px;
+                }
     			&_name {}
     			&_interested {}
     		}
     		&_meteo {
+                padding-left: 40px;
+                padding-top: 10px;
+
     			&_img {}
     			&_details {}
     		}
@@ -32,13 +37,16 @@
     &_geoloc {
     	display: flex;
     	&_description {
-
+        height: 185px;
+        padding-top: 15px;
     	}
     	&_map {
-
+            #map {
+                height: 200px;
+            }   
     	}
     }
-	
+
 }
 
 .photoprofilasso {

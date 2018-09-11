@@ -63,8 +63,8 @@
         <div class="profiluser_event"></div>
           <h2>Mes events :</h2>
             <% @user_events.each do |user_event| %>
-              <%= user_event.event.name %>
-              <%= link_to 'Afficher', user_event %>
+              <%= user_event.event.name %><br>
+              <%= link_to 'Afficher', user_event %><br>
               <%= link_to 'Se désinscrire', user_event, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
       </div>
