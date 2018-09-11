@@ -11,32 +11,43 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="wrappiti">
+    <div class="wrappiti_left">
+
+      <div class="field">
+        <%= form.text_field :name, placeholder: "Nom de ton évènement", class: "champsinfo" %>
+      </div>
+
+      <div class="field">
+        <%= form.text_area :place, placeholder: "Adresse", class: "champsinfo" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :date %>
+        <%= form.date_select :date, class: "champsinfo" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :hour %>
+        <%= form.time_select :hour, { :minute_step => 30 } %>
+      </div>
+
+    </div>
+    <div class="wrappiti_right">
+
+      <div class="field">
+        <%= form.text_area :description , :maxlength => 450, placeholder: "Description 450 caractères maximum", class: "champsdescription"  %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "ok", class: "pommeok" %>
+      </div>
+    <% end %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :place %>
-    <%= form.text_area :place %>
-  </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description , :maxlength => 450, placeholder: "450 caractères maximum"  %>
-  </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
 
-  <div class="field">
-    <%= form.label :hour %>
-    <%= form.time_select :hour, { :minute_step => 30 } %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+
