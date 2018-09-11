@@ -15,7 +15,6 @@ class SeedObject
 
     def self.get_event_name  #le nom des évènements...
       event_name = ['Les mégots', 'Mister Clean', 'Green broom'] #le nom des évènements...
-
     end
 
     def self.get_event_date
