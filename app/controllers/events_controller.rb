@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: [:show, :index]
   before_action :verify_if_currentadmin_have_mobid, except: [:show, :index]
+  before_action :admin_have_event, only: %i[edit update destroy]
 
   # GET /events
   # GET /events.json
@@ -26,9 +27,7 @@ class EventsController < ApplicationController
 
     adress = event.place
     name = event.name
-
     results = Geocoder.search(adress)
-
     begin
       puts 'start'
 
@@ -67,14 +66,7 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1/edit
-  def edit
-    event_mob_id = Event.find(params["id"]).mob_id
-    admin_mob_id = Admin.find(current_admin.id).mob_id
-    if event_mob_id != admin_mob_id
-      redirect_to root_path
-    end
-
-  end
+  def edit; end
 
   # POST /events
   # POST /events.json
@@ -121,15 +113,22 @@ class EventsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:id])
-
     #convertion de la date!
     @date = Utils.get_date(@event.date.to_s)
-
-
   end
 
+  # Methode qui verifie si le current_admin a une asso lié
   def verify_if_currentadmin_have_mobid
     if current_admin.mob_id == nil
+      redirect_to root_path
+    end
+  end
+
+  # Methode qui va verifier si le current_admin a des events lié a son asso
+  def admin_have_event
+    event_mob_id = Event.find(params["id"]).mob_id
+    admin_mob_id = Admin.find(current_admin.id).mob_id
+    if event_mob_id != admin_mob_id
       redirect_to root_path
     end
   end

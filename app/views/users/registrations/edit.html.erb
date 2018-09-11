@@ -1,47 +1,47 @@
 <div class="profiluser">
-  <div class="profiluser_bonjour">
-    <h2>Bonjour <%= current_user.first_name.capitalize %></h2>
-  </div>
+ <div class="profiluser_bonjour">
+   <h2>Bonjour <%= current_user.first_name.capitalize %></h2>
+ </div>
 
-  <div class="champignon">
-    <% if admin_signed_in? %>
-      <%= render "users/shared/error" %>
-      <% else %>
+ <div class="champignon">
+   <% if admin_signed_in? %>
+     <%= render "users/shared/error" %>
+     <% else %>
+    <p id="notice"><%= notice %></p>
+     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+       <%= devise_error_messages! %>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= devise_error_messages! %>
+       <div class="wrappiti">
+         <div class="wrappiti_left">
 
-        <div class="wrappiti">
-          <div class="wrappiti_left">
+           <div class="field">
+             <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "champsinfo" %>
+           </div>
 
-            <div class="field">
-              <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "champsinfo" %>
-            </div>
+           <div class="field">
+             <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "champsinfo" %>
+           </div>
 
-            <div class="field">
-              <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "champsinfo" %>
-            </div>
+           <div class="field">
+             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "champsinfo" %>
+           </div>
+         </div>
 
-            <div class="field">
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "champsinfo" %>
-            </div>
-          </div>
+           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+           <% end %>
 
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-            <% end %>
+         <div class="wrappiti_right">
 
-          <div class="wrappiti_right">
+           <div class="field">
+             <%= f.password_field :password, autocomplete: "new-password", placeholder: "Nouveau mot de passe ?", class: "champsinfo" %>
+             <% if @minimum_password_length %>
+             <% end %>
+           </div>
 
-            <div class="field">
-              <%= f.password_field :password, autocomplete: "new-password", placeholder: "Nouveau mot de passe ?", class: "champsinfo" %>
-              <% if @minimum_password_length %>
-              <% end %>
-            </div>
-
-            <div class="field">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation", class: "champsinfo" %>
-            </div>
+           <div class="field">
+             <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation", class: "champsinfo" %>
+           </div>
 
             <div class="field">
               <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel", class: "champsinfo" %>
@@ -68,11 +68,4 @@
               <%= link_to 'Se désinscrire', user_event, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
       </div>
-
-
-
-
-
-
-
 

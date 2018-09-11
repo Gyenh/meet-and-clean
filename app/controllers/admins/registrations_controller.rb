@@ -16,10 +16,6 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-
-
-
-
     begin
 
        email = current_admin.email
@@ -33,7 +29,6 @@ class Admins::RegistrationsController < Devise::RegistrationsController
         puts "email error"
 
     end
-
   end
 
   # GET /resource/edit

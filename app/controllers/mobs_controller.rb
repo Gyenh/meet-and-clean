@@ -4,6 +4,8 @@ class MobsController < ApplicationController
   before_action :set_mob, only: %i[show edit update destroy]
   before_action :authenticate_admin!, except: %i[index show]
   before_action :admin_have_mob, only: %i[edit update destroy]
+  before_action :test, only: %i[new]
+
 
   # GET /mobs
   # GET /mobs.json
@@ -79,6 +81,7 @@ class MobsController < ApplicationController
     params.require(:mob).permit(:name, :phone, :web_url_1, :web_url_2, :description)
   end
 
+  # Methode qui permet de verifier que le current_admin est bien le créateur du mob
   def admin_have_mob
     unless current_admin.mob.id == @mob.id
       flash[:notice] = "Tu n'es pas autorisé a modifier cette association"
@@ -86,12 +89,9 @@ class MobsController < ApplicationController
     end
   end
 
-
-  # def user_event_id
-  #   unless @user_event.user_id == current_user.id
-  #     flash[:notice] = 'Tu n es pas autoriser a modifier cet event'
-  #     redirect_to user_events_path
-  #   end
-  # end
-
+  def test
+    unless current_admin.mob_id == nil
+      redirect_to root_path
+    end
+  end
 end
