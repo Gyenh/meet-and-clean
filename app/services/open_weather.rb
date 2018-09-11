@@ -8,7 +8,7 @@ class OpenWeather
 	def posts
 		self.class.get ('/data/2.5/forecast?q=paris,fr&mode=json&units=metric&lang=fr&appid=8f59043c8a7b69c797c2b9b1338987a2')
 	end
-	
+
 
 	def get_temperature(hour, mDate)
 
@@ -23,17 +23,15 @@ class OpenWeather
 			if mDate ==  mHash["dt_txt"][0..9]
 
 				if mHour <= mHash["dt_txt"][11..12].to_i
-					print "la température:  "
-					print mHash["main"]["temp"]
-					puts "C° "
-					puts mHash["weather"][0]["description"]
 
-					return
+					mTemperature = mHash["main"]["temp"].to_s + "° C - " + mHash["weather"][0]["description"].to_s
+
+					return mTemperature
 				end
 			end
 
 		end
-
+		return "no temperature already available"
 	end
 
 end
