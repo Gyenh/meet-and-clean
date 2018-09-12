@@ -14,8 +14,8 @@
       </div>
       <div class="adressandnumber">
         <h3><%= event.place %></h3>
-        <h3>1 500 personnes intéressées</h3>
-      </div>
+        <h3><%= UserEvent.all.where(event_id: [event]).count %> personnes intéressées</h3>
+        </div>
       <div class="infoevent">
         <p><%= event.description[0...160] %>...</p>
       </div>

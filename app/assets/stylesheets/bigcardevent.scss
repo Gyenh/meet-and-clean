@@ -5,10 +5,12 @@
     width: 900px;
     position: relative;
     &_informations {
+
         display: flex;
         &_details {
             display: flex;
             flex-direction: column;
+            width: 280px;
             &_event {
                 display: flex;
                 &_date {
@@ -28,6 +30,7 @@
                 flex-direction: column;
                 &_cta {
                     display: flex;
+                    padding-top: 10px;
                 }
             }
         }
@@ -35,13 +38,15 @@
     &_geoloc {
         display: flex;
         &_description {
-        height: 185px;
-        padding-top: 15px;
-        padding-right: 20px;
+            height: 190px;
+            padding-top: 5px;
+            padding-right: 20px;
         }
         &_map {
+            width: 300px;
             #map {
             height: 195px;
+            width: 300px;
             }
         }
     }

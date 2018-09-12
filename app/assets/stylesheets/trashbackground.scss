@@ -3,9 +3,18 @@
     position: absolute;
     width: 51px;
     height: 50px;
-    z-index: 1;
+    z-index: 2;
     top: 17%;
     left: 50%;
+    &_infobuble {
+      position: absolute;
+      min-width: 160px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 .ampoulee {
     position: absolute;
@@ -14,6 +23,15 @@
     z-index: 1;
     top: 66%;
     left: 80%;
+    &_infobuble {
+      position: absolute;
+      min-width: 180px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .biere {
@@ -23,15 +41,33 @@
     z-index: 1;
     top: 78%;
     left: 58%;
+    &_infobuble {
+      position: absolute;
+      min-width: 138px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .bouteille {
-	position: absolute;
+    position: absolute;
     width: 38px;
     height: 50px;
-    z-index: 1;
+    z-index: 2;
     top: 16%;
     left: 9%;
+    &_infobuble {
+      position: absolute;
+      min-width: 160px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .casserole {
@@ -41,15 +77,33 @@
     z-index: 1;
     top: 17%;
     left: 40%;
+    &_infobuble {
+      position: absolute;
+      min-width: 152px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .cassette {
     position: absolute;
     width: 55px;
     height: 50px;
-    z-index: 1;
+    z-index: 2;
     top: 13%;
     left: 68%;
+    &_infobuble {
+      position: absolute;
+      min-width: 178px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .chaussette {
@@ -59,15 +113,33 @@
     z-index: 1;
     top: 37%;
     left: 82%;
+    &_infobuble {
+      position: absolute;
+      min-width: 135px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .chaussettee {
     position: absolute;
     width: 64px;
     height: 50px;
-    z-index: 1;
+    z-index: 2;
     top: 73%;
     left: 37%;
+    &_infobuble {
+      position: absolute;
+      min-width: 150px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .citron {
@@ -77,15 +149,33 @@
     z-index: 1;
     top: 55%;
     left: 10%;
+    &_infobuble {
+      position: absolute;
+      min-width: 115px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .lunette {
- 	position: absolute;
+    position: absolute;
     width: 67px;
     height: 50px;
     z-index: 1;
     top: 15%;
     left: 79%;
+    &_infobuble {
+      position: absolute;
+      min-width: 172px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .orange {
@@ -95,6 +185,15 @@
     z-index: 1;
     top: 48%;
     left: 72%;
+    &_infobuble {
+      position: absolute;
+      min-width: 121px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .ordi {
@@ -104,6 +203,15 @@
     z-index: 1;
     top: 66%;
     left: 20%;
+    &_infobuble {
+      position: absolute;
+      min-width: 120px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .pile {
@@ -113,6 +221,15 @@
     z-index: 1;
     top: 81%;
     left: 47%;
+    &_infobuble {
+      position: absolute;
+      min-width: 113px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .pneu {
@@ -122,24 +239,51 @@
     z-index: 1;
     top: 54%;
     left: 28%;
+    &_infobuble {
+      position: absolute;
+      min-width: 163px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .pomme {
-	position: absolute;
+    position: absolute;
     width: 54px;
     height: 50px;
     z-index: 1;
     top: 40%;
     left: 23%;
+    &_infobuble {
+      position: absolute;
+      min-width: 241px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .pommee {
-	position: absolute;
+    position: absolute;
     width: 50px;
     height: 50px;
     z-index: 1;
     top: 78%;
     left: 73%;
+    &_infobuble {
+      position: absolute;
+      min-width: 136px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .raquette {
@@ -149,6 +293,15 @@
     z-index: 1;
     top: 29%;
     left: 61%;
+    &_infobuble {
+      position: absolute;
+      min-width: 141px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .roue {
@@ -158,6 +311,15 @@
     z-index: 1;
     top: 63%;
     left: 63%;
+    &_infobuble {
+      position: absolute;
+      min-width: 160px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .saccuir {
@@ -167,6 +329,15 @@
     z-index: 1;
     top: 36%;
     left: 38%;
+    &_infobuble {
+      position: absolute;
+      min-width: 113px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .sacpla {
@@ -176,6 +347,15 @@
     z-index: 1;
     top: 78%;
     left: 10%;
+    &_infobuble {
+      position: absolute;
+      min-width: 140px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .soap {
@@ -185,6 +365,15 @@
     z-index: 1;
     top: 13%;
     left: 23%;
+    &_infobuble {
+      position: absolute;
+      min-width: 181px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .tele {
@@ -194,15 +383,33 @@
     z-index: 1;
     top: 58%;
     left: 47%;
+    &_infobuble {
+      position: absolute;
+      min-width: 134px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .tomate {
-	position: absolute;
+    position: absolute;
     width: 50px;
     height: 50px;
     z-index: 1;
     top: 26%;
     left: 16%;
+    &_infobuble {
+      position: absolute;
+      min-width: 123px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .verre {
@@ -212,6 +419,15 @@
     z-index: 1;
     top: 82%;
     left: 27%;
+    &_infobuble {
+      position: absolute;
+      min-width: 175px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
 }
 
 .verrebleu {
@@ -221,4 +437,26 @@
     z-index: 1;
     top: 38%;
     left: 8%;
+    &_infobuble {
+      position: absolute;
+      min-width: 98px;
+      padding: 5px 10px;
+      border: 0px solid black;
+      font-size: 14px;
+      background-color: #f4F4F4;
+      font-weight: 300;
+    }
+}
+
+.button_for_hide_wrappi, .button_for_display_wrappi {
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  border: 3px solid black;
+  padding: 3px 5px;
+}
+
+.fc_pink {
+  color: #E42EF5;
 }

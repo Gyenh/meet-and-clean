@@ -11,32 +11,56 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="inscriptionuser">
+    <div class="connexionnoir">
+      <h2><%= link_to edit_admin_registration_path, class: "noir" do %>
+          <%= current_admin.first_name.capitalize %></h2>
+          <% end %>
+    </div>
+
+    <div class="connexionrose">
+      <% assoid = current_admin.mob.id %>
+
+      <h2><%= link_to edit_mob_path(assoid), class: "rose" do %>
+          <%= current_admin.mob.name.capitalize %></h2>
+      <% end %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
+  <div class="wrappiti">
+    <div class="wrappiti_left">
+
+          <div class="field">
+            <%= form.text_field :name, placeholder: "Nom de ton association", class: "champsinfo" %>
+          </div>
+
+          <div class="field">
+            <%= form.text_field :phone, placeholder: "Téléphone", class: "champsinfo" %>
+          </div>
+
+          <div class="field">
+            <%= form.text_field :web_url_1, placeholder: "Site web", class: "champsinfo" %>
+          </div>
+
+          <div class="field">
+            <%= form.text_field :web_url_2, placeholder: "Autre lien", class: "champsinfo" %>
+          </div>
+
+    </div>
+    
+    <div class="wrappiti_right">
+
+          <div class="field">
+            <%= form.text_area :description, placeholder: "Description", class: "champsdescription" %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "ok", class: "pommeok" %>
+          </div>
+        <% end %>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :web_url_1 %>
-    <%= form.text_area :web_url_1 %>
-  </div>
 
-  <div class="field">
-    <%= form.label :web_url_2 %>
-    <%= form.text_area :web_url_2 %>
-  </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

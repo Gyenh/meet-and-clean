@@ -23,17 +23,20 @@
  //début du code de la map
 
 
-  var ny = gon.mapLatLong;
-	var name = gon.mapName
+var ny = gon.mapLatLong;
+var name = gon.mapName;
 // création de la map
 
 var map = L.map('map', {zoomControl:false}).setView(ny, 16);
-
+	map.dragging.disable();
 // if(map==null)then map=new L.Map('idopenstreet').setView();
 // création du calque images
-L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
+L.tileLayer(
+	'http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}',
+	{
 	maxZoom: 20
-}).addTo(map);
+	}
+).addTo(map);
 
 // ajout d'un markeur
 var marker = L.marker(ny).addTo(map);
