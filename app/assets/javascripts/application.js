@@ -27,8 +27,8 @@
 	var name = gon.mapName
 // création de la map
 
-var map = L.map('map').setView(ny, 16);
-
+var map = L.map('map', {zoomControl:false}).setView(ny, 16);
+map.dragging.disable();
 // if(map==null)then map=new L.Map('idopenstreet').setView();
 // création du calque images
 L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {

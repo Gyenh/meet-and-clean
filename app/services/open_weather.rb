@@ -4,13 +4,13 @@ class OpenWeather
 	include HTTParty
 
 	base_uri "http://api.openweathermap.org/"
-#
+	#
 	def posts
 		self.class.get ("/data/2.5/forecast?q=paris,fr&mode=json&units=metric&lang=fr&appid=#{ENV['WEATHER_KEY']}")
 	end
-#api key = 8f59043c8a7b69c797c2b9b1338987a2
+	#api key = 8f59043c8a7b69c797c2b9b1338987a2
 
- 	def get_temperature(hour, mDate)
+	def get_temperature(hour, mDate)
 
 		open_weather = OpenWeather.new
 
