@@ -2,7 +2,7 @@
 
 class HomePagesController < ApplicationController
   def index
-    @events = Event.all
+    @events = Event.all.sort_by &:date
     @array_date = []
 
     #debut date

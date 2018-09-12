@@ -24,7 +24,9 @@
           <h3><%= @hour %></h3>
           <h3><%= @temperature %></h3>
         <div class="bigcardevent_informations_details_event_interested">
-          <h3>5 023 personnes intéressées</h3>
+          <h3><%= a = UserEvent.all.where(event_id: [@event]).count %>
+              <% if a <= 1 %> <%= t('one') %>
+              <% else %> <%= t('other') %><% end %></h3>
           <h3><%= @event.place %></h3>
         </div>
         </div>
