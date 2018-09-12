@@ -8,6 +8,6 @@ class Admin < ApplicationRecord
 
   validates :first_name, presence: true, length: { maximum: 15 }
   validates :last_name, presence: true, length: { maximum: 15 }
-  validates :phone, length: { is: 9 }
+  # validates :phone, length: { is: 9 }
 
 end

@@ -6,12 +6,11 @@ class AdminTest < ActiveSupport::TestCase
 	def setup 
 		@admin = Admin.new(first_name: 'Kwevan', 
 	    	last_name: 'Gouacide',
-	    	email: 'Gouacide@example.com',
-	    	phone: '0978767655',  
+	    	email: 'Gouacide@example.com',  
 	    	password: 'Bonjour123')
 	end
 
-	test 'should be valid' do
+	test 'admin should be valid' do
 	    assert @admin.valid?
   	end
 
@@ -25,10 +24,6 @@ class AdminTest < ActiveSupport::TestCase
 		assert_not @admin.valid?
 	end	
 
-	test 'phone should be present' do 
-		@admin.phone = ""
-		assert_not @admin.valid?
-	end	
-
+	
 
 end
