@@ -20,11 +20,14 @@
 
 
     <div class="inscriptionnoir">
+      <% if current_admin.mob.id == nil %>
+      <% else %>
       <% assoid = current_admin.mob.id %>
 
       <h2><%= link_to edit_mob_path(assoid), class: "noir" do %>
           <%= current_admin.mob.name.capitalize %></h2>
       <% end %>
+      <%end%>
     </div>
   </div>
 
