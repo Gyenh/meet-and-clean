@@ -43,27 +43,28 @@
              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation", class: "champsinfo" %>
            </div>
 
-           <div class="field">
-             <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel", class: "champsinfo" %>
-           </div>
+            <div class="field">
+              <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel", class: "champsinfo" %>
+            </div>
 
-
-           <div class="actions">
-             <%= f.submit "ok", class: "pommeok" %>
-           </div>
+            <div class="actions">
+              <%= f.submit "ok", class: "pommeok" %>
+            </div>
           </div>
-           <% end %>
-         </div>
-                    <%= button_to "Supprimer mon compte ?", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "champsinfo" %>
+          <% end %>
+        </div>
+
+
+        <%= button_to "Supprimer mon compte ?", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "champsinfo" %>
 
           <% end %>
+        </div>
+      <!-- Affiche tous les événements où le user participe -->
+        <div class="profiluser_event"></div>
+          <h2>Mes events :</h2>
+            <% @user_events.each do |user_event| %>
+              <%= user_event.event.name %><br>
+              <%= link_to 'Afficher', user_event %><br>
+              <%= link_to 'Se désinscrire', user_event, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
       </div>
-     <!-- Affiche tous les événements où le user participe -->
-     <div class="profiluser_event"></div>
-         <h2>Mes events :</h2>
-           <% @user_events.each do |user_event| %>
-             <%= user_event.event.name %><br>
-             <%= link_to 'Afficher', user_event %><br>
-             <%= link_to 'Se désinscrire', user_event, method: :delete, data: { confirm: 'Are you sure?' } %>
-             <% end %>
-     </div>

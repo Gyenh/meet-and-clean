@@ -28,7 +28,7 @@
         <!-- mon background -->
         <%= render 'shared/trash' %>
         <!-- parce qu'un wrappi c'est tout mimi -->
-        <div class="wrappi">
+        <div class="wrappi_<%= controller_name %>_<%= action_name %>">
         <!-- dans le yield je mets toute l'intéraction du site -->
             <%= yield %>
         </div>
