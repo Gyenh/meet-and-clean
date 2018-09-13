@@ -1,9 +1,12 @@
+<p id="notice"><%= notice %></p>
+
 <div class="bigcardevent">
-  <p id="notice"><%= notice %></p>
+
   <div class="bigcardevent_header">
-    <%= image_tag "macbandeau.jpg", class: "bandeauevent" %>
-    <%= image_tag "macprofil.jpg", class: "photoprofilasso" %>
+    <%= image_tag "macbandeau.jpg", class: "bigcardevent_header_bandeau" %>
+    <%= image_tag "macprofil.jpg", class: "bigcardevent_header_photoprofilasso" %>
   </div>
+
   <div class="bigcardevent_informations">
     <div class="bigcardevent_informations_details">
       <div class="bigcardevent_informations_details_event">
@@ -15,7 +18,6 @@
           <h2><%= @event.name.upcase %></h2>
           <h3>Organisé par <%= @event.mob.name %></h3>
         </div>
-
       </div>
       <div class="bigcardevent_informations_details_meteo">
         <div class="bigcardevent_informations_details_meteo_img">
@@ -32,22 +34,11 @@
         </div>
       </div>
     </div>
+
     <div class="bigcardevent_informations_details_actions">
       <div class="bigcardevent_informations_details_actions_cta">
-        <div class="batterygreen">
-          <div class="inner"></div>
-          <div class="innerpre"><h4><%= link_to 'Intéressé(e)', event_path %></h4></div>
-          <div class="posi"></div>
-          <div class="moins"></div>
-          <div class="plus"></div>
-        </div>
-        <div class="batterygreen">
-          <div class="inner"></div>
-          <div class="innerpre"><h4><%= link_to 'Intéressé(e)', event_path %></h4></div>
-          <div class="posi"></div>
-          <div class="moins"></div>
-          <div class="plus"></div>
-        </div>
+        
+
         <div class="batterygreen">
           <div class="inner"></div>
           <% if admin_signed_in? %>
@@ -64,10 +55,11 @@
   </div>
   <div class="bigcardevent_geoloc">
     <div class="bigcardevent_geoloc_description">
-      <h4><%= @event.description %></h4>
+      <p><%= @event.description %></p>
+      <%= social_share_button_tag(@event.name, :url => 'www.google.fr', desc: @event.name) %>
     </div>
     <div class="bigcardevent_geoloc_map">
       <div id="map" data-latitude="40.764698" data-longitude="-73.978972"></div>
     </div>
   </div>
-<%= social_share_button_tag(@event.name, :url => 'www.google.fr', desc: @event.name) %>
+</div>

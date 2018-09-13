@@ -1,16 +1,30 @@
 .bigcardevent {
     background-color: white;
-    padding: 30px;
-    border: 3px solid black;
+    // padding: 30px;
     width: 900px;
     position: relative;
+    box-shadow: 10px 15px 40px $shadowbox;
+    &_header {
+        height: 200px;
+        &_bandeau {
+            width: 900px;
+            height: 200px;
+        }
+        &_photoprofilasso {
+            border-radius: 50%;
+            position: absolute;
+            top: 45px;
+            left: 45px;
+        }
+    }
     &_informations {
-
+        padding-left: 30px;
+        padding-right: 33px;
         display: flex;
         &_details {
             display: flex;
             flex-direction: column;
-            width: 280px;
+            width: 635px;
             &_event {
                 display: flex;
                 &_date {
@@ -37,23 +51,20 @@
     }
     &_geoloc {
         display: flex;
+        padding-left: 30px;
+        padding-right: 33px;
+        padding-bottom: 33px;
         &_description {
-            height: 190px;
+            height: 155px;
             padding-top: 5px;
-            padding-right: 20px;
+            padding-right: 33px;
         }
         &_map {
             width: 300px;
             #map {
-            height: 195px;
+            height: 160px;
             width: 300px;
             }
         }
     }
-}
-.photoprofilasso {
-    border-radius: 50%;
-    position: absolute;
-    top: 85px;
-    left: 75px;
 }
