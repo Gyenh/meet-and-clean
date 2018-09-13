@@ -1,8 +1,10 @@
 .wrappi {
-  position: absolute;
+  position: relative;
   z-index: 3;
   display: flex;
   justify-content: space-around;
+  margin-top: 14vh;
+  padding: 0px 11vw;
 }
 // Toujours mettre un position: relative; au wrappi !!!!
 
@@ -11,7 +13,7 @@
   z-index: 3;
   display: flex;
   justify-content: space-around;
-  margin-top: 20vh;
+  margin-top: 12vh;
   padding: 0px 11vw;
 }
 
