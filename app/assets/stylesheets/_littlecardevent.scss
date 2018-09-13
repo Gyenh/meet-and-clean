@@ -10,23 +10,19 @@
         &_hautcard {
             display: flex;
             height: 95px;
+            padding-left: 21px;
                 &_nameevent {
-                    padding-left: 21px;
-                    width: 230px;
-                    background-color: pink;
+                    width: 215px;
                 }
                 &_date {
-                background-color: pink;
                 }
         }
     &_adressandnumber {
         padding-left: 21px;
-        background-color: pink;
     }
     &_infoevent {
         padding-left: 21px;
-        padding-right: 20px;
+        padding-right: 25px;
         height: 105px;
-        background-color: pink;
     }
 }
