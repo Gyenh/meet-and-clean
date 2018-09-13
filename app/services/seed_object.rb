@@ -6,7 +6,7 @@ class SeedObject
   end
 
   def self.get_description_event
-    description_event = ["Nous allons nous concentrer sur le rammasage de mégot, La définition de déchet est complétée par la notion de déchet ultime (loi du 13 juillet 1992) : « un déchet résultant ou non d’un traitement d’un déchet, qui n’est plus susceptible d’être traité dans des conditions techniques et économiques du moment, notamment par extraction de la part valorisable ou par réduction de son caractère polluant ou dangereux ».", "Rendons Paris Propre,
+    description_event = ["Nous allons nous concentrer sur le ramassage de mégot, La définition de déchets est complétée par la notion de déchets ultimes (loi du 13 juillet 1992) : « un déchet résultant ou non d’un traitement d’un déchet, qui n’est plus susceptible d’être traité dans des conditions techniques et économiques du moment, notamment par extraction de la part valorisable ou par réduction de son caractère polluant ou dangereux ».", "Rendons Paris Propre,
       Chaque mois, Mister Clean propose une opération de nettoyage d'un quartier de Paris.
       Leur concept: « Ville propre, Esprit léger »", "Paris croule sous de véritables tonnes de déchets, précise Stéphane Maleuvre, président de la structure. Il y a trois semaines, nous avons repéré la quantité de détritus à ramasser porte de la Chapelle. » Depuis, les bénévoles retournent chaque semaine sur le secteur pour le nettoyer. Samedi, ils ont rempli plus de 100 sacs de 130 litres d’ordures, en seulement quelques heures. « Nous menons des actions de fonds bénéfiques sur le long terme."]
     end
