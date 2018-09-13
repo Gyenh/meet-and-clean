@@ -10,7 +10,7 @@ Admin.destroy_all
 
 
 
-3.times do |i|
+6.times do |i|
   name = Faker::Name.first_name
   pwd = 123456
 
