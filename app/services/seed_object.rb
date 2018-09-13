@@ -18,7 +18,7 @@ class SeedObject
     end
 
     def self.get_event_date
-      ["2018-09-11", "2018-09-13", "2018-09-29"]
+      ["2018-09-11", "2018-09-17", "2018-09-29"]
 
     end
     def self.get_event_hour

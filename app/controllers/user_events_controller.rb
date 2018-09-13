@@ -41,7 +41,6 @@ class UserEventsController < ApplicationController
 
     # Début envoie email de confirmation
     begin
-      puts 'debut create'
       event = Event.find(params[:event_id])
       date = event.date
       hour = event.hour
@@ -54,7 +53,7 @@ class UserEventsController < ApplicationController
       # Envoie un mail après que l'user se soit inscrit au site
       # Fin envoie email de confirmation
     rescue Exception
-      puts 'email error'
+      flash[:alert] = "Oups, petite erreur d'email mais rien de grave"
     end
     flash[:notice] = 'Participation confirmée'
     redirect_to edit_user_registration_path
