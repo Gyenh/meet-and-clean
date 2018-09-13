@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 class HomePagesController < ApplicationController
   def index
-    
     @events = Event.all.sort_by &:date
     @array_date = []
 
