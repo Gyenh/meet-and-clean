@@ -1,23 +1,23 @@
 <!-- CECI EST LA HOMEPAGE -->
 <!-- à utiliser pour injecter l'infos dans mes cartes à la fin -->
 <% @events.each_with_index do |event, index| %>
-  <div class="carteevent">
-    <div class="hautcard">
-      <div class="nameevent">
+  <div class="littlecardevent">
+    <div class="littlecardevent_hautcard">
+      <div class="littlecardevent_nameevent">
         <h2><%= event.name.upcase %></h2>
       </div>
-      <div class="date">
+      <div class="littlecardevent_date">
         <h5><%= @array_date[index][0] %></h5>
         <h6><%= @array_date[index][1] %></h6>
       </div>
     </div>
-    <div class="adressandnumber">
+    <div class="littlecardevent_adressandnumber">
       <h3><%= event.place %></h3>
       <h3><%= a = UserEvent.all.where(event_id: [event]).count %>
             <% if a <= 1 %> <%= t('one') %>
       <% else %> <%= t('other') %><% end %></h3>
-      </div>
-    <div class="infoevent">
+    </div>
+    <div class="littlecardevent_infoevent">
       <p><%= event.description[0...160] %>...</p>
     </div>
     <div class="batterygreen">
