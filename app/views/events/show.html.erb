@@ -70,4 +70,9 @@
       <div id="map" data-latitude="40.764698" data-longitude="-73.978972"></div>
     </div>
   </div>
-<%= social_share_button_tag(@event.name, :url => 'www.google.fr', desc: @event.name) %>
+<%= social_share_button_tag(
+                              @event.name,
+                              :allow_sites => %w(twitter facebook),
+                              'data-twitter-title' => @event.description,
+                              :url => "https://mob-mop.herokuapp.com/events/#{@event.id}",
+                              desc: @event.name) %>
