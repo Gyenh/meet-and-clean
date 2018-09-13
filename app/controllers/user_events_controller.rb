@@ -1,55 +1,52 @@
-  # frozen_string_literal: true
+# frozen_string_literal: true
 
 class UserEventsController < ApplicationController
   before_action :set_user_event, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  before_action :check_if_user_exist
+  before_action :user_participate_or_not_in_event
 
-  # GET /user_events
-
-  # GET /user_events.json
   def index
     @user_events = UserEvent.all
   end
 
-  # GET /user_events/1
-  # GET /user_events/1.json
   def show
-    redirect_to "/events/#{(UserEvent.find(params['id'])).event_id}"
+    redirect_to "/events/#{UserEvent.find(params['id']).event_id}"
   end
 
-  # GET /user_events/new
   def new
     @user_event = UserEvent.new
   end
 
-  # GET /user_events/1/edit
   def edit; end
 
   def set_event
     @event = Event.find(params[:id])
   end
 
-  # POST /user_events
-  # POST /user_events.json
   def create
     @user_event = UserEvent.new
 
     @user_event.user_id = current_user.id
     @user_event.event_id = params[:event_id]
     @user_event.save
-
-    # Début envoie email de confirmation
+    # Debut envoie email de confirmation
     begin
       event = Event.find(params[:event_id])
       date = event.date
       hour = event.hour
       name =  event.name
       place = event.place
-
-      # name = current_user.first_name  #je crée un faux nom "Marie" par ce qu'on recupère pas encore le nom de l'user danss  le formulaire d'inscription
-      # On appelle la méthode qui sert à envoyer un mail, elle se trouve dans le ficher app/services/mail_object.rb
-      MailService.send_email(current_user.email, name, MailObject.get_confirmation_subject, MailObject.get_confirmation_content(name, place, date, hour))
+      # name = current_user.first_name
+      # je cree un faux nom "Marie" par ce qu'on recupere pas encore le nom
+      # de l'user dans le formulaire d'inscription
+      # On appelle la methode qui sert à envoyer un mail,
+      # elle se trouve dans le ficher app/services/mail_object.rb
+      MailService.send_email(
+        current_user.email,
+        name,
+        MailObject.get_confirmation_subject,
+        MailObject.get_confirmation_content(name, place, date, hour)
+      )
       # Envoie un mail après que l'user se soit inscrit au site
       # Fin envoie email de confirmation
     rescue Exception
@@ -59,8 +56,6 @@ class UserEventsController < ApplicationController
     redirect_to edit_user_registration_path
   end
 
-  # PATCH/PUT /user_events/1
-  # PATCH/PUT /user_events/1.json
   def update
     respond_to do |format|
       if @user_event.update(user_event_params)
@@ -73,8 +68,6 @@ class UserEventsController < ApplicationController
     end
   end
 
-  # DELETE /user_events/1
-  # DELETE /user_events/1.json
   def destroy
     @user_event.destroy
     respond_to do |format|
@@ -95,7 +88,7 @@ class UserEventsController < ApplicationController
     params.require(:user_event).permit(:user_id, :event_id)
   end
 
-  def check_if_user_exist
+  def user_participate_or_not_in_event
     if UserEvent.first.nil?
     elsif UserEvent.where(user_id: current_user.id, event_id: params[:event_id]).blank?
     else
