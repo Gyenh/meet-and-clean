@@ -18,40 +18,54 @@
           <h2><%= @event.name.upcase %></h2>
           <h3>Organisé par <%= @event.mob.name %></h3>
         </div>
+
+        <div class="bigcardevent_informations_details_actions">
+          <div class="bigcardevent_informations_details_actions_cta">
+            <div class="bigcardevent_informations_details_actions_cta_batteryblue">
+
+              <div class="bigcardevent_informations_details_actions_cta_batteryblue_inner">
+              </div>
+
+              <% if admin_signed_in? %>
+              <div class="bigcardevent_informations_details_actions_cta_batteryblue_innerpre">
+                <h4><%= link_to 'Modifier', edit_event_path(@event) %></h4>
+              </div>
+              <% else %>
+              <div class="bigcardevent_informations_details_actions_cta_batteryblue_innerpre">
+                <h4><%= link_to 'Participer', user_events_path(event_id: @event.id), method: :post %></h4>
+              </div>
+              <% end %>
+
+              <div class="bigcardevent_informations_details_actions_cta_batteryblue_posi">
+              </div>
+              <div class="bigcardevent_informations_details_actions_cta_batteryblue_moins">
+              </div>
+              <div class="bigcardevent_informations_details_actions_cta_batteryblue_plus">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
       <div class="bigcardevent_informations_details_meteo">
-        <div class="bigcardevent_informations_details_meteo_img">
-        </div>
         <div class="bigcardevent_informations_details_meteo_details">
           <h3><%= @hour %></h3>
           <h3><%= @temperature %></h3>
+        </div>  
         <div class="bigcardevent_informations_details_event_interested">
           <h3><%= a = UserEvent.all.where(event_id: [@event]).count %>
               <% if a <= 1 %> <%= t('one') %>
               <% else %> <%= t('other') %><% end %></h3>
           <h3><%= @event.place %></h3>
         </div>
-        </div>
       </div>
     </div>
 
-    <div class="bigcardevent_informations_details_actions">
-      <div class="bigcardevent_informations_details_actions_cta">
-        
 
-        <div class="batterygreen">
-          <div class="inner"></div>
-          <% if admin_signed_in? %>
-          <div class="innerpre"><h4><%= link_to 'Modifier', edit_event_path(@event) %></h4></div>
-          <% else %>
-          <div class="innerpre"><h4><%= link_to 'Participer', user_events_path(event_id: @event.id), method: :post %></h4></div>
-          <% end %>
-          <div class="posi"></div>
-          <div class="moins"></div>
-          <div class="plus"></div>
-        </div>
-      </div>
-    </div>
+
   </div>
   <div class="bigcardevent_geoloc">
     <div class="bigcardevent_geoloc_description">
@@ -61,5 +75,8 @@
     <div class="bigcardevent_geoloc_map">
       <div id="map" data-latitude="40.764698" data-longitude="-73.978972"></div>
     </div>
+  </div>
+  <div class="bigcardevent_materiel">
+    <h3><%= @event.mob.name %> fournira : </h3>
   </div>
 </div>

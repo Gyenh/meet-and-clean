@@ -24,28 +24,76 @@
         &_details {
             display: flex;
             flex-direction: column;
-            width: 635px;
             &_event {
                 display: flex;
                 &_date {
                     width: 40px;
                 }
-                &_name {}
-                &_interested {}
+                &_name {
+                    width: 693px;
+                }
+                &_interested {
+                    padding-left: 45px;
+                }
             }
             &_meteo {
                 padding-left: 40px;
                 padding-top: 10px;
-                &_img {}
-                &_details {}
+                display: flex;
+                padding-right: 33px;
+                width: 765px;
             }
             &_actions {
                 display: flex;
                 flex-direction: column;
+                width: 100px;
+                padding-top: 18px;
                 &_cta {
                     display: flex;
                     padding-top: 10px;
+                    &_batteryblue {
+                        &_inner {
+                            width: 95px;
+                            height: 23px;
+                            background-color: white;
+                            position: absolute;
+                            outline: 3px solid black;
+                        }
+                        &_innerpre {
+                            width: 0px;
+                            height: 23px;
+                            background: $bleubattery;
+                            position: absolute;
+                        }
+
+                        &_posi {
+                            width: 7px;
+                            height: 15px;
+                            background: black;
+                            position: absolute;
+                            margin: 4px 0px 0px 95px;
+                        }
+                        &_moins {
+                            width: 13px;
+                            height: 5px;
+                            background: black;
+                            position: absolute;
+                            margin: 9px 0px 0px 80px;
+                        }
+                        &_plus {
+                            width: 5px;
+                            height: 13px;
+                            background: black;
+                            position: absolute;
+                            margin: 5px 0px 0px 84px;
+                        }
+                        &_inner:hover + .innerpre, &_innerpre:hover {
+                            width: 95px;
+                            box-shadow: 0px 0px 10px rgba(255,255,255,0.2) inset;
+                        }
+                    }
                 }
+
             }
         }
     }
@@ -53,7 +101,6 @@
         display: flex;
         padding-left: 30px;
         padding-right: 33px;
-        padding-bottom: 33px;
         &_description {
             height: 155px;
             padding-top: 5px;
@@ -66,5 +113,12 @@
             width: 300px;
             }
         }
+    }
+    &_materiel {
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 2px;
+    padding-top: 11px;
     }
 }
