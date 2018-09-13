@@ -39,6 +39,10 @@
         <%= form.text_area :description , :maxlength => 450, placeholder: "Description 450 caractères maximum", class: "champsdescription"  %>
       </div>
 
+       <div class="field">
+        <%= form.file_field :banner %>     
+      </div>
+
       <div class="actions">
         <%= form.submit "ok", class: "pommeok" %>
       </div>
