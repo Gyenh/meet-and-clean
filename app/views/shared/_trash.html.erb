@@ -172,12 +172,12 @@
   });
   
   $(".button_for_hide_wrappi").click(function() {
-    $(".wrappi").addClass("hidden");
+    $(".wrappi").hide();
     $(".button_for_hide_wrappi").addClass("hidden");
     $(".button_for_display_wrappi").removeClass("hidden");
   });
   $(".button_for_display_wrappi").click(function() {
-    $(".wrappi").removeClass("hidden");
+    $(".wrappi").show();
     $(".button_for_display_wrappi").addClass("hidden");
     $(".button_for_hide_wrappi").removeClass("hidden");
   });

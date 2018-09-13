@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+  # frozen_string_literal: true
 
 class UserEventsController < ApplicationController
   before_action :set_user_event, only: %i[show edit update destroy]
@@ -36,13 +36,13 @@ class UserEventsController < ApplicationController
     @user_event = UserEvent.new
 
     @user_event.user_id = current_user.id
-    @user_event.event_id = params['format']
+    @user_event.event_id = params[:event_id]
     @user_event.save
 
     # Début envoie email de confirmation
     begin
       puts 'debut create'
-      event = Event.find(params['format'])
+      event = Event.find(params[:event_id])
       date = event.date
       hour = event.hour
       name =  event.name
@@ -98,7 +98,7 @@ class UserEventsController < ApplicationController
 
   def check_if_user_exist
     if UserEvent.first.nil?
-    elsif UserEvent.where(user_id: current_user.id, event_id: params['format']).blank?
+    elsif UserEvent.where(user_id: current_user.id, event_id: params[:event_id]).blank?
     else
       flash[:notice] = 'Tu participes deja !'
       redirect_to edit_user_registration_path
