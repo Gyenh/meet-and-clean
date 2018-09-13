@@ -20,13 +20,12 @@ h4 {
     font-family: 'Hind Siliguri', sans-serif;
     font-weight: 600;
     margin-left: 8px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 1px;
 }
 h5 {
     font-size: 14px;
     font-weight: 400;
-    color: #ff00ff;
+    color: $roseuser;
     margin-bottom: 0px;
     margin-top: 15px;
 }
@@ -34,7 +33,7 @@ h5 {
 h6 {
     font-size: 24px;
     font-weight: 400;
-    margin-top: 0px;
+    margin-top: -10px;
     margin-bottom: 1px;
 }
 body {
