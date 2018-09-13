@@ -73,4 +73,6 @@
 <%= social_share_button_tag(
                               @event.name,
                               :allow_sites => %w(twitter facebook),
-                              'data-twitter-title' => @event.description) %>
+                              'data-twitter-title' => @event.description,
+                              :url => events_path(@event),
+                              desc: @event.name) %>
