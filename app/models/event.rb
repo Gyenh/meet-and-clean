@@ -15,7 +15,6 @@ class Event < ApplicationRecord
   def adress_verif(adress)
     begin
       results = Geocoder.search(adress)
-      puts results.first.coordinates
       return true
     rescue Exception
       return false
