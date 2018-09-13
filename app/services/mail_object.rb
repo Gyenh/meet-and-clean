@@ -112,12 +112,10 @@ class MailObject
     Il vous suffit de faire suivre cet e-mail à un ami et lui demander de s\'inscrire à l'évènement.
 
     <br/>
-    #{date}
-    <br/>
-     à #{hour}
+    #{date} à #{hour},
     <br/>
     #{place}
-    <a href=\"https://www.google.com/maps/place/MK2+Biblioth%C3%A8que/@48.832179,2.3735485,17z/data=!4m12!1m6!3m5!1s0x47e67222e1449a79:0x9372475baf9e14!2sMK2+Biblioth%C3%A8que!8m2!3d48.832179!4d2.3757372!3m4!1s0x47e67222e1449a79:0x9372475baf9e14!8m2!3d48.832179!4d2.3757372\">Itinéraire</a></h1>
+    <a href=\"https://www.google.com/maps?f=q&hl=en&q=#{place}\">Itinéraire</a></h1>
     </div>
 
     </div>"
