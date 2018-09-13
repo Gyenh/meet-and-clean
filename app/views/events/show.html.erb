@@ -1,12 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <div class="bigcardevent">
-
   <div class="bigcardevent_header">
     <%= image_tag "macbandeau.jpg", class: "bigcardevent_header_bandeau" %>
     <%= image_tag "macprofil.jpg", class: "bigcardevent_header_photoprofilasso" %>
   </div>
-
   <div class="bigcardevent_informations">
     <div class="bigcardevent_informations_details">
       <div class="bigcardevent_informations_details_event">
@@ -15,17 +13,13 @@
           <h6><%= @date[1] %></h6>
         </div>
         <div class="bigcardevent_informations_details_event_name">
-          <h2><%= @event.name.upcase %></h2>
-          <h3>Organisé par <%= @event.mob.name %></h3>
+          <h2><%= @event.name.upcase %> • Organisé par <%= @event.mob.name %></h2>
         </div>
-
         <div class="bigcardevent_informations_details_actions">
           <div class="bigcardevent_informations_details_actions_cta">
             <div class="bigcardevent_informations_details_actions_cta_batteryblue">
-
               <div class="bigcardevent_informations_details_actions_cta_batteryblue_inner">
               </div>
-
               <% if admin_signed_in? %>
               <div class="bigcardevent_informations_details_actions_cta_batteryblue_innerpre">
                 <h4><%= link_to 'Modifier', edit_event_path(@event) %></h4>
@@ -35,20 +29,15 @@
                 <h4><%= link_to 'Participer', user_events_path(event_id: @event.id), method: :post %></h4>
               </div>
               <% end %>
-
               <div class="bigcardevent_informations_details_actions_cta_batteryblue_posi">
               </div>
               <div class="bigcardevent_informations_details_actions_cta_batteryblue_moins">
               </div>
               <div class="bigcardevent_informations_details_actions_cta_batteryblue_plus">
               </div>
-
             </div>
           </div>
         </div>
-
-
-
       </div>
       <div class="bigcardevent_informations_details_meteo">
         <div class="bigcardevent_informations_details_meteo_details">
@@ -64,8 +53,6 @@
       </div>
     </div>
 
-
-
   </div>
   <div class="bigcardevent_geoloc">
     <div class="bigcardevent_geoloc_description">
@@ -73,10 +60,14 @@
       <%= social_share_button_tag(@event.name, :url => 'www.google.fr', desc: @event.name) %>
     </div>
     <div class="bigcardevent_geoloc_map">
-      <div id="map" data-latitude="40.764698" data-longitude="-73.978972"></div>
+      <div id="map" data-latitude="40.764698" data-longitude="-73.978972">
+      </div>
+        <h4>Itinéraire</h4>
     </div>
   </div>
   <div class="bigcardevent_materiel">
     <h3><%= @event.mob.name %> fournira : </h3>
   </div>
 </div>
+
+
