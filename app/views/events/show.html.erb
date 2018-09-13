@@ -74,5 +74,5 @@
                               @event.name,
                               :allow_sites => %w(twitter facebook),
                               'data-twitter-title' => @event.description,
-                              :url => events_path(@event),
+                              :url => "https://mob-mop.herokuapp.com/events/#{@event.id}",
                               desc: @event.name) %>
