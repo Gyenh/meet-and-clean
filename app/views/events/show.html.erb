@@ -58,11 +58,11 @@
     <div class="bigcardevent_geoloc_description">
       <p><%= @event.description %></p>
           <%= social_share_button_tag(
-                        @event.name,
-                        :allow_sites => %w(twitter facebook),
-                        'data-twitter-title' => @event.description,
-                        :url => "https://mob-mop.herokuapp.com/events/#{@event.id}",
-                        desc: @event.name) %>
+            @event.name,
+            :allow_sites => %w(twitter facebook),
+            'data-twitter-title' => @event.description,
+            :url => "https://mob-mop.herokuapp.com/events/#{@event.id}",
+            desc: @event.name) %>
     </div>
     <div class="bigcardevent_geoloc_map">
       <div id="map" data-latitude="40.764698" data-longitude="-73.978972">
