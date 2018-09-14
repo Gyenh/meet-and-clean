@@ -42,8 +42,11 @@
             &_innerpre { 
                 width: 0px;
                 height: 23px;
-                background: #00ff00;
+                background: $vertbattery;
                 position: absolute;
+                -webkit-transition: all 1s;
+                -moz-transition: all 1s;
+                transition: all 1s;
             }
             &_posi {
                 width: 7px;
@@ -74,8 +77,3 @@
         }
     }
 }
-
-/*csss pour le bouton batterie*/
-* {-webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  transition: all 1s; }
