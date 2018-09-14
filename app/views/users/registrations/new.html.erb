@@ -13,6 +13,7 @@
 
   <div class="mediumboxinsco_champignon">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
     <div class="mediumboxinsco_champignon_wrappiti">
       <div class="mediumboxinsco_champignon_wrappiti_left">
         <div class="mediumboxinsco_champignon_wrappiti_left_field">
