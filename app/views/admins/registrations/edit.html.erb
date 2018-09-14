@@ -1,36 +1,28 @@
-
-<div class="inscription">
-
+<div class="mediumboxeditadmins">
   <% if user_signed_in? %>
   <%= render "admins/shared/error" %>
   <% else %>
-
   <!-- Affichage du nom de l'asso ainsi que de ses Events -->
   <% if current_admin.mob == nil %>
   <%= link_to "Finaliser l'inscription", new_mob_path, class: "blackoverrose" %>
   <% else %>
 
-
-  <div class="inscriptionuser">
-    <div class="inscriptionrose">
-      <h2><%= link_to edit_admin_registration_path, class: "rose" do %>
-          <%= current_admin.first_name.capitalize %></h2>
-          <% end %>
+  <div class="mediumboxeditadmins_header">
+    <div class="mediumboxeditadmins_header_white">
+      <h2 class="mediumboxeditadmins_header_white_purple"><%= link_to edit_admin_registration_path, class: "mediumboxeditadmins_header_white_purple" do %>
+        <%= current_admin.first_name.capitalize %></h2>
+      <% end %>
     </div>
-
-
-    <div class="inscriptionnoir">
+    <div class="mediumboxeditadmins_header_dark">
       <% if current_admin.mob.id == nil %>
       <% else %>
       <% assoid = current_admin.mob.id %>
-
-      <h2><%= link_to edit_mob_path(assoid), class: "noir" do %>
-          <%= current_admin.mob.name.capitalize %></h2>
+      <h2 class="mediumboxeditadmins_header_dark_black"><%= link_to edit_mob_path(assoid), class: "mediumboxeditadmins_header_dark_black" do %>
+        <%= current_admin.mob.name.capitalize %></h2>
       <% end %>
       <%end%>
     </div>
   </div>
-
 
   <div class="champignon">
 

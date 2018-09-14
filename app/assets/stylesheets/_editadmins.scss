@@ -1,0 +1,41 @@
+.mediumboxeditadmins {
+	background-color: $white;
+    width: 700px;
+    height: 325px;
+    border-radius: 1px;
+    box-shadow: 10px 15px 40px $shadowbox;
+    &_header {
+        display: flex;
+        justify-content: space-around;
+		&_dark {
+            height: 60px;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $petitgris;
+            &_black {
+                color: $black;
+                margin-bottom: 14px;
+            }
+        }
+        &_dark:hover {
+            background-color: $grismoyen;
+        }
+        &_white {
+            height: 60px;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &_purple {
+                color: $violetassos;
+                margin-bottom: 14px;
+            }
+            &_pink {
+                color: $roseuser;
+                margin-bottom: 14px;
+            }
+        }
+	}
+}
