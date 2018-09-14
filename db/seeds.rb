@@ -9,9 +9,9 @@ User.destroy_all
 Mob.destroy_all
 Admin.destroy_all
 
-3.times do |i|
+6.times do |i|
   name = Faker::Name.first_name
-  pwd = 123_456
+  pwd = 123456
 
   user = User.create(
     last_name: Faker::Name.last_name,
@@ -24,6 +24,7 @@ Admin.destroy_all
     web_url_1: Faker::Internet.url,
     web_url_2: Faker::Internet.url,
     description: SeedObject.get_description_mob[i],
+    email: Faker::Internet.free_email,
     profile_url: 'https://img3.closermag.fr/var/closermag/storage/images/1/2/5/9/1/12591000/hailie-fille-eminem-toujours-sexy-sur-instagram_exact1024x768_l.jpg'
   )
 

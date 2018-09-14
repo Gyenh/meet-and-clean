@@ -25,6 +25,7 @@ class EventsController < ApplicationController
     adress = event.place
     name = event.name
     results = Geocoder.search(adress)
+    @map_link = "https://www.google.com/maps?f=q&hl=en&q=#{adress}"
     begin
       puts 'start'
 
