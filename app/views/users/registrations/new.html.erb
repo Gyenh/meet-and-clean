@@ -8,12 +8,11 @@
     <% end %>
     <%= link_to new_user_registration_path, class: "mediumboxinsco_header_white" do %>
       <h2 class="mediumboxinsco_header_white_pink">Inscription</h2>
-    <% end %>  
+    <% end %>
   </div>
 
   <div class="mediumboxinsco_champignon">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
     <div class="mediumboxinsco_champignon_wrappiti">
       <div class="mediumboxinsco_champignon_wrappiti_left">
         <div class="mediumboxinsco_champignon_wrappiti_left_field">
