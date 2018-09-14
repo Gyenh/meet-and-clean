@@ -2,6 +2,7 @@
   <% if user_signed_in? %>
     <%= render "admins/shared/error" %>
   <% else %>
+  
   <div class="mediumboxinsco_header">
     <%= link_to new_admin_session_path, class: "mediumboxinsco_header_dark" do %>
       <h2 class="mediumboxinsco_header_dark_black">Connexion</h2>
