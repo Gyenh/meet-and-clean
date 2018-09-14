@@ -1,0 +1,111 @@
+.mediumboxeditadmins {
+	background-color: $white;
+    width: 700px;
+    height: 325px;
+    border-radius: 1px;
+    box-shadow: 10px 15px 40px $shadowbox;
+    &_header {
+        display: flex;
+        justify-content: space-around;
+		&_dark {
+            height: 60px;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $petitgris;
+            &_black {
+                color: $black;
+                margin-bottom: 14px;
+            }
+        }
+        &_dark:hover {
+            background-color: $grismoyen;
+        }
+        &_white {
+            height: 60px;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &_purple {
+                color: $violetassos;
+                margin-bottom: 14px;
+            }
+            &_pink {
+                color: $roseuser;
+                margin-bottom: 14px;
+            }
+        }
+    }
+    &_champignon {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+        margin-top: 50px;
+        &_wrappiti {
+            width: 500px;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            &_left {
+                &_field {
+                    &_champsinfo {
+                        height: 25px;
+                        width: 200px;
+                        border: 1px solid black;
+                        font-family: 'Hind Siliguri', sans-serif;   
+                        font-weight: 600;
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                        margin-top: 10px;
+                        color: black;
+                        border-radius: 1px;
+                        padding-left: 8px;
+                    }
+                    &_champsinfo:focus {
+                        outline: none;
+                    }
+                }
+            }
+            &_right {
+                &_field {
+                    &_champsinfo {
+                        height: 25px;
+                        width: 200px;
+                        border: 1px solid black;
+                        font-family: 'Hind Siliguri', sans-serif;   
+                        font-weight: 600;
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                        margin-top: 10px;
+                        color: black;
+                        border-radius: 1px;
+                        padding-left: 8px;
+                    }
+                    &_champsinfo:focus {
+                        outline: none;
+                    }
+                }
+                &_action {
+                    &_pomme {
+                        height: 40px;
+                        width: 40px;
+                        border: 2px solid black;
+                        border-radius: 50%;
+                        background-color: $vertpomme;
+                        cursor: pointer;
+                        margin-left: 175px;
+                        margin-top: 5px;
+                    }
+                    &_pomme:hover {
+                        color: $violetassos;
+                    }
+                    &_pomme:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }    
+}
