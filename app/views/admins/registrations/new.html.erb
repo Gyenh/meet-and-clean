@@ -1,17 +1,25 @@
-<div class="inscription">
+<div class="mediumboxinsco">
   <% if user_signed_in? %>
     <%= render "admins/shared/error" %>
   <% else %>
+  <div class="mediumboxinsco_header">
+    <%= link_to new_admin_session_path, class: "mediumboxinsco_header_left" do %>
+      <h2>Connexion</h2>
+    <% end %>
+    <%= link_to new_admin_registration_path, class: "mediumboxinsco_header_right" do %>
+      <h2 class="mediumboxinsco_header_right_pink">Inscription</h2>
+    <% end %>  
+  </div>
 
-    <div class="inscriptionuser">
-      <%= link_to new_admin_session_path, class: "connexionnoir" do %>
-        <h2>Connexion</h2>
-      <% end %>
-      <%= link_to new_admin_registration_path, class: "inscriptionrose" do %>
-        <h2 class="rose">Inscription</h2>
-      <% end %>  
-     </div>
-    <div class="champignon">
+
+
+
+
+
+
+
+
+  <div class="champignon">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
         <div class="wrappiti">

@@ -1,37 +1,51 @@
 /*css pour mon inscription d'association*/
-.link {
-    pointer: cursor;
-}
-.inscription {
+
+.mediumboxinsco {
     background-color: white;
-    border: 3px solid black;
     width: 700px;
     height: 325px;
     border-radius: 1px;
+    box-shadow: 10px 15px 40px $shadowbox;
+    &_header {
+        color: #ff00ff;
+        display: flex;
+        justify-content: space-around;
+        &_left {
+            height: 60px;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+        &_left:hover {
+            background-color: #efefef;
+        }
+        &_right {
+            height: 60px;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &_pink {
+                color: #ff00ff;
+            }
+        }
+    }
 }
-/*css pour mon inscription user*/
-.inscriptionuser {
-    color: #ff00ff;
-    display: flex;
-    justify-content: space-around;
-}
-.connexionnoir {
-    height: 60px;
-    width: 50vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 3px solid black;
-    border-right: 3px solid black;
-}
+
+
+
+
+
 .connexionrose {
     height: 60px;
     width: 50vw;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
+
 .inscriptionnoir {
     height: 60px;
     width: 50vw;
@@ -41,16 +55,8 @@
     border-bottom: 3px solid black;
     border-left: 3px solid black;
 }
-.inscriptionrose {
-    height: 60px;
-    width: 50vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.rose {
-    color: #ff00ff;
-}
+
+
 .buttonrond {
     display: flex;
     align-items: center;
