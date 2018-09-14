@@ -1,7 +1,7 @@
 <div class="inscription">
   <% if admin_signed_in? %>
     <%= render "users/shared/error" %>
-    <% else %>
+  <% else %>
 
     <div class="inscriptionuser">
       <%= link_to new_user_session_path, class: "connexionrose" do %>

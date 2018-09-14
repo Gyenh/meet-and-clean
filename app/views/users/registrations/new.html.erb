@@ -1,54 +1,54 @@
-<div class="inscription">
+<div class="mediumboxinsco">
   <% if admin_signed_in? %>
     <%= render "users/shared/error" %>
-    <% else %>
+  <% else %>
+  <div class="mediumboxinsco_header">
+    <%= link_to new_user_session_path, class: "mediumboxinsco_header_dark" do %>
+      <h2 class="mediumboxinsco_header_dark_black">Connexion</h2>
+    <% end %>
+    <%= link_to new_user_registration_path, class: "mediumboxinsco_header_white" do %>
+      <h2 class="mediumboxinsco_header_white_pink">Inscription</h2>
+    <% end %>  
+  </div>
 
-    <div class="inscriptionuser">
-      <%= link_to new_user_session_path, class: "connexionnoir" do %>
-        <h2>Connexion</h2>
-      <% end %>
-      <%= link_to new_user_registration_path, class: "inscriptionrose" do %>
-        <h2 class="rose">Inscription</h2>
-      <% end %>  
-     </div>
-
-    <div class="champignon">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-
-        <div class="wrappiti">
-          <div class="wrappiti_left">
-            <div class="field">
-              <%= f.text_field :last_name, placeholder: "Nom", class: "champsinfo" %>
-            </div>
-
-            <div class="field">
-              <%= f.text_field :first_name, placeholder: "Prenom", class: "champsinfo" %>
-            </div>
-
-            <div class="field">
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "champsinfo" %>
-            </div>
+  <div class="mediumboxinsco_champignon">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="mediumboxinsco_champignon_wrappiti">
+      <div class="mediumboxinsco_champignon_wrappiti_left">
+        <div class="mediumboxinsco_champignon_wrappiti_left_field">
+              <%= f.text_field :last_name, placeholder: "Nom", class: "mediumboxinsco_champignon_wrappiti_left_field_champsinfo" %>
         </div>
-        <div class="wrappiti_right">
-          <div class="field">
-            <% if @minimum_password_length %>
-           <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> ajouter la taille demandé ? est ce que c'est ux ? -->
-            <% end %>
-            <%= f.password_field :password, autocomplete: "new-password", placeholder: "mot de passe", class: "champsinfo" %>
+
+        <div class="mediumboxinsco_champignon_wrappiti_left_field">
+          <%= f.text_field :first_name, placeholder: "Prenom", class: "mediumboxinsco_champignon_wrappiti_left_field_champsinfo" %>
+        </div>
+
+        <div class="mediumboxinsco_champignon_wrappiti_left_field">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "mediumboxinsco_champignon_wrappiti_left_field_champsinfo" %>
+        </div>
+      </div>
+
+      <div class="mediumboxinsco_champignon_wrappiti_right">
+        <div class="mediumboxinsco_champignon_wrappiti_right_field">
+          <% if @minimum_password_length %>
+          <!--<em>(<%= @minimum_password_length %> characters minimum)</em>-->
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "mot de passe", class: "mediumboxinsco_champignon_wrappiti_right_field_champsinfo" %>
           </div>
 
-          <div class="field">
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirmation", class: "champsinfo" %>
+          <div class="mediumboxinsco_champignon_wrappiti_right_field">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirmation", class: "mediumboxinsco_champignon_wrappiti_right_field_champsinfo" %>
           </div>
 
-          <div class="actions">
-              <%= f.submit "ok", class: "pommeok" %>
+          <div class="mediumboxinsco_champignon_wrappiti_right_action">
+            <%= f.submit "ok", class: "mediumboxinsco_champignon_wrappiti_right_action_pomme" %>
           </div>
         </div>
-        <% end %>
+
+      </div>
+    <% end %>
     <% end %>
     </div>
-<!-- pour le bouton connexion : -->
-<!--   <%= render "users/shared/links" %> -->
+  </div>
 </div>
