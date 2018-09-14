@@ -2,9 +2,11 @@
 
 <div class="bigcardevent">
   <div class="bigcardevent_header">
+    <% if @event.banner.attached? %>
     <%= image_tag @event.banner, class: "bigcardevent_header_bandeau" %>
+    <% end %>
     <%= image_tag "macprofil.jpg", class: "bigcardevent_header_photoprofilasso" %>
-  </div>
+     </div>
   <div class="bigcardevent_informations">
     <div class="bigcardevent_informations_details">
       <div class="bigcardevent_informations_details_event">
@@ -67,7 +69,7 @@
     <div class="bigcardevent_geoloc_map">
       <div id="map" data-latitude="40.764698" data-longitude="-73.978972">
       </div>
-        <h4>Itinéraire</h4>
+        <%= link_to "Itinéraire", @map_link, target: "_blank", rel: "alternate" %>
     </div>
   </div>
 
@@ -75,4 +77,3 @@
     <h3><%= @event.mob.name %> fournira : </h3>
   </div>
 </div>
-
