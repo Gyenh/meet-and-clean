@@ -4,19 +4,13 @@
     <% else %>
 
     <div class="inscriptionuser">
-      <div class="connexionrose">
-        <h2><%= link_to 'Connexion', new_user_session_path, class: "rose" %></h2>
-      </div>
-      <div class="inscriptionnoir">
-        <h2><%= link_to 'Inscription', new_user_registration_path %></h2>
-      </div>
-    </div>
-<!--     <div class="buttonrond">
-      <%= link_to ' ', new_user_session_path, class: "rondrose" %>
-      <h3>Je suis un participant</h3>
-      <%= link_to ' ', new_admin_session_path, class: "rondvide" %>
-      <h3>Je suis un créateur d'évènements</h3>
-    </div> -->
+      <%= link_to new_user_session_path, class: "connexionrose" do %>
+        <h2 class="rose">Connexion</h2>
+      <% end %>
+      <%= link_to new_user_registration_path, class: "inscriptionnoir" do %>
+        <h2>Inscription</h2>
+      <% end %>      
+     </div>
     <div class="champignon">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
