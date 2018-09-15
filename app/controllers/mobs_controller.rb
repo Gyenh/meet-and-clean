@@ -59,7 +59,7 @@ class MobsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def mob_params
-    params.require(:mob).permit(:name, :phone, :web_url_1, :web_url_2, :description)
+    params.require(:mob).permit(:name, :phone, :web_url_1, :web_url_2, :description, :avatar)
   end
 
   # Methode qui permet de verifier que le current_admin est bien le créateur du mob

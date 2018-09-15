@@ -3,7 +3,7 @@
     <% if @event.banner.attached? %>
     <%= image_tag @event.banner, class: "bigcardevent_header_bandeau" %>
     <% end %>
-    <%= image_tag "macprofil.jpg", class: "bigcardevent_header_photoprofilasso" %>
+    <%= image_tag @event.mob.avatar, class: "bigcardevent_header_photoprofilasso" %>
      </div>
   <div class="bigcardevent_informations">
     <div class="bigcardevent_informations_details">
