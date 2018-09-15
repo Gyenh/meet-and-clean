@@ -2,14 +2,14 @@
   <% if user_signed_in? %>
     <%= render "admins/shared/error" %>
   <% else %>
-  
+
   <div class="mediumboxinsco_header">
     <%= link_to new_admin_session_path, class: "mediumboxinsco_header_dark" do %>
       <h2 class="mediumboxinsco_header_dark_black">Connexion</h2>
     <% end %>
     <%= link_to new_admin_registration_path, class: "mediumboxinsco_header_white" do %>
       <h2 class="mediumboxinsco_header_white_purple">Inscription</h2>
-    <% end %>  
+    <% end %>
   </div>
 
   <div class="mediumboxinsco_champignon">

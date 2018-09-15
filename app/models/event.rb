@@ -4,11 +4,13 @@ class Event < ApplicationRecord
   belongs_to :mob, optional: true
   has_many :userevents
   has_one_attached :banner
+  has_many :tools_events
+  has_many :tools, through: :tools_events
 
   validates :name, presence: true, length: { maximum: 15 }
 
   validates :place, presence: true
-  validates :description, :length => { :maximum => 450 }
+  validates :description, length: { maximum: 450 }
 
   validate :adress_validation
   # Cette validation appelle notre propre validation maison
