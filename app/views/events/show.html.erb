@@ -66,9 +66,7 @@
             desc: @event.name) %>
     </div>
     <div class="bigcardevent_geoloc_map">
-      <div id="map" data-latitude="40.764698" data-longitude="-73.978972">
-      </div>
-        <%= link_to "Itinéraire", @map_link, target: "_blank", rel: "alternate" %>
+      <iframe src=<%= @embed_map %> frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     </div>
   </div>
 

@@ -19,13 +19,19 @@ class EventsController < ApplicationController
     # debut température
     # on recupère la temperature via la classe OpenWeather,
     # on la stocke dans la variable @temperature
-    @temperature = OpenWeather.new.get_temperature(event.hour.to_s, event.date.to_s)
+    @temperature = "Prévision météo non disponible"
+    begin
+      @temperature = OpenWeather.new.get_temperature(event.hour.to_s, event.date.to_s)
+    rescue Exception => e
+    end
     # fin temperature
 
     adress = event.place
     name = event.name
     results = Geocoder.search(adress)
-    @map_link = "https://www.google.com/maps?f=q&hl=en&q=#{adress}"
+    temp_adress = adress.gsub(' ','%20')
+    #ligne google maps
+    @embed_map = "https://maps.google.com/maps?width=100%&height=600&hl=en&q=#{temp_adress}+(Super%20Event%20de%20ouf)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
     begin
       puts 'start'
 
