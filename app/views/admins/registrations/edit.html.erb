@@ -71,8 +71,6 @@
         <%= f.submit "ok", class: "mediumboxeditadmins_champignon_wrappiti_right_action_pomme" %>
       </div>
       <% end %>
-
-      <%= button_to "Cancel my account", registration_path(resource_name), class: "mediumboxeditadmins_champignon_wrappiti_right_field_champsinfo", data: { confirm: "Are you sure?" }, method: :delete %>
       <% end %>
       <% end %>
 
@@ -80,4 +78,4 @@
   </div>
 </div>
 
-
+<%= button_to "Cancel my account", registration_path(resource_name), class: "mediumboxeditadmins_champignon_wrappiti_right_field_champsinfo", data: { confirm: "Are you sure?" }, method: :delete %>

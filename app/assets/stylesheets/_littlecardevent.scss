@@ -1,79 +1,95 @@
 /*css pour ma carte event en petit pour la homepage*/
 
 .littlecardevent {
-    background-color: white;
-    height: 335px;
-    width: 285px;
-    box-shadow: 10px 15px 40px $shadowbox;
-    border-radius: 1px;
-    padding: 15px;
-        &_hautcard {
-            display: flex;
-            height: 95px;
-            padding-left: 21px;
-                &_nameevent {
-                    width: 215px;
-                }
-                &_date {
-                }
-        }
-    &_adressandnumber {
-        padding-left: 21px;
+  background-color: white;
+  height: 335px;
+  width: 285px;
+  box-shadow: 10px 15px 40px $shadowbox;
+  border-radius: 1px;
+  border: 1px solid transparent;
+  padding: 15px;
+  cursor: pointer;
+  &_hautcard {
+    display: flex;
+    height: 95px;
+    padding-left: 21px;
+    &_nameevent {
+      width: 215px;
     }
-    &_infoevent {
-        padding-left: 21px;
-        padding-right: 25px;
-        height: 105px;
+    &_date {
     }
+  }
+  &_adressandnumber {
+    padding-left: 21px;
+  }
+  &_infoevent {
+    padding-left: 21px;
+    padding-right: 25px;
+    height: 105px;
+  }
 
-    &_batterybutton {
+  &_batterybutton {
     cursor: pointer;
     height: 50px;
     padding-left: 157px;
     padding-top: 23px;
-        &_green {
-            &_inner {
-                width: 95px;
-                height: 23px;
-                background-color: white;
-                position: absolute;
-                outline: 3px solid black;
-            }
-            &_innerpre { 
-                width: 0px;
-                height: 23px;
-                background: $vertbattery;
-                position: absolute;
-                -webkit-transition: all 1s;
-                -moz-transition: all 1s;
-                transition: all 1s;
-            }
-            &_posi {
-                width: 7px;
-                height: 15px;
-                background: black;
-                position: absolute;
-                margin: 4px 0px 0px 95px;
-            }
-            &_moins {
-                width: 13px;
-                height: 5px;
-                background: black;
-                position: absolute;
-                margin: 9px 0px 0px 80px;
-            }
-            &_plus {
-                width: 5px;
-                height: 13px;
-                background: black;
-                position: absolute;
-                margin: 5px 0px 0px 84px;
-            }
-            &_inner:hover + .innerpre,
-            &_innerpre:hover {
-                width: 95px;
-                box-shadow: 0px 0px 10px rgba(255,255,255,0.2) inset;
-            }
-        }
+    &_green {
+      &_inner {
+        width: 95px;
+        height: 23px;
+        background-color: white;
+        position: absolute;
+        outline: 3px solid black;
+      }
+      &_innerpre {
+        width: 0px;
+        height: 23px;
+        background: $vertbattery;
+        position: absolute;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        transition: all 1s;
+      }
+      &_posi {
+        width: 7px;
+        height: 15px;
+        background: black;
+        position: absolute;
+        margin: 4px 0px 0px 95px;
+      }
+      &_moins {
+        width: 13px;
+        height: 5px;
+        background: black;
+        position: absolute;
+        margin: 9px 0px 0px 80px;
+      }
+      &_plus {
+        width: 5px;
+        height: 13px;
+        background: black;
+        position: absolute;
+        margin: 5px 0px 0px 84px;
+      }
+      // &_inner:hover + .innerpre,
+      // &_innerpre:hover {
+      //   width: 95px;
+      //   box-shadow: 0px 0px 10px rgba(255,255,255,0.2) inset;
+      // }
     }
+  }
+}
+
+.littlecardevent:hover .littlecardevent_batterybutton_green_innerpre {
+  width: 95px !important;
+  height: 23px;
+  background: $vertbattery;
+  position: absolute;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+
+.littlecardevent:hover .littlecardevent_hautcard_nameevent {
+  color: $roseuser;
 }

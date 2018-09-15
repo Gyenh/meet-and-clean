@@ -1,69 +1,74 @@
-<%= form_with(model: mob, local: true) do |form| %>
-  <% if mob.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(mob.errors.count, "error") %> prohibited this mob from being saved:</h2>
+<div class="mediumboxeditmobs">
 
-      <ul>
-      <% mob.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="inscriptionuser">
-    <div class="connexionnoir">
-      <h2><%= link_to edit_admin_registration_path, class: "noir" do %>
-          <%= current_admin.first_name.capitalize %></h2>
-          <% end %>
-    </div>
-
-    <div class="connexionrose">
-      <% if current_admin.mob == nil %>
-      <% else %>
-      <% assoid = current_admin.mob %>
-
-      <h2><%= link_to edit_mob_path(assoid), class: "noir" do %>
-          <%= current_admin.mob.name.capitalize %></h2>
-      <% end %>
-      <%end%>
-    </div>
-  </div>
-
-  <div class="wrappiti">
-    <div class="wrappiti_left">
-
-          <div class="field">
-            <%= form.text_field :name, placeholder: "Nom de ton association", class: "champsinfo" %>
-          </div>
-
-          <div class="field">
-            <%= form.text_field :phone, placeholder: "Téléphone", class: "champsinfo" %>
-          </div>
-
-          <div class="field">
-            <%= form.text_field :web_url_1, placeholder: "Site web", class: "champsinfo" %>
-          </div>
-
-          <div class="field">
-            <%= form.text_field :web_url_2, placeholder: "Autre lien", class: "champsinfo" %>
-          </div>
-
-    </div>
-
-    <div class="wrappiti_right">
-
-          <div class="field">
-            <%= form.text_area :description, placeholder: "Description", class: "champsdescription" %>
-          </div>
-
-          <div class="actions">
-            <%= form.submit "ok", class: "pommeok" %>
-          </div>
+  <%= form_with(model: mob, local: true) do |form| %>
+    <% if mob.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(mob.errors.count, "error") %> prohibited this mob from being saved:</h2>
+        <ul>
+        <% mob.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mediumboxeditmobs_header">
+      <div class="mediumboxeditmobs_header_dark">
+        <h2 class="mediumboxeditmobs_header_dark_black"><%= link_to edit_admin_registration_path do %>
+            <%= current_admin.first_name.capitalize %></h2>
+            <% end %>
+      </div>
+
+      <div class="mediumboxeditmobs_header_white">
+        <% if current_admin.mob == nil %>
+        <% else %>
+        <% assoid = current_admin.mob %>
+        <h2 class="mediumboxeditmobs_header_white_purple"><%= link_to edit_mob_path(assoid), class: "mediumboxeditmobs_header_white_purple" do %>
+            <%= current_admin.mob.name.capitalize %></h2>
+        <% end %>
+        <%end%>
+      </div>
+    </div>
+
+    <div class="mediumboxeditmobs_champignon">
+      <div class="mediumboxeditmobs_champignon_wrappiti">
+        <div class="mediumboxeditmobs_champignon_wrappiti_left">
+
+              <div class="mediumboxeditmobs_champignon_wrappiti_left_field">
+                <%= form.text_field :name, placeholder: "Nom de ton association", class: "mediumboxeditmobs_champignon_wrappiti_left_field_champsinfo" %>
+              </div>
+
+              <div class="mediumboxeditmobs_champignon_wrappiti_left_field">
+                <%= form.text_field :phone, placeholder: "Téléphone", class: "mediumboxeditmobs_champignon_wrappiti_left_field_champsinfo" %>
+              </div>
+
+              <div class="mediumboxeditmobs_champignon_wrappiti_left_field">
+                <%= form.text_field :web_url_1, placeholder: "Site web", class: "mediumboxeditmobs_champignon_wrappiti_left_field_champsinfo" %>
+              </div>
+
+              <div class="mediumboxeditmobs_champignon_wrappiti_left_field">
+                <%= form.text_field :web_url_2, placeholder: "Autre lien", class: "mediumboxeditmobs_champignon_wrappiti_left_field_champsinfo" %>
+              </div>
+
+        </div>
+
+        <div class="mediumboxeditmobs_champignon_wrappiti_right">
+
+              <div class="mediumboxeditmobs_champignon_wrappiti_right_field">
+                <%= form.text_area :description, placeholder: "Description", class: "mediumboxeditmobs_champignon_wrappiti_right_field_description" %>
+              </div>
+
+              <div class="mediumboxeditmobs_champignon_wrappiti_right_action">
+                <%= form.submit "ok", class: "mediumboxeditmobs_champignon_wrappiti_right_action_pomme" %>
+              </div>
+
+            <% end %>
+
+        </div>
+      </div>
+
 
     </div>
-  </div>
-
+</div>
 
 
