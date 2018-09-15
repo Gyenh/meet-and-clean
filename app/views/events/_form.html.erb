@@ -1,56 +1,61 @@
 <%= form_with(model: event, local: true) do |form| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<% if event.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="wrappiti">
-    <div class="wrappiti_left">
-
-      <div class="field">
-        <%= form.text_field :name, placeholder: "Nom de ton évènement", class: "champsinfo" %>
-      </div>
-
-      <div class="field">
-        <%= form.text_area :place, placeholder: "Adresse", class: "champsinfo" %>
-      </div>
-
-      <div class="field">
-        <%= form.label :date %>
-        <%= form.date_select :date, class: "champsinfo" %>
-      </div>
-
-      <div class="field">
-        <%= form.label :hour %>
-        <%= form.time_select :hour, { :minute_step => 30 } %>
-      </div>
-
-
-      <div class="field">
-      <%= form.collection_select(:tool_id, Tool.all, :id, :name, {:prompt => "Selectionner le materiels avec ctrl"}, {:multiple => true}) %>
-    </div>
-
-    </div>
-    <div class="wrappiti_right">
-
-      <div class="field">
-        <%= form.text_area :description , :maxlength => 450, placeholder: "Description 450 caractères maximum", class: "champsdescription"  %>
-      </div>
-
-       <div class="field">
-        <%= form.file_field :banner %>
-      </div>
-
-      <div class="actions">
-        <%= form.submit "ok", class: "pommeok" %>
-      </div>
+  <ul>
+    <% event.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
     <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="wrappiti">
+  <div class="wrappiti_left">
+
+    <div class="field">
+      <%= form.text_field :name, placeholder: "Nom de ton évènement", class: "champsinfo" %>
     </div>
+
+    <div class="field">
+      <%= form.text_area :place, placeholder: "Adresse", class: "champsinfo" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :date %>
+      <%= form.date_select :date, class: "champsinfo" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :hour %>
+      <%= form.time_select :hour, { :minute_step => 30 } %>
+    </div>
+
+    <div class="field">
+      <%= form.label "Matériels fourni" %><br />
+      <%= form.collection_check_boxes :tool_ids, Tool.all, :id, :name do |b| %>
+      <div class="collection-check-box">
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+      <% end %>
+    </div>
+
   </div>
+  <div class="wrappiti_right">
+
+    <div class="field">
+      <%= form.text_area :description , :maxlength => 450, placeholder: "Description 450 caractères maximum", class: "champsdescription"  %>
+    </div>
+
+    <div class="field">
+      <%= form.file_field :banner %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "ok", class: "pommeok" %>
+    </div>
+    <% end %>
+  </div>
+</div>
