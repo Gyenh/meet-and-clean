@@ -1,51 +1,54 @@
-<%= form_with(model: event, local: true) do |form| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="mediumboxcreateevent">
+  <%= form_with(model: event, local: true) do |form| %>
+    <% if event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="wrappiti">
-    <div class="wrappiti_left">
-
-      <div class="field">
-        <%= form.text_field :name, placeholder: "Nom de ton évènement", class: "champsinfo" %>
-      </div>
-
-      <div class="field">
-        <%= form.text_area :place, placeholder: "Adresse", class: "champsinfo" %>
-      </div>
-
-      <div class="field">
-        <%= form.label :date %>
-        <%= form.date_select :date, class: "champsinfo" %>
-      </div>
-
-      <div class="field">
-        <%= form.label :hour %>
-        <%= form.time_select :hour, { :minute_step => 30 } %>
-      </div>
-
-    </div>
-    <div class="wrappiti_right">
-
-      <div class="field">
-        <%= form.text_area :description , :maxlength => 450, placeholder: "Description 450 caractères maximum", class: "champsdescription"  %>
-      </div>
-
-       <div class="field">
-        <%= form.file_field :banner %>     
-      </div>
-
-      <div class="actions">
-        <%= form.submit "ok", class: "pommeok" %>
+        <ul>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
       </div>
     <% end %>
+    <div class="mediumboxcreateevent_champignon">
+      <div class="mediumboxcreateevent_champignon_wrappiti">
+        <div class="mediumboxcreateevent_champignon_wrappiti_left">
+          <h2 class="blue">Créer un évènement</h2>
+          <div class="mediumboxcreateevent_champignon_wrappiti_left_field">
+            <%= form.text_field :name, placeholder: "Nom de ton évènement", class: "mediumboxcreateevent_champignon_wrappiti_left_field_champsinfo" %>
+          </div>
+
+          <div class="mediumboxcreateevent_champignon_wrappiti_left_field">
+            <%= form.text_area :place, placeholder: "Adresse", class: "mediumboxcreateevent_champignon_wrappiti_left_field_champsinfo" %>
+          </div>
+
+          <div class="mediumboxcreateevent_champignon_wrappiti_left_field">
+            <%= form.label :date %>
+            <%= form.date_select :date, class: "mediumboxcreateevent_champignon_wrappiti_left_field_champsinfo" %>
+          </div>
+
+          <div class="mediumboxcreateevent_champignon_wrappiti_left_field">
+            <%= form.label :hour %>
+            <%= form.time_select :hour, { :minute_step => 30 } %>
+          </div>
+
+        </div>
+        <div class="mediumboxcreateevent_champignon_wrappiti_right">
+
+          <div class="mediumboxcreateevent_champignon_wrappiti_right_field">
+            <%= form.text_area :description , :maxlength => 450, placeholder: "Description 450 caractères maximum", class: "mediumboxcreateevent_champignon_wrappiti_right_field_description"  %>
+          </div>
+
+           <div class="mediumboxcreateevent_champignon_wrappiti_right_field">
+            <%= form.file_field :banner %>     
+          </div>
+
+          <div class="mediumboxcreateevent_champignon_wrappiti_right_field_action">
+            <%= form.submit "ok", class: "mediumboxcreateevent_champignon_wrappiti_right_field_action_pomme" %>
+          </div>
+        <% end %>
+        </div>
+      </div>
     </div>
-  </div>
+</div>
