@@ -19,6 +19,9 @@
 .wrappi_events_show {
   position: relative;
   z-index: 3;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5vh;
 }
 
 .wrappi_sessions_new, .wrappi_registrations_new {
