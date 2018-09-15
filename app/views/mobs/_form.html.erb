@@ -57,6 +57,10 @@
             <%= form.text_area :description, placeholder: "Description", class: "champsdescription" %>
           </div>
 
+          <div class="field">
+            <%= form.file_field :avatar %>     
+          </div>
+
           <div class="actions">
             <%= form.submit "ok", class: "pommeok" %>
           </div>
