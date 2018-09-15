@@ -1,10 +1,12 @@
 <div class="bigcardevent">
   <div class="bigcardevent_header">
     <% if @event.banner.attached? %>
-    <%= image_tag @event.banner, class: "bigcardevent_header_bandeau" %>
+      <%= image_tag @event.banner, class: "bigcardevent_header_bandeau" %>
     <% end %>
-    <%= image_tag @event.mob.avatar, class: "bigcardevent_header_photoprofilasso" %>
-     </div>
+    <% if @event.mob.avatar.attached? %>
+      <%= image_tag @event.mob.avatar, class: "bigcardevent_header_photoprofilasso" %>
+    <% end %>
+  </div>
   <div class="bigcardevent_informations">
     <div class="bigcardevent_informations_details">
       <div class="bigcardevent_informations_details_event">
@@ -29,7 +31,7 @@
                 <h4><%= link_to 'Participer', user_events_path(event_id: @event.id), method: :post %></h4>
               </div>
               <% end %>
-            
+
               <div class="bigcardevent_informations_details_actions_cta_batteryblue_posi">
               </div>
               <div class="bigcardevent_informations_details_actions_cta_batteryblue_moins">
