@@ -1,4 +1,9 @@
 <div class="bigcardevent">
+  <%= link_to root_path do %>
+  <div class="bigcardevent_cross">
+    <i class="fas fa-times"></i>
+  </div>
+  <% end %>
   <div class="bigcardevent_header">
     <% if @event.banner.attached? %>
     <%= image_tag @event.banner, class: "bigcardevent_header_bandeau" %>
@@ -29,6 +34,7 @@
                 <h4><%= link_to 'Participer', user_events_path(event_id: @event.id), method: :post %></h4>
               </div>
               <% end %>
+
               <div class="bigcardevent_informations_details_actions_cta_batteryblue_posi">
               </div>
               <div class="bigcardevent_informations_details_actions_cta_batteryblue_moins">
@@ -70,6 +76,6 @@
   </div>
 
   <div class="bigcardevent_materiel">
-    <h3><%= @event.mob.name %> fournira : </h3>
+    <h3><%= @event.mob.name %> fournira : <%= @event.tools.map(&:name).join(', ') %></h3>
   </div>
 </div>
