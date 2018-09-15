@@ -68,8 +68,11 @@ en:
     errors:
       models:
         user:
+        admin:
           attributes:
             first_name:
+              blank: "ne peut pas être vide."
+            last_name:
               blank: "ne peut pas être vide."
             email:
               taken: "déjà existant"
