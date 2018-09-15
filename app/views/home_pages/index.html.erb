@@ -1,33 +1,46 @@
 <!-- CECI EST LA HOMEPAGE -->
 <!-- à utiliser pour injecter l'infos dans mes cartes à la fin -->
-<% @events.each_with_index do |event, index| %>
-  <div class="littlecardevent">
-    <div class="littlecardevent_hautcard">
-      <div class="littlecardevent_hautcard_nameevent">
-        <h2><%= event.name.upcase %></h2>
+<%# @events.each_with_index do |event, index| %>
+<% @events.in_groups_of(3).each_with_index do |group, index| %>
+  <div id="<%= index %>" class="mini_wrappi <%= (index == 0) ? "" : "hidden" %>">
+    <% group.each_with_index do |event, index| %>
+      <div class="littlecardevent">
+        <div class="littlecardevent_hautcard">
+          <div class="littlecardevent_hautcard_nameevent">
+            <h2><%= event.name.upcase %></h2>
+          </div>
+          <div class="littlecardevent_hautcard_date">
+            <h5><%= @array_date[index][0] %></h5>
+            <h6><%= @array_date[index][1] %></h6>
+          </div>
+        </div>
+        <div class="littlecardevent_adressandnumber">
+          <h3><%= event.place %></h3>
+          <h3><%= a = UserEvent.all.where(event_id: [event]).count %>
+                <% if a <= 1 %> <%= t('one') %>
+          <% else %> <%= t('other') %><% end %></h3>
+        </div>
+        <div class="littlecardevent_infoevent">
+          <p><%= event.description[0...170] %>...</p>
+        </div>
+        <div class="littlecardevent_batterybutton">
+          <div class="littlecardevent_batterybutton_green">
+            <div class="littlecardevent_batterybutton_green_inner"></div>
+            <div class="littlecardevent_batterybutton_green_innerpre"><h4><%= link_to 'Intéressé(e)', event %></h4></div>
+            <div class="littlecardevent_batterybutton_green_posi"></div>
+            <div class="littlecardevent_batterybutton_green_moins"></div>
+            <div class="littlecardevent_batterybutton_green_plus"></div>
+          </div>
+        </div>
       </div>
-      <div class="littlecardevent_hautcard_date">
-        <h5><%= @array_date[index][0] %></h5>
-        <h6><%= @array_date[index][1] %></h6>
-      </div>
-    </div>
-    <div class="littlecardevent_adressandnumber">
-      <h3><%= event.place %></h3>
-      <h3><%= a = UserEvent.all.where(event_id: [event]).count %>
-            <% if a <= 1 %> <%= t('one') %>
-      <% else %> <%= t('other') %><% end %></h3>
-    </div>
-    <div class="littlecardevent_infoevent">
-      <p><%= event.description[0...170] %>...</p>
-    </div>
-    <div class="littlecardevent_batterybutton">
-      <div class="littlecardevent_batterybutton_green">
-        <div class="littlecardevent_batterybutton_green_inner"></div>
-        <div class="littlecardevent_batterybutton_green_innerpre"><h4><%= link_to 'Intéressé(e)', event %></h4></div>
-        <div class="littlecardevent_batterybutton_green_posi"></div>
-        <div class="littlecardevent_batterybutton_green_moins"></div>
-        <div class="littlecardevent_batterybutton_green_plus"></div>
-      </div>
-    </div>
+    <% end %>
   </div>
 <% end %>
+
+<div class="arrow arrow_left">
+  <i class="fas fa-angle-left"></i>
+</div>
+<div class="arrow arrow_right">
+  <i class="fas fa-angle-right"></i>
+</div>
+<%#= (@events.first(3).include?(event)) ? "" : "hidden" %>
