@@ -72,24 +72,16 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-
-    tools = params["event"]["tool_id"].reject { |item| item.empty? } #.map(&to_i)
-    puts "================"
-    p tools
+    @event.mob_id = current_admin.mob_id
 
     # recuperer les params qui concernent les outils
     # faire un each sur la liste
     # creer un nouvel enregistrement de ToolsEvent pour chaque item
-
-
-    @event.mob_id = current_admin.mob_id
+    tools = params["event"]["tool_ids"].reject { |item| item.empty? }
 
     respond_to do |format|
       if @event.save
-        tools.each do |tool|
-          ToolsEvent.create(event_id: @event.id, tool_id: tool)
-        end
-
+        ToolsEvent.create(event_id: @event.id, tool_id: tools)
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
