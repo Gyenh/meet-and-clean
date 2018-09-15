@@ -58,6 +58,10 @@
                 <%= form.text_area :description, placeholder: "Description", class: "mediumboxeditmobs_champignon_wrappiti_right_field_description" %>
               </div>
 
+              <div class="field">
+                <%= form.file_field :avatar %>
+              </div>
+
               <div class="mediumboxeditmobs_champignon_wrappiti_right_action">
                 <%= form.submit "ok", class: "mediumboxeditmobs_champignon_wrappiti_right_action_pomme" %>
               </div>
@@ -66,16 +70,6 @@
 
         </div>
       </div>
-
-          <div class="field">
-            <%= form.file_field :avatar %>
-          </div>
-
-          <div class="actions">
-            <%= form.submit "ok", class: "pommeok" %>
-          </div>
-        <% end %>
-
     </div>
 </div>
 
