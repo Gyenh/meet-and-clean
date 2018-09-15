@@ -1,29 +1,30 @@
-<div class="inscription">
+<div class="mediumboxinsco">
   <% if user_signed_in? %>
     <%= render "admins/shared/error" %>
-    <% else %>
+  <% else %>
 
-    <div class="inscriptionuser">
-      <%= link_to new_admin_session_path, class: "connexionrose" do %>
-        <h2 class="rose">Connexion</h2>
-      <% end %>
-      <%= link_to new_admin_registration_path, class: "inscriptionnoir" do %>
-        <h2>Inscription</h2>
-      <% end %>      
-     </div>
-    <div class="champignon">
+  <div class="mediumboxinsco_header">
+    <%= link_to new_admin_session_path, class: "mediumboxinsco_header_white" do %>
+      <h2 class="mediumboxinsco_header_white_purple">Connexion</h2>
+    <% end %>
+    <%= link_to new_admin_registration_path, class: "mediumboxinsco_header_dark" do %>
+      <h2 class="mediumboxinsco_header_dark_black">Inscription</h2>
+    <% end %>      
+  </div>
+
+    <div class="mediumboxinsco_champignon">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-      <div class="field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "champsinfo" %>
+      <div class="mediumboxinsco_champignon_wrappiti_left_field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@super.com", class: "mediumboxinsco_champignon_wrappiti_left_field_champsinfo" %>
       </div>
 
-      <div class="field">
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe", class: "champsinfo" %>
+      <div class="mediumboxinsco_champignon_wrappiti_left_field">
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "mot de passe", class: "mediumboxinsco_champignon_wrappiti_left_field_champsinfo" %>
       </div>
 
       <% if devise_mapping.rememberable? -%>
-        <div class="field">
+        <div class="mediumboxinsco_champignon_wrappiti_left_field">
           <h3>
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
@@ -34,8 +35,8 @@
         </div>
       <% end -%>
 
-      <div class="actions">
-        <%= f.submit "ok", class: "pommeok" %>
+      <div class="mediumboxinsco_champignon_wrappiti_right_action">
+        <%= f.submit "ok", class: "mediumboxinsco_champignon_wrappiti_right_action_pomme" %>
       </div>
     <% end %>
   <% end %>

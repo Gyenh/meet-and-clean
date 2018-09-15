@@ -1,10 +1,10 @@
-<p class="notice"><%= notice %></p>
-
 <div class="bigcardevent">
   <div class="bigcardevent_header">
+    <% if @event.banner.attached? %>
     <%= image_tag @event.banner, class: "bigcardevent_header_bandeau" %>
+    <% end %>
     <%= image_tag "macprofil.jpg", class: "bigcardevent_header_photoprofilasso" %>
-  </div>
+     </div>
   <div class="bigcardevent_informations">
     <div class="bigcardevent_informations_details">
       <div class="bigcardevent_informations_details_event">

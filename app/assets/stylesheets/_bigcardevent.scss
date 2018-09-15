@@ -67,6 +67,9 @@
                             height: 23px;
                             background: $bleubattery;
                             position: absolute;
+                            -webkit-transition: all 1s;
+                            -moz-transition: all 1s;
+                            transition: all 1s;
                         }
 
                         &_posi {
