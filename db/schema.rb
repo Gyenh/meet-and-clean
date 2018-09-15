@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2018_09_14_102543) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.time "hour"
-    t.string "banner_url"
     t.index ["mob_id"], name: "index_events_on_mob_id"
   end
 
@@ -72,7 +71,6 @@ ActiveRecord::Schema.define(version: 2018_09_14_102543) do
     t.text "web_url_2"
     t.text "description"
     t.string "email"
-    t.string "profile_url"
   end
 
   create_table "tools", force: :cascade do |t|
