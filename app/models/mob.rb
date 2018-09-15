@@ -3,6 +3,7 @@
 class Mob < ApplicationRecord
   has_many :events
   has_many :admins
+  has_one_attached :avatar
 
   # Validation des formulaires
   validates :description, length: { maximum: 450 }
