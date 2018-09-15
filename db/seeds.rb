@@ -8,6 +8,8 @@ Event.destroy_all
 User.destroy_all
 Mob.destroy_all
 Admin.destroy_all
+Tool.destroy_all
+ToolsEvent.destroy_all
 
 6.times do |i|
   name = Faker::Name.first_name
@@ -25,7 +27,6 @@ Admin.destroy_all
     web_url_2: Faker::Internet.url,
     description: SeedObject.get_description_mob[i],
     email: Faker::Internet.free_email,
-    profile_url: 'https://img3.closermag.fr/var/closermag/storage/images/1/2/5/9/1/12591000/hailie-fille-eminem-toujours-sexy-sur-instagram_exact1024x768_l.jpg'
   )
 
   event = Event.create(
@@ -35,7 +36,6 @@ Admin.destroy_all
     date: SeedObject.get_event_date[i],
     hour: SeedObject.get_event_hour[i],
     mob_id: mob.id,
-    banner_url: 'https://img3.closermag.fr/var/closermag/storage/images/1/2/5/9/1/12591000/hailie-fille-eminem-toujours-sexy-sur-instagram_exact1024x768_l.jpg'
   )
 
   admin = Admin.create(
@@ -50,6 +50,14 @@ Admin.destroy_all
   # cette ligne inscrit tous les user a un evenement
   # userEvent = UserEvent.create(user_id: user.id, event_id: event.id)
 end
+
+# Generation de la table Tool
+Tool.create(name: 'Gants')
+Tool.create(name: 'Gilet Jaune')
+Tool.create(name: 'Pince à dechets')
+Tool.create(name: 'Sac Plastique')
+Tool.create(name: 'Cendriers de poche')
+Tool.create(name: 'Biere')
 
 # on ajoute nos mails dans la base de donnee,
 # pour se connecter sans etre oblige de s'inscrire

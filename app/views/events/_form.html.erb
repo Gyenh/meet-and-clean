@@ -41,8 +41,18 @@
           </div>
 
            <div class="mediumboxcreateevent_champignon_wrappiti_right_field">
-            <%= form.file_field :banner %>     
+            <%= form.file_field :banner %>
           </div>
+
+          <div class="field">
+            <%= form.label "Matériels fourni" %><br />
+            <%= form.collection_check_boxes :tool_ids, Tool.all, :id, :name do |b| %>
+              <div class="collection-check-box">
+                <%= b.check_box %>
+                <%= b.label %>
+              </div>
+                <% end %>
+              </div>
 
           <div class="mediumboxcreateevent_champignon_wrappiti_right_field_action">
             <%= form.submit "ok", class: "mediumboxcreateevent_champignon_wrappiti_right_field_action_pomme" %>
