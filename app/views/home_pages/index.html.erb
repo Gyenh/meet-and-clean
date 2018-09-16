@@ -12,8 +12,8 @@
                 <h2><%= event.name.upcase %></h2>
               </div>
               <div class="littlecardevent_hautcard_date">
-                <h5><%= @array_date[index][0] %></h5>
-                <h6><%= @array_date[index][1] %></h6>
+                <h5><%= Utils.get_date(event.date.to_s)[0] %></h5>
+                <h6><%= Utils.get_date(event.date.to_s)[1] %></h6>
               </div>
             </div>
             <div class="littlecardevent_adressandnumber">
