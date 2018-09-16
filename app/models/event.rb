@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   has_many :tools_events
   has_many :tools, through: :tools_events
 
-  validates :name, presence: true, length: { maximum: 15 }
+  validates :name, presence: true, length: { maximum: 30 }
 
   validates :place, presence: true
   validates :description, length: { maximum: 450 }

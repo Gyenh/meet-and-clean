@@ -1,0 +1,26 @@
+.arrow_left {
+  top: 50%;
+  left: 40px;
+}
+.arrow_right {
+  top: 50%;
+  right: 40px;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  position: absolute;
+  color: $bleuevent;
+  font-size: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background-color: $petitgris;
+}

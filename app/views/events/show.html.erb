@@ -1,10 +1,21 @@
 <div class="bigcardevent">
+  <%= link_to root_path do %>
+  <div class="bigcardevent_cross">
+    <i class="fas fa-times"></i>
+  </div>
+  <% end %>
   <div class="bigcardevent_header">
     <% if @event.banner.attached? %>
-    <%= image_tag @event.banner, class: "bigcardevent_header_bandeau" %>
+      <%= image_tag @event.banner, class: "bigcardevent_header_bandeau" %>
+    <% else %>
+      <%= image_tag "macbandeau.jpg", class: "bigcardevent_header_bandeau" %>
     <% end %>
-    <%= image_tag "macprofil.jpg", class: "bigcardevent_header_photoprofilasso" %>
-     </div>
+    <% if @event.mob.avatar.attached? %>
+      <%= image_tag @event.mob.avatar, class: "bigcardevent_header_photoprofilasso" %>
+    <% else %>
+      <%= image_tag "photoprofil-42.jpeg", class: "bigcardevent_header_photoprofilasso" %>
+    <% end %>
+  </div>
   <div class="bigcardevent_informations">
     <div class="bigcardevent_informations_details">
       <div class="bigcardevent_informations_details_event">
@@ -16,25 +27,35 @@
           <h2><%= @event.name.upcase %> • Organisé par <%= @event.mob.name %></h2>
         </div>
         <div class="bigcardevent_informations_details_actions">
+          <%= social_share_button_tag(
+            @event.name,
+            :allow_sites => %w(twitter facebook),
+            'data-twitter-title' => @event.description,
+            :url => "https://mob-mop.herokuapp.com/events/#{@event.id}",
+            desc: @event.name) %>
           <div class="bigcardevent_informations_details_actions_cta">
-            <div class="bigcardevent_informations_details_actions_cta_batteryblue">
-              <div class="bigcardevent_informations_details_actions_cta_batteryblue_inner">
+            <div class="bigcardevent_informations_details_actions_cta_batteryrose">
+              <div class="bigcardevent_informations_details_actions_cta_batteryrose_inner">
               </div>
               <% if admin_signed_in? %>
-              <div class="bigcardevent_informations_details_actions_cta_batteryblue_innerpre">
-                <h4><%= link_to 'Modifier', edit_event_path(@event) %></h4>
+                <div class="bigcardevent_informations_details_actions_cta_batteryrose_innerpre">
+                  <h4><%= link_to 'Modifier', edit_event_path(@event) %></h4>
+                </div>
+              <% elsif user_signed_in?  %>
+              <div class="bigcardevent_informations_details_actions_cta_batteryrose_innerpre bg_red">
+                <h4><%= link_to "Annuler", user_event_path, method: :delete, data: { confirm: "Genre tu veux te désinscrire ? La planète t\'en voudra" } %></h4>
               </div>
               <% else %>
-              <div class="bigcardevent_informations_details_actions_cta_batteryblue_innerpre">
-                <h4><%= link_to 'Participer', user_events_path(event_id: @event.id), method: :post %></h4>
-              </div>
+                <div class="bigcardevent_informations_details_actions_cta_batteryrose_innerpre">
+                  <h4><%= link_to 'Participer', user_events_path(event_id: @event.id), method: :post %></h4>
+                </div>
               <% end %>
-            
-              <div class="bigcardevent_informations_details_actions_cta_batteryblue_posi">
+
+              <div class="bigcardevent_informations_details_actions_cta_batteryrose_posi">
               </div>
-              <div class="bigcardevent_informations_details_actions_cta_batteryblue_moins">
+              <div class="bigcardevent_informations_details_actions_cta_batteryrose_moins">
               </div>
-              <div class="bigcardevent_informations_details_actions_cta_batteryblue_plus">
+              <div class="bigcardevent_informations_details_actions_cta_batteryrose_plus">
               </div>
             </div>
           </div>
@@ -58,19 +79,16 @@
   <div class="bigcardevent_geoloc">
     <div class="bigcardevent_geoloc_description">
       <p><%= @event.description %></p>
-          <%= social_share_button_tag(
-            @event.name,
-            :allow_sites => %w(twitter facebook),
-            'data-twitter-title' => @event.description,
-            :url => "https://mob-mop.herokuapp.com/events/#{@event.id}",
-            desc: @event.name) %>
     </div>
     <div class="bigcardevent_geoloc_map">
       <iframe src=<%= @embed_map %> frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     </div>
   </div>
-
-  <div class="bigcardevent_materiel">
-    <h3><%= @event.mob.name %> fournira : <%= @event.tools.map(&:name).join(', ') %></h3>
-  </div>
+    <div class="bigcardevent_materiel">
+      <% if @event.tools.map(&:name).empty? %>
+        <h3><span class="fc_violetassos"><%= @event.mob.name %></span> ne fournit pas le matériel.</h3>
+      <% else %>
+        <h3><span class="fc_violetassos"><%= @event.mob.name %> fournira : <%= @event.tools.map(&:name).join(', ') %></h3>
+      <% end %>
+    </div>
 </div>

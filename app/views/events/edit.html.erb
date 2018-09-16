@@ -1,10 +1,10 @@
 <% if user_signed_in? %>
   <%= render "views/shared/error" %>
   <% else %>
-  <h1>Editing Event</h1>
-
 <%= render 'form', event: @event %>
+<div class="buttons_events_edit">
+<%#= link_to 'Show', @event %>
+<%#= link_to 'Back', events_path %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+</div>
 <% end %>

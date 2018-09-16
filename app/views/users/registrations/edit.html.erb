@@ -1,73 +1,118 @@
-<div class="profiluser">
- <div class="profiluser_bonjour">
-   <h2>Bonjour <%= current_user.first_name.capitalize %></h2>
- </div>
+<div class="mediumboxedituser">
+  <% if admin_signed_in? %>
+    <%= render "users/shared/error" %>
+  <% else %>
+  <div class="mediumboxedituser_header">
+    <%= link_to "#", id: "mediumboxedituser_cta_edit", class: "mediumboxedituser_header_dark" do %>
+      <h2 class="mediumboxedituser_header_dark_black"><%= current_user.first_name.capitalize %> (edit)</h2>
+    <% end %>
+    <%= link_to "#", id: "mediumboxedituser_cta_mobs", class: "mediumboxedituser_header_white" do %>
+      <h2 class="mediumboxedituser_header_white_pink">Mes Mobs</h2>
+    <% end %>
+  </div>
 
- <div class="champignon">
-   <% if admin_signed_in? %>
-     <%= render "users/shared/error" %>
-     <% else %>
-    <p id="notice"><%= notice %></p>
-    <% if flash[:alert] %>
-   <p class="flash-error"><%= flash[:alert] %></p>
- <% end %>
-     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-       <%= devise_error_messages! %>
-
-       <div class="wrappiti">
-         <div class="wrappiti_left">
-
-           <div class="field">
-             <%= f.text_field :first_name, :readonly => true, autofocus: true, autocomplete: "first_name", class: "champsinfo" %>
-           </div>
-
-           <div class="field">
-             <%= f.text_field :last_name, :readonly => true, autofocus: true, autocomplete: "last_name", class: "champsinfo" %>
-           </div>
-
-           <div class="field">
-             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "champsinfo" %>
-           </div>
-         </div>
-
-           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-           <% end %>
-
-         <div class="wrappiti_right">
-
-           <div class="field">
-             <%= f.password_field :password, autocomplete: "new-password", placeholder: "Nouveau mot de passe ?", class: "champsinfo" %>
-             <% if @minimum_password_length %>
-             <% end %>
-           </div>
-
-           <div class="field">
-             <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation", class: "champsinfo" %>
-           </div>
-
-            <div class="field">
-              <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel", class: "champsinfo" %>
+  <div id="current_user_events" class="mediumboxedituser_champignon">
+    <h2 class="mediumboxedituser_champignon_h2">Mes events</h2>
+    <div class="div_to_scroll">
+      <% @user_events.each do |user_event| %>
+        <div class="event_mini_card">
+          <div class="event_mini_card_date">
+            <div class="event_mini_card_date_month">
+              <%= l(user_event.event.date, format: '%b') %>
             </div>
-
-            <div class="actions">
-              <%= f.submit "ok", class: "pommeok" %>
+            <div class="event_mini_card_date_day">
+              <%= l(user_event.event.date, format: '%d') %>
             </div>
           </div>
-          <% end %>
+          <div class="event_mini_card_name">
+            <%= user_event.event.name %>
+          </div>
+          <div class="event_mini_card_link">
+              <div class="edit_user_battery_cta">
+                <div class="edit_user_battery_cta_batteryrose">
+                  <div class="edit_user_battery_cta_batteryrose_inner"></div>
+                  <div class="edit_user_battery_cta_batteryrose_innerpre"><h4><%= link_to 'Afficher', user_event %></h4></div>
+                  <div class="edit_user_battery_cta_batteryrose_posi"></div>
+                  <div class="edit_user_battery_cta_batteryrose_moins"></div>
+                  <div class="edit_user_battery_cta_batteryrose_plus"></div>
+                </div>
+              </div>
+          </div>
         </div>
+      <%#= link_to 'Se désinscrire', user_event, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
 
 
-        <%= button_to "Supprimer mon compte ?", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "champsinfo" %>
+  <div id="current_user_infos" class="mediumboxedituser_champignon hidden">
+       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+         <%= devise_error_messages! %>
 
-          <% end %>
-        </div>
-      <!-- Affiche tous les événements où le user participe -->
-        <div class="profiluser_event"></div>
-          <h2>Mes events :</h2>
-            <% @user_events.each do |user_event| %>
-              <%= user_event.event.name %><br>
-              <%= link_to 'Afficher', user_event %><br>
-              <%= link_to 'Se désinscrire', user_event, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
-      </div>
+         <div class="mediumboxedituser_champignon_wrappiti">
+           <div class="mediumboxedituser_champignon_wrappiti_left">
+
+             <div class="mediumboxedituser_champignon_wrappiti_left_field">
+               <%= f.text_field :first_name, :readonly => true, autofocus: true, autocomplete: "first_name", class: "mediumboxedituser_champignon_wrappiti_left_field_champsinfo" %>
+             </div>
+
+             <div class="mediumboxedituser_champignon_wrappiti_left_field">
+               <%= f.text_field :last_name, :readonly => true, autofocus: true, autocomplete: "last_name", class: "mediumboxedituser_champignon_wrappiti_left_field_champsinfo" %>
+             </div>
+
+             <div class="mediumboxedituser_champignon_wrappiti_left_field">
+               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mediumboxedituser_champignon_wrappiti_left_field_champsinfo" %>
+             </div>
+           </div>
+
+             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+               <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+             <% end %>
+
+           <div class="mediumboxedituser_champignon_wrappiti_right">
+
+             <div class="mediumboxedituser_champignon_wrappiti_right_field">
+               <%= f.password_field :password, autocomplete: "new-password", placeholder: "Nouveau mot de passe ?", class: "mediumboxedituser_champignon_wrappiti_right_field_champsinfo" %>
+               <% if @minimum_password_length %>
+               <% end %>
+             </div>
+
+             <div class="mediumboxedituser_champignon_wrappiti_right_field">
+               <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation", class: "mediumboxedituser_champignon_wrappiti_right_field_champsinfo" %>
+             </div>
+
+              <div class="mediumboxedituser_champignon_wrappiti_right_field">
+                <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel", class: "mediumboxedituser_champignon_wrappiti_right_field_champsinfo" %>
+              </div>
+
+              <div class="mediumboxedituser_champignon_wrappiti_right_action">
+                <%= f.submit "ok", class: "mediumboxedituser_champignon_wrappiti_right_action_pomme" %>
+              </div>
+            </div>
+            <% end %>
+    <% end %>
+    </div>
+            <%= link_to registration_path(resource_name), data: { confirm: "Vraiment ? Tu ne veux plus cleaner ta planète et quitter MOBMOP ?" }, method: :delete, class: "button_to_delete_account" do %>
+            <i class="fas fa-trash-alt"></i>
+            <% end %>
+  </div>
+
+</div>
+<script>
+  $(document).ready(function() {
+    $("#mediumboxedituser_cta_edit").click(function() {
+      $("#current_user_infos").removeClass("hidden");
+      $("#current_user_events").addClass("hidden");
+      $("#mediumboxedituser_cta_edit").removeClass("mediumboxedituser_header_dark").addClass("mediumboxedituser_header_white");
+      $("#mediumboxedituser_cta_mobs").removeClass("mediumboxedituser_header_white").addClass("mediumboxedituser_header_dark");
+    });
+    $("#mediumboxedituser_cta_mobs").click(function() {
+      $("#current_user_events").removeClass("hidden");
+      $("#current_user_infos").addClass("hidden");
+      $("#mediumboxedituser_cta_mobs").removeClass("mediumboxedituser_header_dark").addClass("mediumboxedituser_header_white");
+      $("#mediumboxedituser_cta_edit").removeClass("mediumboxedituser_header_white").addClass("mediumboxedituser_header_dark");
+      // $("#mediumboxedituser_cta_edit").removeClass("mediumboxedituser_header_white");
+      // $("#mediumboxedituser_cta_mobs").addClass("mediumboxedituser_header_dark");
+    });
+  })
+</script>

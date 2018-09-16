@@ -34,7 +34,7 @@ class MobsController < ApplicationController
   def update
     respond_to do |format|
       if @mob.update(mob_params)
-        format.html { redirect_to @mob, notice: 'Mob was successfully updated.' }
+        format.html { redirect_to edit_mob_path(@mob), notice: 'Mob was successfully updated.' }
         format.json { render :show, status: :ok, location: @mob }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class MobsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def mob_params
-    params.require(:mob).permit(:name, :phone, :web_url_1, :web_url_2, :description)
+    params.require(:mob).permit(:name, :phone, :web_url_1, :web_url_2, :description, :avatar)
   end
 
   # Methode qui permet de verifier que le current_admin est bien le créateur du mob
