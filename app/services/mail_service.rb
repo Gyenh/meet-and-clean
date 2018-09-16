@@ -14,7 +14,7 @@ class MailService
     variable = Mailjet::Send.create(messages: [{
                                       'From' => {
                                         'Email' => ENV['DEFAULT_FROM'],
-                                        # email du expediteur
+                                        # email de l'expediteur
                                         'Name' => 'Mobmop'
                                       },
                                       'To' => [

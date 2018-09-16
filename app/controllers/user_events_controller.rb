@@ -37,6 +37,12 @@ class UserEventsController < ApplicationController
       hour = Utils.get_clean_time(event.hour.to_s)
       name =  event.name
       place = event.place
+
+      #st
+      adress = event.place
+      temp_adress = adress.gsub(' ','%20')
+      embed_map = "https://maps.google.com/maps?width=100%&height=600&hl=en&q=#{temp_adress}+(Super%20Event%20de%20ouf)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+      #en
       # name = current_user.first_name
       # je cree un faux nom "Marie" par ce qu'on recupere pas encore le nom
       # de l'user dans le formulaire d'inscription
@@ -46,7 +52,7 @@ class UserEventsController < ApplicationController
         current_user.email,
         name,
         MailObject.get_confirmation_subject,
-        MailObject.get_confirmation_content(name, place, date, hour)
+        MailObject.get_confirmation_content(name, place, date, hour, embed_map)
       )
       # Envoie un mail après que l'user se soit inscrit au site
       # Fin envoie email de confirmation

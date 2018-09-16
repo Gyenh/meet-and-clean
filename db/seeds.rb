@@ -1,14 +1,14 @@
 # frozen_string_literal: true
-
+#le contenu du seed se trouve dans la Classe seed_object.rb, dans la dossier app/services
 # require 'faker'
 #
 # # Suppression des donnees de chaque tables dans la database
-# UserEvent.destroy_all
-# Event.destroy_all
-# User.destroy_all
-# Mob.destroy_all
-# Admin.destroy_all
-#
+UserEvent.destroy_all
+Event.destroy_all
+User.destroy_all
+Mob.destroy_all
+Admin.destroy_all
+Tool.destroy_all
 # 6.times do |i|
 #   name = Faker::Name.first_name
 #   pwd = 123456

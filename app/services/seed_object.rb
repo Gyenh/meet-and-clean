@@ -1,4 +1,5 @@
 #Cette classe contient le contenu du seed
+#chaque methode contient un array de string
 class SeedObject
 
   def self.get_mob_name
