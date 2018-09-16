@@ -115,7 +115,7 @@ class MailObject
   </html>"
   end
 
-  def self.get_confirmation_content(name, place, date, hour, embed_map)
+  def self.get_confirmation_content(name, place, date, hour)
     "<h3  style=\"background-color:black;color:white;padding:20px;\">Participation confirmée !</h3><br />
 
     <div      style=\"display: flex;justify-content: center;\">
@@ -134,7 +134,6 @@ class MailObject
     #{place}
     <a href=\"https://www.google.com/maps?f=q&hl=en&q=#{place}\">Itinéraire</a></h1>
     </div>
-    #{embed_map}
     </div>"
   end
 end

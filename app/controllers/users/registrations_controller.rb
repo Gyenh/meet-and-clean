@@ -26,8 +26,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     begin
       email = current_user.email
 
-      name = 'Marie'
-      # name = current_user.first_name
+
+      name = current_user.first_name
       # je crée un faux nom "Marie" par ce qu'on recupère
       # pas encore le nom de l'user dans le formulaire d'inscription
 
@@ -35,7 +35,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       # elle se trouve dans le ficher app/services/mail_object.rb
       MailService.send_email(
         email, name, MailObject.get_welcome_subject,
-        subject = MailObject.get_welcome_content
+        subject = MailObject.get_welcome_admin_content(name)
       )
     # envoie un mail après que l'user se soit inscrit au site
     rescue Exception

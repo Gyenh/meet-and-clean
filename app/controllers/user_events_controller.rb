@@ -38,13 +38,7 @@ class UserEventsController < ApplicationController
       name =  event.name
       place = event.place
 
-      #st
-      adress = event.place
-      results = Geocoder.search(adress)
-      lat = results.first.coordinates[0]
-      long = results.first.coordinates[1]
-      embed_map = "<img width=\"600\" src=\"https://static-maps.yandex.ru/1.x/?lang=en-US&ll=#{lat},#{long}&z=13&l=map&size=600,300&pt=\" alt=\"map !\">"
-      #en
+
       # name = current_user.first_name
       # je cree un faux nom "Marie" par ce qu'on recupere pas encore le nom
       # de l'user dans le formulaire d'inscription
@@ -54,7 +48,7 @@ class UserEventsController < ApplicationController
         current_user.email,
         name,
         MailObject.get_confirmation_subject,
-        MailObject.get_confirmation_content(name, place, date, hour, embed_map)
+        MailObject.get_confirmation_content(name, place, date, hour)
       )
       # Envoie un mail après que l'user se soit inscrit au site
       # Fin envoie email de confirmation
