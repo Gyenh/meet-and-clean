@@ -41,7 +41,7 @@
         <% assoid = current_admin.mob %>
           <%= link_to edit_mob_path(assoid) do %>
               <div class="mediumboxeditmobs_header_white">
-        <h2 class="mediumboxeditmobs_header_dark_black"><%= link_to edit_mob_path(assoid) do %>
+        <h2 class="mediumboxeditmobs_header_white_purple"><%= link_to edit_mob_path(assoid) do %>
             <%= current_admin.mob.name %></h2>
             <% end %>
       </div>
@@ -143,8 +143,8 @@
       $("#mediumboxeditmobs_mob_cta").removeClass("mediumboxedituser_header_white").addClass("mediumboxedituser_header_dark");
       $("#mediumboxeditmobs_events_cta").removeClass("mediumboxedituser_header_dark").addClass("mediumboxedituser_header_white");
       $("#mediumboxeditmobs_events_cta").css("color", "#822AE8");
-      $("#mediumboxeditmobs_mob_cta > h2 > a").css("color", "black")
-    });
+      $(".mediumboxeditmobs_header_white_purple").css("color", "black");
+      });
     $("#mediumboxeditmobs_mob").click(function() {
       $("#mediumboxeditmobs_mob").removeClass("hidden");
       $("#mediumboxeditmobs_event").addClass("hidden");

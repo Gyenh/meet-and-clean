@@ -34,8 +34,11 @@
       cursor: pointer;
       background-color: $white;
       &_purple {
-        color: $violetassos;
+        color: $violetassos !important;
         margin-bottom: 14px;
+      }
+      &_purple > a {
+        color: $violetassos !important;
       }
       &_pink {
         color: $roseuser;
