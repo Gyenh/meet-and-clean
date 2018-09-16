@@ -10,10 +10,11 @@
       right: 15px;
       color: $roseuser;
       // color: $black;
-      width: 20px;
+      width: 22px;
       height: 20px;
+      line-height: 2px;
       text-align: center;
-      line-height: 22px;
+      backgrouncolor: transparent;
       border: 3px solid transparent;
     }
     &_cross:hover {
@@ -22,10 +23,11 @@
       right: 15px;
       color: $roseuser;
       // color: $black;
-      width: 20px;
+      width: 22px;
       height: 20px;
+      line-height: 2px;
       text-align: center;
-      line-height: 22px;
+      background-color: $white;
       border: 3px solid $roseuser;
       //border: 3px solid $black;
     }
@@ -55,7 +57,7 @@
                     width: 40px;
                 }
                 &_name {
-                    width: 693px;
+                    width: 615px;
                     display: flex;
                     align-items: center;
                 }
@@ -73,13 +75,16 @@
             }
             &_actions {
                 display: flex;
-                flex-direction: column;
-                width: 100px;
+                justify-content: space-between;
+                align-items: center;
+                width: 160px;
                 padding-top: 18px;
                 &_cta {
                     display: flex;
                     padding-top: 10px;
-                    &_batteryblue {
+                    margin-top: -40px;
+                    margin-right: 80px;
+                    &_batteryrose {
                         &_inner {
                             width: 95px;
                             height: 23px;
@@ -90,7 +95,7 @@
                         &_innerpre {
                             width: 0px;
                             height: 23px;
-                            background: $bleubattery;
+                            background: $vertpomme;
                             position: absolute;
                             -webkit-transition: all 1s;
                             -moz-transition: all 1s;

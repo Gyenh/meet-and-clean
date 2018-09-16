@@ -12,9 +12,9 @@
       </div>
     <% end %>
     <div class="mediumboxcreateevent_champignon">
+          <h2 class="blue mediumboxcreateevent_champignon_title_h2">Créer un évènement</h2>
       <div class="mediumboxcreateevent_champignon_wrappiti">
         <div class="mediumboxcreateevent_champignon_wrappiti_left">
-          <h2 class="blue">Créer un évènement</h2>
           <div class="mediumboxcreateevent_champignon_wrappiti_left_field">
             <%= form.text_field :name, placeholder: "Nom de ton évènement", class: "mediumboxcreateevent_champignon_wrappiti_left_field_champsinfo" %>
           </div>
@@ -34,31 +34,33 @@
           </div>
 
         </div>
-        <div class="mediumboxcreateevent_champignon_wrappiti_right">
+        <div class="mediumboxcreateevent_champignon_wrappiti_center">
 
-          <div class="mediumboxcreateevent_champignon_wrappiti_right_field">
-            <%= form.text_area :description , :maxlength => 450, placeholder: "Description 450 caractères maximum", class: "mediumboxcreateevent_champignon_wrappiti_right_field_description"  %>
+          <div class="mediumboxcreateevent_champignon_wrappiti_center_field">
+            <%= form.text_area :description , :maxlength => 450, placeholder: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis fringilla nisl, eu fringilla lacus rhoncus ullamcorper. Donec ut elit ac mi ultrices sodales. Suspendisse fermentum erat nec dui tempus, et semper tellus tempor. Praesent vestibulum turpis est, at tristique magna convallis nec. Cras viverra vitae neque vitae viverra. Integer vestibulum et lorem sit amet aliquam. Maecenas dictum nunc justo, in vestibulum est blandit a cras amet."  %>
           </div>
-
+        </div>
+          <div class="mediumboxcreateevent_champignon_wrappiti_right">
            <div class="mediumboxcreateevent_champignon_wrappiti_right_field">
             <%= form.file_field :banner %>
           </div>
 
-          <div class="field">
+          <div class="mediumboxcreateevent_champignon_wrappiti_right_field">
             <%= form.label "Matériels fourni" %><br />
             <%= form.collection_check_boxes :tool_ids, Tool.all, :id, :name do |b| %>
+
               <div class="collection-check-box">
                 <%= b.check_box %>
                 <%= b.label %>
               </div>
                 <% end %>
-              </div>
+          </div>
 
           <div class="mediumboxcreateevent_champignon_wrappiti_right_field_action">
             <%= form.submit "ok", class: "mediumboxcreateevent_champignon_wrappiti_right_field_action_pomme" %>
           </div>
-        <% end %>
         </div>
+        <% end %>
       </div>
     </div>
 </div>

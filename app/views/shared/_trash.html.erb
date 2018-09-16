@@ -170,14 +170,16 @@
     var sameElementById = $(this).attr('id');
     $("." + sameElementById + "_infobuble").addClass("hidden");
   });
-  
+
   $(".button_for_hide_wrappi").click(function() {
-    $(".wrappi").hide();
+    $(".wrappi_for_trash, .wrappi").hide();
+    $(".arrow_left, .arrow_right").hide();
     $(".button_for_hide_wrappi").addClass("hidden");
     $(".button_for_display_wrappi").removeClass("hidden");
   });
   $(".button_for_display_wrappi").click(function() {
-    $(".wrappi").show();
+    $(".wrappi_for_trash, .wrappi").show();
+    $(".arrow_left, .arrow_right").show();
     $(".button_for_display_wrappi").addClass("hidden");
     $(".button_for_hide_wrappi").removeClass("hidden");
   });

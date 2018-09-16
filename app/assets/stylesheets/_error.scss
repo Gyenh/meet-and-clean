@@ -1,5 +1,10 @@
 .error {
 	padding-left: 20px;
-    height: 60px;
-    color: red;
+  height: 60px;
+  color: red;
+}
+
+#notice {
+  color: $rednotice;
+  text-align: center;
 }
