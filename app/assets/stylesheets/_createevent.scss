@@ -90,6 +90,7 @@
             &_right {
               flex: 0 0 33%;
                 &_field {
+                    display: grid;
                   margin-bottom: 15px;
                     &_champsinfo {
                         height: 25px;
@@ -123,23 +124,23 @@
                     &_description:focus {
                         outline: none;
                     }
-                }
-                &_action {
-                    &_pomme {
-                        height: 40px;
-                        width: 40px;
-                        border: 2px solid black;
-                        border-radius: 50%;
-                        background-color: $vertpomme;
-                        cursor: pointer;
-                        margin-left: 175px;
-                        margin-top: 5px;
-                    }
-                    &_pomme:hover {
-                        color: $violetassos;
-                    }
-                    &_pomme:focus {
-                        outline: none;
+                    &_action {
+                        &_pomme {
+                            height: 40px;
+                            width: 40px;
+                            border: 2px solid black;
+                            border-radius: 50%;
+                            background-color: $vertpomme;
+                            cursor: pointer;
+                            margin-left: 175px;
+                            margin-top: 5px;
+                        }
+                        &_pomme:hover {
+                            color: $violetassos;
+                        }
+                        &_pomme:focus {
+                            outline: none;
+                        }
                     }
                 }
             }

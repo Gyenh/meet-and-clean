@@ -46,7 +46,7 @@
           </div>
 
           <div class="mediumboxcreateevent_champignon_wrappiti_right_field">
-            <%= form.label "Matériels fourni" %><br />
+            <%= form.label "Matériels fourni" %>
             <%= form.collection_check_boxes :tool_ids, Tool.all, :id, :name do |b| %>
 
               <div class="collection-check-box">
