@@ -8,3 +8,19 @@
   color: $rednotice;
   text-align: center;
 }
+
+#error_explanation {
+  margin-top: -50px;
+  font-size: 14px;
+  color: red;
+
+}
+
+#error_explanation > h2 {
+  font-size: 14px;
+}
+
+#error_explanation > ul {
+  margin: 0px !important;
+  margin-bottom: 10px !important;
+}

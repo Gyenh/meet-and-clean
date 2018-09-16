@@ -10,25 +10,29 @@
     position: relative;
     &_dark {
       height: 60px;
-      width: 50vw;
+      flex: 0 0 33%;
       display: flex;
       align-items: center;
       justify-content: center;
       background-color: $petitgris;
+      cursor: pointer;
       &_black {
         color: $black;
         margin-bottom: 14px;
+      &_h2 {
+        margin-bottom: 14px;
+      }
       }
     }
-    &_dark:hover {
-      background-color: $grismoyen;
-    }
+
     &_white {
       height: 60px;
-      width: 50vw;
+      flex: 0 0 34%;
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      background-color: $white;
       &_purple {
         color: $violetassos;
         margin-bottom: 14px;
@@ -39,16 +43,17 @@
       }
     }
   }
-  &_header > h2 {
-   position: absolute;
-   top: 80px;
-   left: 30px;
+  &_header_h2 {
+   // position: absolute;
+   // top: 80px;
+   // left: 30px;
+   padding-left: 30px;
+   padding-top: 30px;
    color: $violetassos;
  }
  &_champignon {
-  margin: 20px;
-  margin-top: 50px;
-  padding-top: 30px;
+
+  padding-top: 10px;
   &_wrappiti {
     width: 80%;
     margin: auto;

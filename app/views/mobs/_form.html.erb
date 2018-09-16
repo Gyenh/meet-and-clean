@@ -13,23 +13,33 @@
     <% end %>
 
     <div class="mediumboxeditmobs_header">
+      <%= link_to edit_admin_registration_path do %>
       <div class="mediumboxeditmobs_header_dark">
         <h2 class="mediumboxeditmobs_header_dark_black"><%= link_to edit_admin_registration_path do %>
             <%= current_admin.first_name.capitalize %></h2>
             <% end %>
       </div>
+      <% end %>
 
-      <div class="mediumboxeditmobs_header_white">
         <% if current_admin.mob == nil %>
         <% else %>
         <% assoid = current_admin.mob %>
+          <%= link_to edit_mob_path(assoid) do %>
+      <div id="mediumboxeditmobs_mob_cta" class="mediumboxeditmobs_header_white">
+
         <h2 class="mediumboxeditmobs_header_white_purple"><%= link_to edit_mob_path(assoid), class: "mediumboxeditmobs_header_white_purple" do %>
             <%= current_admin.mob.name.capitalize %></h2>
         <% end %>
-        <%end%>
       </div>
-    <h2 class="">Dis nous tout sur ton mob !</h2>
+        <% end %>
+      <% end %>
+      <div id="mediumboxeditmobs_events_cta" class="mediumboxeditmobs_header_dark">
+        <h2 class="mediumboxeditmobs_header_dark_black_h2">Mes events</h2>
+      </div>
     </div>
+
+    <div id="mediumboxeditmobs_mob" class="mediumboxeditmobs_box_jquery">
+    <h2 class="mediumboxeditmobs_header_h2">Dis nous tout sur ton mob !</h2>
     <div class="mediumboxeditmobs_champignon">
       <div class="mediumboxeditmobs_champignon_wrappiti">
         <div class="mediumboxeditmobs_champignon_wrappiti_left">
@@ -72,5 +82,60 @@
       </div>
     </div>
 </div>
+
+<div id="mediumboxeditmobs_event" class="mediumboxeditmobs_box_jquery hidden">
+    <h2 class="mediumboxedituser_champignon_h2">Mes events</h2>
+    <div class="div_to_scroll">
+      <% current_admin.mob.events.each do |item| %>
+        <div class="event_mini_card">
+          <div class="event_mini_card_date">
+            <div class="event_mini_card_date_month">
+              <%= l(item.date, format: '%b') %>
+            </div>
+            <div class="event_mini_card_date_day">
+              <%= l(item.date, format: '%d') %>
+            </div>
+          </div>
+          <div class="event_mini_card_name">
+            <%= item.name %>
+          </div>
+          <div class="event_mini_card_link">
+              <div class="edit_user_battery_cta">
+                <div class="edit_user_battery_cta_batteryrose">
+                  <div class="edit_user_battery_cta_batteryrose_inner"></div>
+                  <div class="edit_user_battery_cta_batteryrose_innerpre"><h4><%= link_to 'Afficher', item %></h4></div>
+                  <div class="edit_user_battery_cta_batteryrose_posi"></div>
+                  <div class="edit_user_battery_cta_batteryrose_moins"></div>
+                  <div class="edit_user_battery_cta_batteryrose_plus"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+      <%#= link_to 'Se désinscrire', user_event, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+</div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#mediumboxeditmobs_events_cta").click(function() {
+      $("#mediumboxeditmobs_event").removeClass("hidden");
+      $("#mediumboxeditmobs_mob").addClass("hidden");
+      $("#mediumboxeditmobs_mob_cta").removeClass("mediumboxedituser_header_white").addClass("mediumboxedituser_header_dark");
+      $("#mediumboxeditmobs_events_cta").removeClass("mediumboxedituser_header_dark").addClass("mediumboxedituser_header_white");
+      $("#mediumboxeditmobs_events_cta").css("color", "#822AE8");
+      $("#mediumboxeditmobs_mob_cta > h2 > a").css("color", "black")
+    });
+    $("#mediumboxeditmobs_mob").click(function() {
+      $("#mediumboxeditmobs_mob").removeClass("hidden");
+      $("#mediumboxeditmobs_event").addClass("hidden");
+      // $("#mediumboxedituser_cta_mobs").removeClass("mediumboxedituser_header_dark").addClass("mediumboxedituser_header_white");
+      // $("#mediumboxedituser_cta_edit").removeClass("mediumboxedituser_header_white").addClass("mediumboxedituser_header_dark");
+      // // $("#mediumboxedituser_cta_edit").removeClass("mediumboxedituser_header_white");
+      // // $("#mediumboxedituser_cta_mobs").addClass("mediumboxedituser_header_dark");
+    });
+  })
+</script>
 
 
