@@ -81,6 +81,11 @@
             }
             &_center {
               flex: 0 0 34%;
+              &_field {
+                &_description:focus {
+                    outline: none;
+                }
+              }
             }
             &_right {
               flex: 0 0 33%;
