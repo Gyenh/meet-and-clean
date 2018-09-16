@@ -4,13 +4,14 @@
 http://mob-mop.herokuapp.com/<br/>
 
 # MobMop, qu'est ce que c'est ?
-Une plateforme de mise en relation pour rendre nos rues plus propres.
+Une plateforme de mise en relation à destinations des associations, institutions mais aussi des personnes de tout horizon afin de les réunir dans un but commun de sensibilisation et de la population à la sauvegarde de la planète.
 
-Elle a pour but de simplifier la vie des associations et des citoyens qui ont pour objectif de rendre l'espace public des rues de leurs villes, elle mettra à disposition des outils basiques pour créer des événements.<br>
+Elle a pour but de simplifier la vie des associations et des citoyens, elle mettra à disposition des outils basiques pour créer des événements.
+
 Mais aussi, retrouver un répertoire d'événements similaires et permettre à toutes les associations d'être representées a travers une même plateforme, donc avoir une voix plus forte en terme de marketing, ainsi qu'au niveau organisationel, en effet, actuellement les différentes structures passent principalement par Facebook qui est assez archaïque pour l'utilisateur et l'association.
 
 
-## La team
+## La team :id:
 
 **Team Front**
 - Cat - _slack_ @clyde
