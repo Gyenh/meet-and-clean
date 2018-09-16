@@ -1,7 +1,7 @@
 .mediumboxcreateevent {
 	background-color: $white;
-    width: 700px;
-    height: 325px;
+    width: 900px;
+    height: 400px;
     border-radius: 1px;
     box-shadow: 10px 15px 40px $shadowbox;
     &_header {
@@ -39,22 +39,33 @@
         }
     }
     &_champignon {
-        display: flex;
-        justify-content: center;
+        // display: flex;
+        // justify-content: center;
         margin: 20px;
         margin-top: 50px;
+        position: relative;
+        &_title_h2 {
+          position: absolute;
+          top: 30px;
+          left: 0px;
+          color: $violetassos;
+        }
         &_wrappiti {
-            width: 500px;
+            width: 100%;
             margin: auto;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            padding-top: 100px;
             &_left {
+              flex: 0 0 33%;
+              padding-left: 30px;
                 &_field {
+                  margin-bottom: 15px;
                     &_champsinfo {
                         height: 25px;
                         width: 200px;
                         border: 1px solid black;
-                        font-family: 'Hind Siliguri', sans-serif;   
+                        font-family: 'Hind Siliguri', sans-serif;
                         font-weight: 600;
                         font-size: 14px;
                         margin-bottom: 10px;
@@ -68,13 +79,18 @@
                     }
                 }
             }
+            &_center {
+              flex: 0 0 34%;
+            }
             &_right {
+              flex: 0 0 33%;
                 &_field {
+                  margin-bottom: 15px;
                     &_champsinfo {
                         height: 25px;
                         width: 200px;
                         border: 1px solid black;
-                        font-family: 'Hind Siliguri', sans-serif;   
+                        font-family: 'Hind Siliguri', sans-serif;
                         font-weight: 600;
                         font-size: 14px;
                         margin-bottom: 10px;
@@ -90,7 +106,7 @@
                         height: 120px;
                         width: 200px;
                         border: 1px solid black;
-                        font-family: 'Hind Siliguri', sans-serif;   
+                        font-family: 'Hind Siliguri', sans-serif;
                         font-weight: 600;
                         font-size: 14px;
                         margin-bottom: 10px;
@@ -123,5 +139,25 @@
                 }
             }
         }
-    }    
+    }
 }
+
+.collection-check-box {
+  display: inline-block;
+}
+textarea {
+    height: 210px;
+    width: 200px;
+    border: 1px solid black;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: black;
+    border-radius: 1px;
+    padding-left: 8px;
+}
+
+

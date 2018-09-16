@@ -13,6 +13,20 @@
 .blackhoverrose:hover {
     color: #ff00ff;
 }
+.blackhoverviolet {
+    color: black;
+    padding-top: 3px;
+    font-size: 13px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.blackhoverviolet:hover {
+    color: $violetassos;
+}
 .navbuttonrose {
     position: relative;
     display: inline-block;

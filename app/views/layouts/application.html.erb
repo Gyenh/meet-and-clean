@@ -22,13 +22,13 @@
     <div class="wrapper">
         <!-- ma navbar -->
         <%= render 'shared/navbar' %>
-        <p class="notice"><%= notice %></p>
+        <p id="notice"><%= notice %></p>
         <!-- mon background -->
         <%= render 'shared/trash' %>
         <!-- parce qu'un wrappi c'est tout mimi -->
 
         <!-- ajout des noms de controller et des actions pour créer des class spécifiques en fonction de la page -->
-        <div class="wrappi_<%= controller_name %>_<%= action_name %>">
+        <div class=" wrappi wrappi_<%= controller_name %>_<%= action_name %>">
 
         <!-- dans le yield je mets toute l'intéraction du site -->
             <%= yield %>

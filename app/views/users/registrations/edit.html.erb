@@ -1,17 +1,51 @@
 <div class="mediumboxedituser">
+  <% if admin_signed_in? %>
+    <%= render "users/shared/error" %>
+  <% else %>
   <div class="mediumboxedituser_header">
-   <div class="mediumboxedituser_header_white">
-     <h2>Bonjour <%= current_user.first_name.capitalize %></h2>
-   </div>
+    <%= link_to "#", id: "mediumboxedituser_cta_edit", class: "mediumboxedituser_header_dark" do %>
+      <h2 class="mediumboxedituser_header_dark_black"><%= current_user.first_name.capitalize %> (edit)</h2>
+    <% end %>
+    <%= link_to "#", id: "mediumboxedituser_cta_mobs", class: "mediumboxedituser_header_white" do %>
+      <h2 class="mediumboxedituser_header_white_pink">Mes Mobs</h2>
+    <% end %>
+  </div>
 
-   <div class="mediumboxedituser_champignon">
-     <% if admin_signed_in? %>
-       <%= render "users/shared/error" %>
-       <% else %>
-      <p id="notice"><%= notice %></p>
-      <% if flash[:alert] %>
-     <p class="flash-error"><%= flash[:alert] %></p>
-   <% end %>
+  <div id="current_user_events" class="mediumboxedituser_champignon">
+    <h2 class="mediumboxedituser_champignon_h2">Mes events</h2>
+    <div class="div_to_scroll">
+      <% @user_events.each do |user_event| %>
+        <div class="event_mini_card">
+          <div class="event_mini_card_date">
+            <div class="event_mini_card_date_month">
+              <%= l(user_event.event.date, format: '%b') %>
+            </div>
+            <div class="event_mini_card_date_day">
+              <%= l(user_event.event.date, format: '%d') %>
+            </div>
+          </div>
+          <div class="event_mini_card_name">
+            <%= user_event.event.name %>
+          </div>
+          <div class="event_mini_card_link">
+              <div class="edit_user_battery_cta">
+                <div class="edit_user_battery_cta_batteryrose">
+                  <div class="edit_user_battery_cta_batteryrose_inner"></div>
+                  <div class="edit_user_battery_cta_batteryrose_innerpre"><h4><%= link_to 'Afficher', user_event %></h4></div>
+                  <div class="edit_user_battery_cta_batteryrose_posi"></div>
+                  <div class="edit_user_battery_cta_batteryrose_moins"></div>
+                  <div class="edit_user_battery_cta_batteryrose_plus"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+      <%#= link_to 'Se désinscrire', user_event, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div id="current_user_infos" class="mediumboxedituser_champignon hidden">
        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
          <%= devise_error_messages! %>
 
@@ -56,20 +90,29 @@
               </div>
             </div>
             <% end %>
-          </div>
-
-
-          <%= button_to "Supprimer mon compte ?", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "mediumboxedituser_champignon_wrappiti_right_field_champsinfo" %>
-
+    <% end %>
+    </div>
+            <%= link_to registration_path(resource_name), data: { confirm: "Vraiment ? Tu ne veux plus cleaner ta planète et quitter MOBMOP ?" }, method: :delete, class: "button_to_delete_account" do %>
+            <i class="fas fa-trash-alt"></i>
             <% end %>
-          </div>
+  </div>
+
 </div>
-        <!-- Affiche tous les événements où le user participe -->
-          <div class="profiluser_event"></div>
-            <h2>Mes events :</h2>
-              <% @user_events.each do |user_event| %>
-                <%= user_event.event.name %><br>
-                <%= link_to 'Afficher', user_event %><br>
-                <%= link_to 'Se désinscrire', user_event, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-        </div>
+<script>
+  $(document).ready(function() {
+    $("#mediumboxedituser_cta_edit").click(function() {
+      $("#current_user_infos").removeClass("hidden");
+      $("#current_user_events").addClass("hidden");
+      $("#mediumboxedituser_cta_edit").removeClass("mediumboxedituser_header_dark").addClass("mediumboxedituser_header_white");
+      $("#mediumboxedituser_cta_mobs").removeClass("mediumboxedituser_header_white").addClass("mediumboxedituser_header_dark");
+    });
+    $("#mediumboxedituser_cta_mobs").click(function() {
+      $("#current_user_events").removeClass("hidden");
+      $("#current_user_infos").addClass("hidden");
+      $("#mediumboxedituser_cta_mobs").removeClass("mediumboxedituser_header_dark").addClass("mediumboxedituser_header_white");
+      $("#mediumboxedituser_cta_edit").removeClass("mediumboxedituser_header_white").addClass("mediumboxedituser_header_dark");
+      // $("#mediumboxedituser_cta_edit").removeClass("mediumboxedituser_header_white");
+      // $("#mediumboxedituser_cta_mobs").addClass("mediumboxedituser_header_dark");
+    });
+  })
+</script>

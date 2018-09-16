@@ -1,4 +1,4 @@
-<div class="mediumboxeditadmin">
+<div class="mediumboxeditadmins">
   <% if user_signed_in? %>
   <%= render "admins/shared/error" %>
   <% else %>
@@ -7,41 +7,41 @@
   <%= link_to "Finaliser l'inscription", new_mob_path, class: "blackoverrose" %>
   <% else %>
 
-  <div class="mediumboxeditadmin_header">
-    <div class="mediumboxeditadmin_header_white">
-      <h2 class="mediumboxeditadmin_header_white_purple"><%= link_to edit_admin_registration_path, class: "mediumboxeditadmin_header_white_purple" do %>
+  <div class="mediumboxeditadmins_header">
+    <div class="mediumboxeditadmins_header_white">
+      <h2 class="mediumboxeditadmins_header_white_purple"><%= link_to edit_admin_registration_path, class: "mediumboxeditadmins_header_white_purple" do %>
         <%= current_admin.first_name.capitalize %></h2>
       <% end %>
     </div>
-    <div class="mediumboxeditadmin_header_dark">
+    <div class="mediumboxeditadmins_header_dark">
       <% if current_admin.mob.id == nil %>
       <% else %>
       <% assoid = current_admin.mob.id %>
-      <h2 class="mediumboxeditadmin_header_dark_black"><%= link_to edit_mob_path(assoid), class: "mediumboxeditadmin_header_dark_black" do %>
+      <h2 class="mediumboxeditadmins_header_dark_black"><%= link_to edit_mob_path(assoid), class: "mediumboxeditadmins_header_dark_black" do %>
         <%= current_admin.mob.name.capitalize %></h2>
       <% end %>
       <%end%>
     </div>
   </div>
 
-  <div class="mediumboxeditadmin_champignon">
+  <div class="mediumboxeditadmins_champignon">
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="mediumboxeditadmin_champignon_wrappiti">
-      <div class="mediumboxeditadmin_champignon_wrappiti_left">
+    <div class="mediumboxeditadmins_champignon_wrappiti">
+      <div class="mediumboxeditadmins_champignon_wrappiti_left">
 
-        <div class="mediumboxeditadmin_champignon_wrappiti_left_field">
-          <%= f.text_field :last_name, placeholder: "Nom", class: "mediumboxeditadmin_champignon_wrappiti_left_field_champsinfo" %>
+        <div class="mediumboxeditadmins_champignon_wrappiti_left_field">
+          <%= f.text_field :last_name, placeholder: "Nom", class: "mediumboxeditadmins_champignon_wrappiti_left_field_champsinfo" %>
         </div>
 
-        <div class="mediumboxeditadmin_champignon_wrappiti_left_field">
-          <%= f.text_field :first_name, placeholder: "Prenom", class: "mediumboxeditadmin_champignon_wrappiti_left_field_champsinfo" %>
+        <div class="mediumboxeditadmins_champignon_wrappiti_left_field">
+          <%= f.text_field :first_name, placeholder: "Prenom", class: "mediumboxeditadmins_champignon_wrappiti_left_field_champsinfo" %>
         </div>
 
-        <div class="mediumboxeditadmin_champignon_wrappiti_left_field">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mediumboxeditadmin_champignon_wrappiti_left_field_champsinfo" %>
+        <div class="mediumboxeditadmins_champignon_wrappiti_left_field">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mediumboxeditadmins_champignon_wrappiti_left_field_champsinfo" %>
         </div>
 
       </div>
@@ -50,25 +50,25 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
-    <div class="mediumboxeditadmin_champignon_wrappiti_right">
+    <div class="mediumboxeditadmins_champignon_wrappiti_right">
 
-      <div class="mediumboxeditadmin_champignon_wrappiti_right_field">
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Nouveau mot de passe", class: "mediumboxeditadmin_champignon_wrappiti_right_field_champsinfo" %>
+      <div class="mediumboxeditadmins_champignon_wrappiti_right_field">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Nouveau mot de passe", class: "mediumboxeditadmins_champignon_wrappiti_right_field_champsinfo" %>
         <% if @minimum_password_length %>
         <br />
         <% end %>
       </div>
 
-      <div class="mediumboxeditadmin_champignon_wrappiti_right_field">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation", class: "mediumboxeditadmin_champignon_wrappiti_right_field_champsinfo" %>
+      <div class="mediumboxeditadmins_champignon_wrappiti_right_field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation", class: "mediumboxeditadmins_champignon_wrappiti_right_field_champsinfo" %>
       </div>
 
-      <div class="mediumboxeditadmin_champignon_wrappiti_right_field">
-        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel", class: "mediumboxeditadmin_champignon_wrappiti_right_field_champsinfo" %>
+      <div class="mediumboxeditadmins_champignon_wrappiti_right_field">
+        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel", class: "mediumboxeditadmins_champignon_wrappiti_right_field_champsinfo" %>
       </div>
 
-      <div class="mediumboxeditadmin_champignon_wrappiti_right_action">
-        <%= f.submit "ok", class: "mediumboxeditadmin_champignon_wrappiti_right_action_pomme" %>
+      <div class="mediumboxeditadmins_champignon_wrappiti_right_action">
+        <%= f.submit "ok", class: "mediumboxeditadmins_champignon_wrappiti_right_action_pomme" %>
       </div>
       <% end %>
       <% end %>
@@ -77,5 +77,3 @@
     </div>
   </div>
 </div>
-
-<%= button_to "Cancel my account", registration_path(resource_name), class: "mediumboxeditadmin_champignon_wrappiti_right_field_champsinfo", data: { confirm: "Are you sure?" }, method: :delete %>

@@ -1,18 +1,54 @@
 /*partie de la navbar de droite*/
-.eventbleu {
+.eventpurple {
 	border: solid 2px black;
-    padding: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
-	border-radius: 1px;
-	font-weight: 600;
-	cursor: pointer;
-    margin-right: 15px;
-    text-decoration: none;
-    color: black;
-    font-size: 13px;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+}
+.eventpurple:hover {
+  background: $violetassos;
+  color: white;
+}
+
+.eventpink {
+  border: solid 2px black;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+}
+.eventpink:hover {
+  background: $roseuser;
+  color: white;
+}
+
+.eventbleu {
+  border: solid 2px black;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
 }
 .eventbleu:hover {
-    background: #0000ff;
-    color: white;
+  background: #0000ff;
+  color: white;
 }
