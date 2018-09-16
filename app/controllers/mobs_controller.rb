@@ -34,7 +34,7 @@ class MobsController < ApplicationController
   def update
     respond_to do |format|
       if @mob.update(mob_params)
-        format.html { redirect_to @mob, notice: 'Mob was successfully updated.' }
+        format.html { redirect_to edit_mob_path(@mob), notice: 'Mob was successfully updated.' }
         format.json { render :show, status: :ok, location: @mob }
       else
         format.html { render :edit }
