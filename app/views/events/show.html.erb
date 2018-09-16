@@ -41,7 +41,7 @@
                 <div class="bigcardevent_informations_details_actions_cta_batteryrose_innerpre">
                   <h4><%= link_to 'Modifier', edit_event_path(@event) %></h4>
                 </div>
-              <% elsif user_signed_in?  %>
+              <% elsif user_signed_in? %>
               <div class="bigcardevent_informations_details_actions_cta_batteryrose_innerpre bg_red">
                 <h4><%= link_to "Annuler", user_event_path, method: :delete, data: { confirm: "Genre tu veux te désinscrire ? La planète t\'en voudra" } %></h4>
               </div>
