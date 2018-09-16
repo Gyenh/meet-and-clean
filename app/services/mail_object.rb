@@ -134,6 +134,7 @@ class MailObject
     #{place}
     <a href=\"https://www.google.com/maps?f=q&hl=en&q=#{place}\">Itinéraire</a></h1>
     </div>
+    #{embed_map}
     </div>"
   end
 end

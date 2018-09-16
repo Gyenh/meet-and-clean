@@ -3,13 +3,13 @@
 # require 'faker'
 
 # Suppression des donnees de chaque tables dans la database
-# UserEvent.destroy_all
-# Event.destroy_all
-# User.destroy_all
-# Mob.destroy_all
-# Admin.destroy_all
-# Tool.destroy_all
-# ToolsEvent.destroy_all
+UserEvent.destroy_all
+Event.destroy_all
+User.destroy_all
+Mob.destroy_all
+Admin.destroy_all
+Tool.destroy_all
+ToolsEvent.destroy_all
 
 # 6.times do |i|
 #   name = Faker::Name.first_name

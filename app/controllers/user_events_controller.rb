@@ -40,8 +40,10 @@ class UserEventsController < ApplicationController
 
       #st
       adress = event.place
-      temp_adress = adress.gsub(' ','%20')
-      embed_map = "https://maps.google.com/maps?width=100%&height=600&hl=en&q=#{temp_adress}+(Super%20Event%20de%20ouf)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+      results = Geocoder.search(adress)
+      lat = results.first.coordinates[0]
+      long = results.first.coordinates[1]
+      embed_map = "<img width=\"600\" src=\"https://static-maps.yandex.ru/1.x/?lang=en-US&ll=#{lat},#{long}&z=13&l=map&size=600,300&pt=\" alt=\"map !\">"
       #en
       # name = current_user.first_name
       # je cree un faux nom "Marie" par ce qu'on recupere pas encore le nom
