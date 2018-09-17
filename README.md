@@ -1,7 +1,7 @@
 # Notre site en ligne
-[![N|Solid](app/assets/images/logo.svg)](http://mob-mop.herokuapp.com/)
+[![N|Solid](app/assets/images/logo.svg)](http://mobmop.com/)
 <br/>_Tu peux cliquer sur l'image ou tu peux suivre le lien suivant:_
-http://mob-mop.herokuapp.com/<br/>
+https://mob-mop.herokuapp.com/<br/>
 
 # MobMop, qu'est ce que c'est ?
 Une plateforme de mise en relation à destinations des associations, institutions mais aussi des personnes de tout horizon afin de les réunir dans un but commun de sensibilisation de la population à la propreté de nos rues.
